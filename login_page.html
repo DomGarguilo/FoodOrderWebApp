@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
+    <style>
+        body {
+            background: lightgray;
+        }
+
+        #login_wrapper {
+            background: white;
+            float: left;
+            width: 65%;
+            height: 100%;
+            min-width: 500px;
+            position: absolute;
+            left: 17%;
+            margin-top: -8px;
+        }
+
+        #login_container {
+            text-align: center;
+        }
+
+        /* textfield where student ID displays */
+        #login_credentials {
+            margin: 20px;
+        }
+
+        table {
+            background: black;
+        }
+
+        td {
+            background: white;
+            min-width: 40px;
+            padding: 15px;
+            font-size: 30px;
+            font: bold;
+        }
+
+        td:active {
+            background: lightgray;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id='login_wrapper'>
+        <div id='login_container'>
+            <h1>Welcome</h1>
+            <h2>Please log in with your TU-ID</h2>
+            <hr style='background: lightgray;'>
+
+            <div id='login_credentials'>
+                <form>
+                    ID: <input type='text' id='studentID' />
+                </form>
+            </div>
+            <table align='center'>
+                <!-- supposedly align=center is outdated for <tables>, but I couldn't find another way -->
+
+                <tb>
+                    <!--Table 7,8,9 -->
+                    <tr>
+                        <td onclick="numberInput(7)">7</td>
+                        <td onclick="numberInput(8)">8</td>
+                        <td onclick="numberInput(9)">9</td>
+                    </tr>
+
+                    <!--Table 4,5,6 -->
+                    <tr>
+                        <td onclick="numberInput(4)">4</td>
+                        <td onclick="numberInput(5)">5</td>
+                        <td onclick="numberInput(6)">6</td>
+                    </tr>
+
+                    <!--Table 1,2,3-->
+                    <tr>
+                        <td onclick="numberInput(1)">1</td>
+                        <td onclick="numberInput(2)">2</td>
+                        <td onclick="numberInput(3)">3</td>
+                    </tr>
+
+                    <!--Table 0,Delete-->
+                    <tr>
+                        <td onclick="numberInput(0)">0</td>
+                        <td onclick="del()" colspan="2">Delete</td>
+                    </tr>
+
+                </tb>
+                <tf>
+                    <!--Table Enter-->
+                    <tr>
+                        <!-- Enter button has no functionality yet-->
+                        <td onclick="" colspan="3">Enter</td>
+                    </tr>
+                </tf>
+
+            </table>
+
+        </div>
+    </div>
+
 </body>
+
+<script>
+
+    //Takes passed # and adds it to the textfield
+    function numberInput(number) {
+        document.getElementById('studentID').value += number;
+
+    }
+
+    //Deletes last digit
+    function del() {
+        var input = document.getElementById('studentID').value;
+        input = input.substring(0, input.length - 1);
+        document.getElementById('studentID').value = input;
+    }
+</script>
+
 </html>
