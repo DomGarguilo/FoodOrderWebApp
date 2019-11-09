@@ -11,6 +11,11 @@
             background: lightgray;
         }
 
+        table.center {
+            margin-left:auto; 
+            margin-right:auto;
+        }
+
         #login_wrapper {
             background: white;
             float: left;
@@ -32,15 +37,48 @@
         }
 
         table {
-            background: black;
+            background: white;
         }
 
         td {
-            background: white;
+            border-color: black;
+            border-width: 10px;
             min-width: 40px;
             padding: 15px;
+            font-family: sans-serif;
+            font-weight: 500;
             font-size: 30px;
             font: bold;
+        }
+
+        td#one, td#two, td#three, td#four, td#five, td#six, td#eight {
+            background: yellow;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        td#zero {
+            background: yellow;
+            border-radius: 5px 5px 5px 40px;
+        }
+
+        td#seven {
+            background: yellow;
+            border-radius: 40px 5px 5px 5px;
+        }
+
+        td#nine {
+            background: yellow;
+            border-radius: 5px 40px 5px 5px;
+        }
+
+        td#delete {
+            background: red;
+            border-radius: 5px 5px 40px 5px;
+        }
+
+        td#enter {
+            background: green;
+            border-radius: 40px;
         }
 
         td:active {
@@ -61,35 +99,34 @@
                     ID: <input type='text' id='studentID' />
                 </form>
             </div>
-            <table align='center'>
-                <!-- supposedly align=center is outdated for <tables>, but I couldn't find another way -->
+            <table class = "center">
 
                 <tb>
                     <!--Table 7,8,9 -->
                     <tr>
-                        <td onclick="numberInput(7)">7</td>
-                        <td onclick="numberInput(8)">8</td>
-                        <td onclick="numberInput(9)">9</td>
+                        <td id = "seven" onclick="numberInput(7)">7</td>
+                        <td id = "eight" onclick="numberInput(8)">8</td>
+                        <td id = "nine" onclick="numberInput(9)">9</td>
                     </tr>
 
                     <!--Table 4,5,6 -->
                     <tr>
-                        <td onclick="numberInput(4)">4</td>
-                        <td onclick="numberInput(5)">5</td>
-                        <td onclick="numberInput(6)">6</td>
+                        <td id = "four" onclick="numberInput(4)">4</td>
+                        <td id = "five" onclick="numberInput(5)">5</td>
+                        <td id = "six" onclick="numberInput(6)">6</td>
                     </tr>
 
                     <!--Table 1,2,3-->
                     <tr>
-                        <td onclick="numberInput(1)">1</td>
-                        <td onclick="numberInput(2)">2</td>
-                        <td onclick="numberInput(3)">3</td>
+                        <td id = "one" onclick="numberInput(1)">1</td>
+                        <td id = "two" onclick="numberInput(2)">2</td>
+                        <td id = "three" onclick="numberInput(3)">3</td>
                     </tr>
 
                     <!--Table 0,Delete-->
                     <tr>
-                        <td onclick="numberInput(0)">0</td>
-                        <td onclick="del()" colspan="2">Delete</td>
+                        <td id = "zero" onclick="numberInput(0)">0</td>
+                        <td id = "delete" onclick="del()" colspan="2">Delete</td>
                     </tr>
 
                 </tb>
@@ -97,7 +134,7 @@
                     <!--Table Enter-->
                     <tr>
                         <!-- Enter button has no functionality yet-->
-                        <td onclick="" colspan="3">Enter</td>
+                        <td id = "enter" onclick="" colspan="3">Enter</td>
                     </tr>
                 </tf>
 
