@@ -5,8 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Breakfast</title>
+<<<<<<< Updated upstream
 </head>
 <body>
     
 </body>
+=======
+
+    <style>
+        
+        #pancake_options {
+            display: none;
+        }
+
+        #egg_options {
+            display: none;
+        }
+
+        #bacon_options {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action = "review_order.html" method = "GET" name = "BreakfastItem">
+
+        <input type = "radio" name = "BFItem" value = "pancakes" onclick = "displayPancakeOptions(checked)"> <label style = "font-family: monospace;">Pancakes</label> <br>
+        <div id = "pancake_options">
+            <input type = "checkbox" name = "sugar"> Sugar
+        </div>
+
+        <input type = "radio" name = "BFItem" value = "fried_eggs" onclick = "displayEggOptions(checked)"> <label style = "font-family: monospace;">Eggs</label> <br>
+        <div id = "egg_options">
+            <input type = "checkbox" name = "redpepper"> Red Pepper
+        </div>
+
+        <input type = "radio" name = "BFItem" value = "bacon" onclick = "displayBaconOptions(checked)"> <label style = "font-family: monospace;">Bacon</label> <br>
+        <div id = "bacon_options">
+            <input type = "checkbox" name = "sugar"> Sugar
+        </div>
+
+        <input type = "submit"> Add Item and Review Order
+
+    </form>
+
+
+</body>
+
+<script>
+
+    function hideAllOptions() {
+        document.getElementById("pancake_options").style.display = "none";
+        document.getElementById("egg_options").style.display = "none";
+        document.getElementById("bacon_options").style.display = "none";
+    }
+
+    //Function to display pancake options
+    function displayPancakeOptions() {
+        hideAllOptions();
+        var x = document.getElementById("pancake_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    function displayEggOptions() {
+        hideAllOptions();
+        var x = document.getElementById("egg_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    function displayBaconOptions() {
+        hideAllOptions();
+        var x = document.getElementById("bacon_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+</script>
+
+>>>>>>> Stashed changes
 </html>
