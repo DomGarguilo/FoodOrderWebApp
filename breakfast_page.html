@@ -22,7 +22,7 @@
         label {
             display: inline-block;
             background-color: #ddd;
-            padding: 10px 20px;
+            padding: 2% 10%;
             font-family: sans-serif, Arial;
             font-size: 16px;
             border: 2px solid #444;
@@ -30,7 +30,7 @@
         }
 
         label:hover {
-            background-color: #dfd;
+            background-color: rgb(255, 253, 221);
         }
 
         :focus + label {
@@ -38,8 +38,8 @@
         }
 
         :checked + label {
-            background-color: #bfb;
-            border-color: #4c4;
+            background-color: rgb(250, 255, 187);
+            border-color: rgb(204, 195, 68);
         }
         
         #pancake_options {
@@ -54,6 +54,21 @@
             display: none;
         }
 
+        input[type = "submit"] {
+            display: inline-block;
+            background-color: rgb(73, 250, 87);
+            padding: 20px 100px;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+            border: 2px solid rgb(15, 151, 10);
+            border-radius: 4px;
+            
+        }
+
+        input[type = "submit"]:hover {
+            background-color: rgb(50, 252, 0);
+        }
+
     </style>
 
 </head>
@@ -63,31 +78,31 @@
         <input type = "radio" id = "r_pancakes" name = "BFItem" value = "pancakes" onclick = "displayPancakeOptions(checked)" class = "radio-tools">
         <label for = "r_pancakes">Pancakes</label> <br>
         <div id = "pancake_options">
-            <input type = "checkbox" name = "sugar"> Sugar
-            <input type = "checkbox" name = "syrup"> Syrup
-            <input type = "checkbox" name = "berries"> Berries
-            <input type = "checkbox" name = "whipped_cream"> Whipped Cream
-        </div>
+            <input type = "checkbox" name = "option"> Sugar
+            <input type = "checkbox" name = "option"> Syrup
+            <input type = "checkbox" name = "option"> Berries
+            <input type = "checkbox" name = "option"> Whipped Cream
+        </div> <br><br><br>
 
         <input type = "radio" id = "r_eggs" name = "BFItem" value = "fried_eggs" onclick = "displayEggOptions(checked)" class = "radio-tools">
         <label for = "r_eggs">Fried Eggs</label> <br>
         <div id = "egg_options">
-            <input type = "checkbox" name = "redpepper"> Red Pepper
-            <input type = "checkbox" name = "salt"> Salt
-            <input type = "checkbox" name = "sage"> Sage
-            <input type = "checkbox" name = "garlic"> Garlic
-        </div>
+            <input type = "checkbox" name = "option"> Red Pepper
+            <input type = "checkbox" name = "option"> Salt
+            <input type = "checkbox" name = "option"> Sage
+            <input type = "checkbox" name = "option"> Garlic
+        </div> <br><br><br>
 
         <input type = "radio" id = "r_bacon" name = "BFItem" value = "bacon" onclick = "displayBaconOptions(checked)" class = "radio-tools">
         <label for = "r_bacon">Bacon</label> <br>
         <div id = "bacon_options">
-            <input type = "radio" name = "bacon_type" value = "smoked"> Smoked
-            <input type = "radio" name = "bacon_type" value = "turkey"> Turkey Bacon
-            <input type = "radio" name = "bacon_type" value = "canadian"> Canadian Bacon
-            <input type = "radio" name = "bacon_type" value = "pancetta"> Pancetta
-        </div>
+            <input type = "radio" name = "option" value = "smoked"> Smoked
+            <input type = "radio" name = "option" value = "turkey"> Turkey Bacon
+            <input type = "radio" name = "option" value = "canadian"> Canadian Bacon
+            <input type = "radio" name = "option" value = "pancetta"> Pancetta
+        </div> <br><br><br>
 
-        <input type = "submit"> Add Item and Review Order
+        <br><br><br><br><br><br><br><br><br>  <input type = "submit" value = "Add Item and Review Order"> 
 
     </form>
 
@@ -96,11 +111,22 @@
 
 <script>
 
-    //Function to hide all sub options
+    //Function to hide and unselect all sub options
     function hideAllOptions() {
+        var items = document.getElementsByName("option");
         document.getElementById("pancake_options").style.display = "none";
         document.getElementById("egg_options").style.display = "none";
         document.getElementById("bacon_options").style.display = "none";
+
+        for (var i=0; i < items.length; i++) {
+			if (items[i].type == 'checkbox') {
+				items[i].checked = false;
+            }
+            if (items[i].type == 'radio') {
+				items[i].checked = false;
+            }
+		}
+
     }
 
     //Function to display pancake options
