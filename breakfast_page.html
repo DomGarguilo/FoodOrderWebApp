@@ -69,15 +69,15 @@
 
         /*hides the menu options by default-------------------------------------------------------------------------------------------------------------------------------------------------------------*/        
         #pancake_options {
-            display: none;
+            visibility: hidden;
         }
 
         #egg_options {
-            display: none;
+            visibility: hidden;
         }
 
         #bacon_options {
-            display: none;
+            visibility: hidden;
         }
 
     </style>
@@ -86,7 +86,7 @@
 <body>
 
     <h1 id = "head">Breakfast Menu</h1> 
-    <h3 id="please_select">Please Select an Item</h3> <br><br><br>
+    <h3 id="please_select">Please Select an Item:</h3> <br>
 
     <form action = "review_order.html" method = "GET" name = "BreakfastItem" class="order">
 
@@ -101,7 +101,7 @@
             <input type = "checkbox" id = "syrup" class = "all_options"> <label for = "syrup" class = "option_label">Syrup</label><br>
             <input type = "checkbox" id = "berries" class = "all_options"> <label for = "berries" class = "option_label">Berries</label><br>
             <input type = "checkbox" id = "wh_cream" class = "all_options"> <label for = "wh_cream" class = "option_label">Whipped Cream</label><br>
-        </div> <br><br><br>
+        </div> <br>
 
         <!--Eggs Button (Options only appear when this button is clicked)-->
         <input type = "radio" id = "r_eggs" name = "BFItem" value = "fried_eggs" onclick = "displayEggOptions(checked)" class = "radio-tools">
@@ -111,7 +111,7 @@
             <input type = "checkbox" id = "salt" class = "all_options"> <label for = "salt" class = "option_label">Salt</label><br>
             <input type = "checkbox" id = "sage" class = "all_options"> <label for = "sage" class = "option_label">Sage</label><br>
             <input type = "checkbox" id = "garlic" class = "all_options"> <label for = "garlic" class = "option_label">Garlic</label><br>
-        </div> <br><br><br>
+        </div> <br>
 
         <!--Bacon Button (Options only appear when this button is clicked)-->
         <input type = "radio" id = "r_bacon" name = "BFItem" value = "bacon" onclick = "displayBaconOptions(checked)" class = "radio-tools">
@@ -121,10 +121,10 @@
             <input type = "radio" id = "turkey" value = "turkey" class = "all_options"> <label for = "turkey" class = "option_label">Turkey Bacon</label><br>
             <input type = "radio" id = "canadian" value = "canadian" class = "all_options"> <label for = "canadian" class = "option_label">Canadian Bacon</label><br>
             <input type = "radio" id = "pancetta" value = "pancetta" class = "all_options"> <label for = "pancetta" class = "option_label">Pancetta</label><br>
-        </div> <br><br><br>
+        </div> <br>
         
         <!--Submit form and proceed to review_order page-->
-        <br><br><br><br><br>  <input type = "submit" value = "Add item to order"> 
+        <br><input type = "submit" value = "Add item to order"> 
 
     </form>
 
@@ -138,9 +138,9 @@
     //Function to hide and unselect all sub options
     function hideAllOptions() {
         var items = document.getElementsByClassName("all_options");
-        document.getElementById("pancake_options").style.display = "none";
-        document.getElementById("egg_options").style.display = "none";
-        document.getElementById("bacon_options").style.display = "none";
+        document.getElementById("pancake_options").style.visibility = "hidden";
+        document.getElementById("egg_options").style.visibility = "hidden";
+        document.getElementById("bacon_options").style.visibility = "hidden";
 
         for (var i=0; i < items.length; i++) {
 			if (items[i].type == 'checkbox' || items[i].type == 'radio') {
@@ -155,7 +155,7 @@
         hideAllOptions();
         var x = document.getElementById("pancake_options");
         if (checked = true) {
-            x.style.display = "block";
+            x.style.visibility = "visible";
         }
     }
 
@@ -164,7 +164,7 @@
         hideAllOptions();
         var x = document.getElementById("egg_options");
         if (checked = true) {
-            x.style.display = "block";
+            x.style.visibility = "visible";
         }
     }
 
@@ -173,7 +173,7 @@
         hideAllOptions();
         var x = document.getElementById("bacon_options");
         if (checked = true) {
-            x.style.display = "block";
+            x.style.visibility = "visible";
         }
     }
 
