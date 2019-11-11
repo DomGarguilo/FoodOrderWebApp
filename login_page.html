@@ -9,8 +9,8 @@
     <title>Welcome</title>
     <style>
         table.center {
-            margin-left:auto; 
-            margin-right:auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #login_wrapper {
@@ -48,7 +48,13 @@
             font: bold;
         }
 
-        td#one, td#two, td#three, td#four, td#five, td#six, td#eight {
+        td#one,
+        td#two,
+        td#three,
+        td#four,
+        td#five,
+        td#six,
+        td#eight {
             background: yellow;
             border-radius: 5px 5px 5px 5px;
         }
@@ -78,8 +84,26 @@
             border-radius: 40px;
         }
 
-        td:active {
-            background: lightgray;
+        td#zero:active,
+        td#one:active,
+        td#two:active,
+        td#three:active,
+        td#four:active,
+        td#five:active,
+        td#six:active,
+        td#seven:active,
+        td#eight:active,
+        td#nine:active {
+            background: rgb(192, 192, 0);
+        }
+
+        td#delete:active {
+            background: rgb(158, 0, 0);
+
+        }
+
+        td#enter:active {
+            background: rgb(0, 54, 0);
         }
     </style>
 </head>
@@ -90,53 +114,53 @@
             <h1>Welcome</h1>
             <h2>Please log in with your TU-ID</h2>
             <hr style='background: lightgray;'>
+            <form id='loginForm' action='breakfast_page.html' method='GET'>
+                <div id='login_credentials'>
 
-            <div id='login_credentials'>
-                <form>
-                    <h5>ID: <input type='text' id='studentID' /></h5>
-                </form>
-            </div>
-            <table class = "center">
+                    <h5>ID: <input type='text' name='studentID' id='studentID'> </h5>
 
-                <tb>
-                    <!--Table 7,8,9 -->
-                    <tr>
-                        <td id = "seven" onclick="numberInput(7)">7</td>
-                        <td id = "eight" onclick="numberInput(8)">8</td>
-                        <td id = "nine" onclick="numberInput(9)">9</td>
-                    </tr>
+                </div>
+                <table class="center">
 
-                    <!--Table 4,5,6 -->
-                    <tr>
-                        <td id = "four" onclick="numberInput(4)">4</td>
-                        <td id = "five" onclick="numberInput(5)">5</td>
-                        <td id = "six" onclick="numberInput(6)">6</td>
-                    </tr>
+                    <tb>
+                        <!--Table 7,8,9 -->
+                        <tr>
+                            <td id="seven" onclick="numberInput(7)">7</td>
+                            <td id="eight" onclick="numberInput(8)">8</td>
+                            <td id="nine" onclick="numberInput(9)">9</td>
+                        </tr>
 
-                    <!--Table 1,2,3-->
-                    <tr>
-                        <td id = "one" onclick="numberInput(1)">1</td>
-                        <td id = "two" onclick="numberInput(2)">2</td>
-                        <td id = "three" onclick="numberInput(3)">3</td>
-                    </tr>
+                        <!--Table 4,5,6 -->
+                        <tr>
+                            <td id="four" onclick="numberInput(4)">4</td>
+                            <td id="five" onclick="numberInput(5)">5</td>
+                            <td id="six" onclick="numberInput(6)">6</td>
+                        </tr>
 
-                    <!--Table 0,Delete-->
-                    <tr>
-                        <td id = "zero" onclick="numberInput(0)">0</td>
-                        <td id = "delete" onclick="del()" colspan="2">Delete</td>
-                    </tr>
+                        <!--Table 1,2,3-->
+                        <tr>
+                            <td id="one" onclick="numberInput(1)">1</td>
+                            <td id="two" onclick="numberInput(2)">2</td>
+                            <td id="three" onclick="numberInput(3)">3</td>
+                        </tr>
 
-                </tb>
-                <tf>
-                    <!--Table Enter-->
-                    <tr>
-                        <!-- Enter button has no functionality yet-->
-                        <td id = "enter" onclick="" colspan="3">Enter</td>
-                    </tr>
-                </tf>
+                        <!--Table 0,Delete-->
+                        <tr>
+                            <td id="zero" onclick="numberInput(0)">0</td>
+                            <td id="delete" onclick="del()" colspan="2">Delete</td>
+                        </tr>
 
-            </table>
+                    </tb>
+                    <tf>
+                        <!--Table Enter-->
+                        <tr>
+                            <td id="enter" colspan="3" onclick="loginForm.submit()">Enter</td>
+                        </tr>
+                    </tf>
 
+                </table>
+
+            </form>
         </div>
     </div>
 
@@ -156,6 +180,7 @@
         input = input.substring(0, input.length - 1);
         document.getElementById('studentID').value = input;
     }
+
 </script>
 
 </html>

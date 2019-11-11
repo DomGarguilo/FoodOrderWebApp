@@ -117,6 +117,9 @@
 
     <form action = "review_order.html" method = "GET" name = "BreakfastItem">
 
+        <!--Used to pass studentID from previous webpage-->
+        <input type='hidden' value='' name='studentID' id='studentID'> 
+
         <!--Pancake Button (Options only appear when this button is clicked)-->
         <input type = "radio" id = "r_pancakes" name = "BFItem" value = "pancakes" onclick = "displayPancakeOptions(checked)" class = "radio-tools">
         <label for = "r_pancakes" class = "item_label">Pancakes</label> <br><br>
@@ -146,7 +149,7 @@
             <input type = "radio" id = "canadian" value = "canadian" class = "all_options"> <label for = "canadian" class = "option_label">Canadian Bacon</label><br>
             <input type = "radio" id = "pancetta" value = "pancetta" class = "all_options"> <label for = "pancetta" class = "option_label">Pancetta</label><br>
         </div> <br><br><br>
-
+        
         <!--Submit form and proceed to review_order page-->
         <br><br><br><br><br><br><br><br><br>  <input type = "submit" value = "Add Item and Review Order"> 
 
@@ -156,6 +159,8 @@
 </body>
 
 <script>
+
+    onLoadUp();
 
     //Function to hide and unselect all sub options
     function hideAllOptions() {
@@ -197,6 +202,14 @@
         if (checked = true) {
             x.style.display = "block";
         }
+    }
+
+    //Function to take previous page string query and pass it on
+    function onLoadUp() {
+        var urlContent = location.search.substring(1); //stores url string
+        urlContent = urlContent.replace("studentID=", ""); //remove everything but the ID #'s
+        document.getElementById('studentID').value = urlContent; //finds the 'hidden' form-input and changes the value
+
     }
 
 </script>
