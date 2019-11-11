@@ -64,10 +64,6 @@ figure:hover {
     background-color: lightgrey;
 }
 
-td {
-    align-content: top;
-}
-
 /*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
 input[type = "submit"] {
     display: inline-block;
