@@ -27,6 +27,14 @@ h6 {
     font-family: proxima-nova,sans-serif;
 }
 
+.order{
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 25px;
+}
+
 #button {
     background-color: #4CAF50;
     border: none;
