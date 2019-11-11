@@ -38,7 +38,8 @@
             border-color: rgb(0, 89, 255);
         }
 
-        .all_options {
+        /*hides radio button checks and checkboxes for menu options-------------------------------------------------------------------------------------------------------------------------------------*/
+        /*.all_options {
             margin: 10px;
             opacity: 0;
             position: fixed;
@@ -61,7 +62,7 @@
             background-color: rgb(255, 253, 221);
         }
 
-        .option_label:checked {
+        :checked + .option_label {
             background-color: rgb(250, 255, 187);
             border-color: rgb(204, 195, 68);
         }
@@ -120,30 +121,30 @@
         <input type = "radio" id = "r_pancakes" name = "BFItem" value = "pancakes" onclick = "displayPancakeOptions(checked)" class = "radio-tools">
         <label for = "r_pancakes" class = "item_label">Pancakes</label> <br><br>
         <div id = "pancake_options"> 
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Sugar</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Syrup</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Berries</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Whipped Cream</label><br>
+            <input type = "checkbox" id = "sugar" class = "all_options"> <label for = "sugar" class = "option_label">Sugar</label><br>
+            <input type = "checkbox" id = "syrup" class = "all_options"> <label for = "syrup" class = "option_label">Syrup</label><br>
+            <input type = "checkbox" id = "berries" class = "all_options"> <label for = "berries" class = "option_label">Berries</label><br>
+            <input type = "checkbox" id = "wh_cream" class = "all_options"> <label for = "wh_cream" class = "option_label">Whipped Cream</label><br>
         </div> <br><br><br>
 
         <!--Eggs Button (Options only appear when this button is clicked)-->
         <input type = "radio" id = "r_eggs" name = "BFItem" value = "fried_eggs" onclick = "displayEggOptions(checked)" class = "radio-tools">
         <label for = "r_eggs" class = "item_label">Fried Eggs</label> <br><br>
         <div id = "egg_options">
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Red Pepper</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Salt</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Sage</label><br>
-            <input type = "checkbox" name = "option" class = "all_options"> <label class = "option_label">Garlic</label><br>
+            <input type = "checkbox" id = "red_pep" class = "all_options"> <label for = "red_pep" class = "option_label">Red Pepper</label><br>
+            <input type = "checkbox" id = "salt" class = "all_options"> <label for = "salt" class = "option_label">Salt</label><br>
+            <input type = "checkbox" id = "sage" class = "all_options"> <label for = "sage" class = "option_label">Sage</label><br>
+            <input type = "checkbox" id = "garlic" class = "all_options"> <label for = "garlic" class = "option_label">Garlic</label><br>
         </div> <br><br><br>
 
         <!--Bacon Button (Options only appear when this button is clicked)-->
         <input type = "radio" id = "r_bacon" name = "BFItem" value = "bacon" onclick = "displayBaconOptions(checked)" class = "radio-tools">
         <label for = "r_bacon" class = "item_label">Bacon</label> <br><br>
         <div id = "bacon_options">
-            <input type = "radio" name = "option" value = "smoked" class = "all_options"> <label class = "option_label">Smoked</label><br>
-            <input type = "radio" name = "option" value = "turkey" class = "all_options"> <label class = "option_label">Turkey Bacon</label><br>
-            <input type = "radio" name = "option" value = "canadian" class = "all_options"> <label class = "option_label">Canadian Bacon</label><br>
-            <input type = "radio" name = "option" value = "pancetta" class = "all_options"> <label class = "option_label">Pancetta</label><br>
+            <input type = "radio" id = "smoked" value = "smoked" class = "all_options"> <label for = "smoked" class = "option_label">Smoked</label><br>
+            <input type = "radio" id = "turkey" value = "turkey" class = "all_options"> <label for = "turkey" class = "option_label">Turkey Bacon</label><br>
+            <input type = "radio" id = "canadian" value = "canadian" class = "all_options"> <label for = "canadian" class = "option_label">Canadian Bacon</label><br>
+            <input type = "radio" id = "pancetta" value = "pancetta" class = "all_options"> <label for = "pancetta" class = "option_label">Pancetta</label><br>
         </div> <br><br><br>
 
         <!--Submit form and proceed to review_order page-->
@@ -158,16 +159,13 @@
 
     //Function to hide and unselect all sub options
     function hideAllOptions() {
-        var items = document.getElementsByName("option");
+        var items = document.getElementsByClassName("all_options");
         document.getElementById("pancake_options").style.display = "none";
         document.getElementById("egg_options").style.display = "none";
         document.getElementById("bacon_options").style.display = "none";
 
         for (var i=0; i < items.length; i++) {
-			if (items[i].type == 'checkbox') {
-				items[i].checked = false;
-            }
-            if (items[i].type == 'radio') {
+			if (items[i].type == 'checkbox' || items[i].type == 'radio') {
 				items[i].checked = false;
             }
 		}
