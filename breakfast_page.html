@@ -80,40 +80,13 @@
             display: none;
         }
 
-        /*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
-        input[type = "submit"] {
-            display: inline-block;
-            background-color: rgb(73, 250, 87);
-            padding: 20px 100px;
-            font-family: sans-serif, Arial;
-            font-size: 16px;
-            border: 2px solid rgb(15, 151, 10);
-            border-radius: 4px;
-            
-        }
-
-        input[type = "submit"]:hover {
-            background-color: rgb(50, 252, 0);
-        }
-
-        /*background stuff------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-        #head {
-            background-color:rgb(247, 230, 0);
-        }
-
-        body {
-            background-image: url("black-gradient.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-
     </style>
 
 </head>
 <body>
 
     <h1 id = "head">Breakfast Menu</h1> 
-    <h3>Please Select an Item</h3> <br><br><br>
+    <h3 id="please_select">Please Select an Item</h3> <br><br><br>
 
     <form action = "review_order.html" method = "GET" name = "BreakfastItem" class="order">
 
@@ -151,7 +124,7 @@
         </div> <br><br><br>
         
         <!--Submit form and proceed to review_order page-->
-        <br><br><br><br><br><br><br><br><br>  <input type = "submit" value = "Add Item and Review Order"> 
+        <br><br><br><br><br>  <input type = "submit" value = "Add item to order"> 
 
     </form>
 

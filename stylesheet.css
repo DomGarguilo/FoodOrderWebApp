@@ -1,6 +1,13 @@
 body {
-    background: lightgray;
+    background-image: url("black-gradient.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
     text-align: center;
+}
+
+/* title banner */
+#head {
+    background-color:rgb(247, 230, 0);
 }
 
 h1 {
@@ -27,7 +34,15 @@ h6 {
     font-family: proxima-nova,sans-serif;
 }
 
-.order{
+label {
+    font-family: proxima-nova,sans-serif;
+}
+
+#please_select {
+    color: white;
+}
+
+.order {
     max-width: 700px;
     margin: auto;
     background: white;
@@ -35,13 +50,37 @@ h6 {
     border-radius: 25px;
 }
 
-#button {
-    background-color: #4CAF50;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 20px;
-    font-family: proxima-nova,sans-serif;
+figure {
+    display: inline-block;
+    background-color: rgb(73, 250, 87);
+    padding: 10px 10px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid rgb(15, 151, 10);
+    border-radius: 4px;
+}
+
+figure:hover {
+    background-color: lightgrey;
+}
+
+td {
+    align-content: top;
+}
+
+/*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
+input[type = "submit"] {
+    display: inline-block;
+    background-color: rgb(73, 250, 87);
+    padding: 20px 100px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid rgb(15, 151, 10);
+    border-radius: 4px;
+    
+}
+
+input[type = "submit"]:hover {
+    background-color: rgb(50, 252, 0);
 }
 
