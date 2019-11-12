@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Review Order</title>
 </head>
+
 <body>
-    
+    <p id='output' style="font-size: 30px;"> </p>
 </body>
+
+<script>
+
+    onLoadUp();
+    function onLoadUp() {
+        var formsRawOutput = location.search.substring(1); // takes query string from url 
+        var formsOutput = formsRawOutput.replace(/=/g, " = "); // takes 'studentID=123' and makes it 'studentID = 123' (just for readability)
+        var formsArray = formsOutput.split("&"); //splits query string into multiple lines delimited by & 
+
+        for (var i = 0; i < formsArray.length; i++) { //places array contents into <p> 
+            document.getElementById("output").innerHTML += (formsArray[i] + " <br>");
+        }
+    }
+</script>
+
 </html>
