@@ -66,6 +66,7 @@
             border-color: rgb(204, 195, 68);
         }
 
+        /*Hides sub options by default ------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
         #pasta_options {
             display: none;
         }
@@ -94,14 +95,14 @@
     <h1 id="head">Pasta Menu</h1>
     <form name="pasta_form" method="GET" action="review_order.html" class="order">
         
-        <input type = "checkbox" id = "c_pasta" name = "PastaItem" value = "pancakes" onclick = "displayPastaOptions(checked)" class = "radio-tools">
+        <input type = "checkbox" id = "c_pasta" name = "PastaItem" onclick = "displayPastaOptions(checked)" class = "radio-tools">
         <label for = "c_pasta" class = "item_label">Select Pasta Type</label><br><br>
         <div id = "pasta_options">
             <input type="radio" id = "penne" name="pasta_type" value="penne" class = "all_options" required> <label for = "penne" class = "option_label">Penne</label><br>
             <input type="radio" id = "bowtie" name="pasta_type" value="bowtie" class = "all_options" required> <label for = "bowtie" class = "option_label">Bowtie</label><br>
         </div><br><br>
 
-        <input type = "checkbox" id = "c_sauce" name = "PastaItem" value = "pancakes" onclick = "displaySauceOptions(checked)" class = "radio-tools">
+        <input type = "checkbox" id = "c_sauce" name = "PastaItem" onclick = "displaySauceOptions(checked)" class = "radio-tools">
         <label for = "c_sauce" class = "item_label">Select Sauce Type</label><br><br>
         <div id = "sauce_options">
             <input type="checkbox" id = "pesto" name="sauce_type" value="pesto" class = "all_options"> <label for = "pesto" class = "option_label">Pesto</label><br>
@@ -109,7 +110,7 @@
             <input type="checkbox" id = "alfredo" name="sauce_type" value="alfredo" class = "all_options"> <label for = "alfredo" class = "option_label">Alfredo</label><br>
         </div><br><br>
         
-        <input type = "checkbox" id = "c_protein" name = "PastaItem" value = "pancakes" onclick = "displayProteinOptions(checked)" class = "radio-tools">
+        <input type = "checkbox" id = "c_protein" name = "PastaItem" onclick = "displayProteinOptions(checked)" class = "radio-tools">
         <label for = "c_protein" class = "item_label">Select Proteins</label><br><br>
         <div id = "protein_options">
             <input type="checkbox" id = "chicken" name="protein" value="chicken" class = "all_options"> <label for = "chicken" class = "option_label">Chicken</label><br>
@@ -148,8 +149,26 @@
 
     onLoadUp();
 
+    //Function to hide and unselect all sub options
+    function hideAllOptions() {
+        var items = document.getElementsByClassName("all_options");
+        document.getElementById("pasta_options").style.display = "none";
+        document.getElementById("sauce_options").style.display = "none";
+        document.getElementById("protein_options").style.display = "none";
+        document.getElementById("topping_options").style.display = "none";
+        document.getElementById("seasoning_options").style.display = "none";
+
+        for (var i=0; i < items.length; i++) {
+			if (items[i].type == 'checkbox' || items[i].type == 'radio') {
+				items[i].checked = false;
+            }
+		}
+
+    }
+
     //Function to display pancake options
     function displayPastaOptions() {
+        hideAllOptions()
         var x = document.getElementById("pasta_options");
         if (checked = true) {
             x.style.display = "block";
@@ -158,6 +177,7 @@
 
     //Function to display egg options
     function displaySauceOptions() {
+        hideAllOptions()
         var x = document.getElementById("sauce_options");
         if (checked = true) {
             x.style.display = "block";
@@ -166,6 +186,7 @@
 
     //Function to display bacon options
     function displayProteinOptions() {
+        hideAllOptions()
         var x = document.getElementById("protein_options");
         if (checked = true) {
             x.style.display = "block";
@@ -173,6 +194,7 @@
     }
 
     function displayToppingOptions() {
+        hideAllOptions()
         var x = document.getElementById("topping_options");
         if (checked = true) {
             x.style.display = "block";
@@ -180,6 +202,7 @@
     }
 
     function displaySeasoningOptions() {
+        hideAllOptions()
         var x = document.getElementById("seasoning_options");
         if (checked = true) {
             x.style.display = "block";
