@@ -99,7 +99,7 @@
         <div id='login_container'>
             <h1 id="head">Welcome</h1>
             <h3 ID="please_select">Please log in with your TU-ID</h3>
-            <form id='loginForm' action='breakfast_page.html' method='GET' class = 'order'>
+            <form id='loginForm' action='selection_page.html' method='GET' class = 'order'>
                 <div id='login_credentials'>
 
                     <h5>ID: <input type='text' name='studentID' id='studentID'> </h5>
@@ -165,10 +165,15 @@
         document.getElementById('studentID').value = input;
     }
     
+    /* commented out by Justin; this code breaks the form input 
+    from transferring StudentID to the next page 
+    (via url: the studentID inside of breakfast_page.html?studentID=0123456789)
+
     //Enters student id
     document.getElementById('enter').onclick = function(){
         location.href="selection_page.html";     //Add the html link to the page to chose either breakfast or pasta
         }
+    */
     
 </script>
 

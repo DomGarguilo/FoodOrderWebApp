@@ -43,23 +43,54 @@
 
     <body>
         <h1 id="head">Make a Selection</h1>
+        <form id='selectionForm' action='' method='GET'>    
+        <!--Used to pass studentID from previous webpage-->
+        <input type='hidden' value='' name='studentID' id='studentID'>
         <div class = 'order'>
-            <div id = 't1'>
-                <a href="breakfast_page.html">
-                <figure>
-                <figcaption id="text" style="text-align: center; font-family: proxima-nova,sans-serif;">BREAKFAST</figcaption>
-                <img src = 'breakfast.jpg'>
-                </figure>
-            </a>
-            </div>
-            <div id='t2'>
-                <a href="pasta_page.html">
-                <figure>
-                    <figcaption style="text-align: center; font-family: proxima-nova,sans-serif;">PASTA</figcaption>
-                    <img src="pasta.jpg" >
-                    
-                </figure>
-            </a>
-            </div>
+                <div id = 't1'>
+                    <a href="breakfast_page.html">
+                    <figure>
+                    <figcaption id="text" style="text-align: center; font-family: proxima-nova,sans-serif;">BREAKFAST</figcaption>
+                    <img src = 'breakfast.jpg'>
+                    </figure>
+                </a>
+                </div>
+                <div id='t2'>
+                    <a href="pasta_page.html">
+                    <figure>
+                        <figcaption style="text-align: center; font-family: proxima-nova,sans-serif;">PASTA</figcaption>
+                        <img src="pasta.jpg" >
+                        
+                    </figure>
+                </a>
+                </div>
+        </form>
     </body>
+
+    <script>
+        onLoadUp();
+
+        //go to breakfast page
+        document.getElementById('breakfast').onclick = function () {
+            //obsolete code commented, but i didnt want to fully remove it
+            //location.href="breakfast_page.html";     //Add the html link to the page to chose either breakfast or pasta
+            document.getElementById('selectionForm').action = 'breakfast_page.html';
+            document.getElementById('selectionForm').submit();
+        }
+
+        //go to pasta page
+        document.getElementById('pasta').onclick = function () {
+            //obsolete code commented, but i didnt want to fully remove it
+            //location.href="pasta_page.html";     //Add the html link to the page to chose either breakfast or pasta
+            document.getElementById('selectionForm').action = 'pasta_page.html';
+            document.getElementById('selectionForm').submit();
+        }
+
+        function onLoadUp() {
+            var urlContent = location.search.substring(1); //stores url string
+            urlContent = urlContent.replace("studentID=", ""); //remove everything but the ID #'s
+            document.getElementById('studentID').value = urlContent; //finds the 'hidden' form-input and changes the value
+        }
+
+    </script>
 </html>
