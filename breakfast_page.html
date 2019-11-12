@@ -87,7 +87,7 @@
     <h1 id = "head">Breakfast Menu</h1> 
     <h3 id="please_select">Please Select an Item:</h3> <br>
 
-    <form action = "review_order.html" method = "GET" name = "BreakfastItem" class="order">
+    <form action="review_order.html" method = "GET" name = "BreakfastItem" class="order">
 
         <!--Used to pass studentID from previous webpage-->
         <input type='hidden' value='' name='studentID' id='studentID'> 
@@ -180,7 +180,7 @@
     function onLoadUp() {
         var urlContent = location.search.substring(1); //stores url string
         urlContent = urlContent.replace("studentID=", ""); //remove everything but the ID #'s
-        document.getElementById('studentID').value = urlContent; //finds the 'hidden' form-input and changes the value
+        document.getElementById('studentID').value = urlContent; //finds the 'hidden' form-input and changes the values
 
     }
 
