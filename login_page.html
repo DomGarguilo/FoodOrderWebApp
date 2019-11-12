@@ -13,17 +13,6 @@
             margin-right: auto;
         }
 
-        #login_wrapper {
-            background: white;
-            float: left;
-            width: 65%;
-            height: 100%;
-            min-width: 500px;
-            position: absolute;
-            left: 17%;
-            margin-top: -8px;
-        }
-
         #login_container {
             text-align: center;
         }
@@ -109,12 +98,11 @@
 </head>
 
 <body>
-    <div id='login_wrapper'>
         <div id='login_container'>
             <h1 id="head">Welcome</h1>
             <h2>Please log in with your TU-ID</h2>
             <hr style='background: lightgray;'>
-            <form id='loginForm' action='breakfast_page.html' method='GET'>
+            <form id='loginForm' action='breakfast_page.html' method='GET' class = 'order'>
                 <div id='login_credentials'>
 
                     <h5>ID: <input type='text' name='studentID' id='studentID'> </h5>
@@ -162,7 +150,6 @@
 
             </form>
         </div>
-    </div>
 
 </body>
 
