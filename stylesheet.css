@@ -21,23 +21,26 @@ h1, h2, h3, h4, h5, h6, label {
 }
 
 .order {
-    max-width: 700px;
+    max-width: 800px;
+    max-height: 800px;
     margin: auto;
     background:rgba(255, 255, 255, 0.5);
     padding: 10px;
     border-radius: 25px;
+    align-content: center;
+
 }
 
 figure {
     display: inline-block;
-    background-color: rgb(73, 250, 87);
+    background-color:  lightgrey;
     padding: 10px 10px;
     font-family: sans-serif, Arial;
     font-size: 16px;
 }
 
 figure:hover {
-    background-color: lightgrey;
+    background-color:  rgb(73, 250, 87);;
 }
 
 /*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
