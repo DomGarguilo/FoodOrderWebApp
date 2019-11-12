@@ -6,54 +6,194 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>Pasta</title>
+
+    <style>
+
+        /*hides radio button checks for menu items-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+        .radio-tools {
+            margin: 10px;
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+
+        /*creates clickable boxes for menu items and adds style to them---------------------------------------------------------------------------------------------------------------------------------*/
+        .item_label {
+            display: inline-block;
+            background-color: rgb(53, 113, 128);
+            width: 50%;
+            padding: 2% 0%;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+        }
+        
+        .item_label:hover {
+            background-color: rgb(1, 173, 241);
+            cursor:pointer;
+        }
+
+        .item_label:checked {
+            background-color: rgb(95, 178, 255);
+        }
+
+        /*hides radio button checks and checkboxes for menu options-------------------------------------------------------------------------------------------------------------------------------------*/
+        .all_options {
+            margin: 10px;
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+
+        /*creates clickable boxes for menu item options and adds style to them--------------------------------------------------------------------------------------------------------------------------*/
+        .option_label {
+            display: inline-block;
+            background-color: #ddd;
+            width: 25%;
+            padding: 1% 0%;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 4px;
+        }
+
+        .option_label:hover {
+            background-color: rgb(255, 253, 221);
+            cursor:pointer;
+        }
+
+        :checked + .option_label {
+            background-color: rgb(250, 255, 187);
+            border-color: rgb(204, 195, 68);
+        }
+
+        #pasta_options {
+            display: none;
+        }
+
+        #sauce_options {
+            display: none;
+        }
+
+        #protein_options {
+            display: none;
+        }
+
+        #topping_options {
+            display: none;
+        }
+
+        #seasoning_options {
+            display: none;
+        }
+    
+    </style>
+
 </head>
 <body>
     
     <h1 id="head">Pasta Menu</h1>
     <form name="pasta_form" method="GET" action="review_order.html" class="order">
         
-        <h1>Select Pasta Type</h1>
-        <h3>
-        <input type="radio" name="pasta_type" value="penne" required> Penne
-        <input type="radio" name="pasta_type" value="bowtie" required> Bowtie<br><br>
-        </h3>
+        <input type = "checkbox" id = "c_pasta" name = "PastaItem" value = "pancakes" onclick = "displayPastaOptions(checked)" class = "radio-tools">
+        <label for = "c_pasta" class = "item_label">Select Pasta Type</label><br><br>
+        <div id = "pasta_options">
+            <input type="radio" id = "penne" name="pasta_type" value="penne" class = "all_options" required> <label for = "penne" class = "option_label">Penne</label><br>
+            <input type="radio" id = "bowtie" name="pasta_type" value="bowtie" class = "all_options" required> <label for = "bowtie" class = "option_label">Bowtie</label><br>
+        </div><br><br>
 
-        <h1>Select sauce type</h1>
-        <h3>
-        <input type="checkbox" name="sauce_type" value="pesto">Pesto
-        <input type="checkbox" name="sauce_type" value="marinara">Marinara
-        <input type="checkbox" name="sauce_type" value="alfredo">Alfredo<br><br>
-        </h3>
+        <input type = "checkbox" id = "c_sauce" name = "PastaItem" value = "pancakes" onclick = "displaySauceOptions(checked)" class = "radio-tools">
+        <label for = "c_sauce" class = "item_label">Select Sauce Type</label><br><br>
+        <div id = "sauce_options">
+            <input type="checkbox" id = "pesto" name="sauce_type" value="pesto" class = "all_options"> <label for = "pesto" class = "option_label">Pesto</label><br>
+            <input type="checkbox" id = "marinara" name="sauce_type" value="marinara" class = "all_options"> <label for = "marinara" class = "option_label">Marinara</label><br>
+            <input type="checkbox" id = "alfredo" name="sauce_type" value="alfredo" class = "all_options"> <label for = "alfredo" class = "option_label">Alfredo</label><br>
+        </div><br><br>
         
-        <h1>Select Proteins</h1>
-        <h3>
-        <input type="checkbox" name="protein" value="chicken">Chicken
-        <input type="checkbox" name="protein" value="shrimp">Shrimp
-        <input type="checkbox" name="protein" value="meatball">MeatBall
-        <input type="checkbox" name="protein" value="sausage">Sausage
-        <input type="checkbox" name="protein" value="crabmeat">Crab Meat<br><br>
-        </h3>
+        <input type = "checkbox" id = "c_protein" name = "PastaItem" value = "pancakes" onclick = "displayProteinOptions(checked)" class = "radio-tools">
+        <label for = "c_protein" class = "item_label">Select Proteins</label><br><br>
+        <div id = "protein_options">
+            <input type="checkbox" id = "chicken" name="protein" value="chicken" class = "all_options"> <label for = "chicken" class = "option_label">Chicken</label><br>
+            <input type="checkbox" id = "shrimp" name="protein" value="shrimp" class = "all_options"> <label for = "shrimp" class = "option_label">Shrimp</label><br>
+            <input type="checkbox" id = "meatball" name="protein" value="meatball" class = "all_options"> <label for = "meatball" class = "option_label">Meatball</label><br>
+            <input type="checkbox" id = "sausage" name="protein" value="sausage" class = "all_options"> <label for = "sausage" class = "option_label">Sausage</label><br>
+            <input type="checkbox" id = "crab_meat" name="protein" value="crabmeat" class = "all_options"> <label for = "crab_meat" class = "option_label">Crab Meat</label><br>
+        </div><br><br>
         
-        <h1>Select additional ingredients</h1>
-        <h3>
-        <input type="checkbox" name="ingredients" value="onion">Onion
-        <input type="checkbox" name="ingredients" value="tomato">Tomato
-        <input type="checkbox" name="ingredients" value="broccoli">Broccoli
-        <input type="checkbox" name="ingredients" value="mushroom">Mushroom
-        <input type="checkbox" name="ingredients" value="Corn">Corn<br><br>
-        </h3>
+        <input type = "checkbox" id = "c_topping" name = "PastaItem" value = "pancakes" onclick = "displayToppingOptions(checked)" class = "radio-tools">
+        <label for = "c_topping" class = "item_label">Select Additional Toppings</label><br><br>
+        <div id = "topping_options">
+            <input type="checkbox" id = "onion" name="ingredients" value="onion" class = "all_options"> <label for = "onion" class = "option_label">Onion</label><br>
+            <input type="checkbox" id = "tomato" name="ingredients" value="tomato" class = "all_options"> <label for = "tomato" class = "option_label">Tomato</label><br>
+            <input type="checkbox" id = "brocoli" name="ingredients" value="broccoli" class = "all_options"> <label for = "brocoli" class = "option_label">Broccoli</label><br>
+            <input type="checkbox" id = "mushroom" name="ingredients" value="mushroom" class = "all_options"> <label for = "mushroom" class = "option_label">Mushroom</label><br>
+            <input type="checkbox" id = "corn" name="ingredients" value="Corn" class = "all_options"> <label for = "corn" class = "option_label">Corn</label><br>
+        </div><br><br>
 
-        <h1>Select seasonings</h1>
-        <h3>
-        <input type="checkbox" name="seasonings" value="saltAndPepper">Salt and Pepper
-        <input type="checkbox" name="seasonings" value="oldBay">Old Bay
-        <input type="checkbox" name="seasonings" value="cajun">Cajun
-        <input type="checkbox" name="seasonings" value="italian">Italian
-        <input type="checkbox" name="seasonings" value="garlic">Garlic<br>
-        </h3>
+        <input type = "checkbox" id = "c_seasoning" name = "PastaItem" value = "pancakes" onclick = "displaySeasoningOptions(checked)" class = "radio-tools">
+        <label for = "c_seasoning" class = "item_label">Select Seasonings</label><br><br>
+        <div id = "seasoning_options">
+            <input type="checkbox" id = "saltNpep" name="seasonings" value="saltAndPepper" class = "all_options"> <label for = "saltNpep" class = "option_label">Salt and Pepper</label><br>
+            <input type="checkbox" id = "old_bay" name="seasonings" value="oldBay" class = "all_options"> <label for = "old_bay" class = "option_label">Old Bay</label><br>
+            <input type="checkbox" id = "cajun" name="seasonings" value="cajun" class = "all_options"> <label for = "cajun" class = "option_label">Cajun</label><br>
+            <input type="checkbox" id = "italian" name="seasonings" value="italian" class = "all_options"> <label for = "italian" class = "option_label">Italian</label><br>
+            <input type="checkbox" id = "garlic" name="seasonings" value="garlic" class = "all_options"> <label for = "garlic" class = "option_label">Garlic</label><br>
+        </div><br><br><br><br>
 
         <input type="submit" id="button" value="Add item to order">
         
     </form>
 </body>
+
+<script>
+
+    onLoadUp();
+
+    //Function to display pancake options
+    function displayPastaOptions() {
+        var x = document.getElementById("pasta_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    //Function to display egg options
+    function displaySauceOptions() {
+        var x = document.getElementById("sauce_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    //Function to display bacon options
+    function displayProteinOptions() {
+        var x = document.getElementById("protein_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    function displayToppingOptions() {
+        var x = document.getElementById("topping_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    function displaySeasoningOptions() {
+        var x = document.getElementById("seasoning_options");
+        if (checked = true) {
+            x.style.display = "block";
+        }
+    }
+
+    //Function to take previous page string query and pass it on
+    function onLoadUp() {
+        var urlContent = location.search.substring(1); //stores url string
+        urlContent = urlContent.replace("studentID=", ""); //remove everything but the ID #'s
+        document.getElementById('studentID').value = urlContent; //finds the 'hidden' form-input and changes the value
+
+    }
+
+</script>
+
 </html>
