@@ -1,7 +1,7 @@
 body {
-    background-image: url("black-gradient.jpg");
+    background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     text-align: center;
 }
 
@@ -45,7 +45,7 @@ label {
 .order {
     max-width: 700px;
     margin: auto;
-    background: white;
+    background:rgba(255, 255, 255, 0.5);
     padding: 10px;
     border-radius: 25px;
 }
