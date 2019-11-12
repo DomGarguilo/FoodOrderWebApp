@@ -12,31 +12,7 @@ body {
     color: white;
 }
 
-h1 {
-    font-family: proxima-nova,sans-serif;
-}
-
-h2 {
-    font-family: proxima-nova,sans-serif;
-}
-
-h3 {
-    font-family: proxima-nova,sans-serif;
-}
-
-h4 {
-    font-family: proxima-nova,sans-serif;
-}
-
-h5 {
-    font-family: proxima-nova,sans-serif;
-}
-
-h6 {
-    font-family: proxima-nova,sans-serif;
-}
-
-label {
+h1, h2, h3, h4, h5, h6, label {
     font-family: proxima-nova,sans-serif;
 }
 
@@ -77,3 +53,13 @@ input[type = "submit"]:hover {
     background-color: rgb(30, 110, 9);
 }
 
+input[type=text], select {
+    width: 40%;
+    padding: 13px;
+    margin: 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 30px;
+  }
