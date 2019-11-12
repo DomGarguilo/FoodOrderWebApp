@@ -7,7 +7,9 @@ body {
 
 /* title banner */
 #head {
-    background-color:rgb(247, 230, 0);
+    background-image: url("header_bg.jpg");
+    background-size: cover;
+    color: white;
 }
 
 h1 {
@@ -56,29 +58,22 @@ figure {
     padding: 10px 10px;
     font-family: sans-serif, Arial;
     font-size: 16px;
-    border: 2px solid rgb(15, 151, 10);
-    border-radius: 4px;
 }
 
 figure:hover {
     background-color: lightgrey;
-    cursor:pointer;
 }
 
 /*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
 input[type = "submit"] {
     display: inline-block;
-    background-color: rgb(73, 250, 87);
+    background-color: rgb(61, 172, 70);
     padding: 20px 100px;
     font-family: sans-serif, Arial;
     font-size: 16px;
-    border: 2px solid rgb(15, 151, 10);
-    border-radius: 4px;
-    
 }
 
 input[type = "submit"]:hover {
-    background-color: rgb(50, 252, 0);
-    cursor:pointer;
+    background-color: rgb(30, 110, 9);
 }
 
