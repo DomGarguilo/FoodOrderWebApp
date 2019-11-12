@@ -62,6 +62,7 @@ figure {
 
 figure:hover {
     background-color: lightgrey;
+    cursor:pointer;
 }
 
 /*creates clickable box for submit button and adds style to it----------------------------------------------------------------------------------------------------------------------------------*/
@@ -78,5 +79,6 @@ input[type = "submit"] {
 
 input[type = "submit"]:hover {
     background-color: rgb(50, 252, 0);
+    cursor:pointer;
 }
 
