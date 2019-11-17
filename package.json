@@ -1,0 +1,19 @@
+{
+  "name": "cosc484_group3",
+  "version": "1.0.0",
+  "description": "WV dining hall food ordering system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DomGarguilo/COSC484_Group3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DomGarguilo/COSC484_Group3/issues"
+  },
+  "homepage": "https://github.com/DomGarguilo/COSC484_Group3#readme"
+}
