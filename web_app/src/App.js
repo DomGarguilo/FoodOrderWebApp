@@ -3,7 +3,7 @@ import './App.css';
 import LoginPage from './components/LoginPage'
 
 import {
-  BroswerRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch,
   Link,
@@ -28,16 +28,26 @@ class App extends Component {
     this.callAPI();
   }
 
-  render() {
-    return (
-    <div className="App">
-      <header className="App-header">
-        <LoginPage />
-        <p className="App-intro">;{this.state.apiResponse}</p>
-      </header>
-    </div>
-    );
-  }
+//type users
+render()
+{
+  return <Router>
+    <Route path ="/users" component={LoginPage} >
+    
+    </Route>
+  </Router>
+}
+
+  // render() {
+  //   return (
+  //   <div className="App">
+  //     <header className="App-header">
+  //       <LoginPage />
+  //       <p className="App-intro">;{this.state.apiResponse}</p>
+  //     </header>
+  //   </div>
+  //   );
+  // }
 }
 
 export default App;
