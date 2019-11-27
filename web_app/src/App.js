@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './components/Login'
+import LoginPage from './components/LoginPage'
+
 
 class App extends Component {
   render() {
     return (
     <div className="App">
       <header className="App-header">
-        <Login />
+        <LoginPage />
       </header>
     </div>
     );
