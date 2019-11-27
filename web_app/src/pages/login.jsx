@@ -1,14 +1,16 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const MainPage = () => {
+const Login = () => {
 
     return (
         <div>
-            <h3>react router test</h3>
+            <h3>This is where the login page would be</h3>
             <small>Main page</small>
+            <Link to = "/selection"> Go to selection page </Link>
         </div>
     )
 
 }
 
-export default MainPage;
+export default Login;
