@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './components/LoginPage'
 
+import {
+  BroswerRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 class App extends Component {
 
@@ -20,7 +27,6 @@ class App extends Component {
   componentDidMount(){
     this.callAPI();
   }
-
 
   render() {
     return (
