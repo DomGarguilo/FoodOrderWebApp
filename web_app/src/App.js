@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './components/LoginPage'
-import login from './pages/login'
 import {
   BrowserRouter as Router,
   Route,
@@ -9,6 +8,9 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+
+import Login from './pages/login';
+import Selection from './pages/selection';
 
 class App extends Component {
 
@@ -31,9 +33,14 @@ class App extends Component {
 //type users
 render()
 {
-  return <Router>
-    <Route path ="/" component={login} />
-  </Router>
+  return (
+    <Router>
+      <Switch>
+        <Route exact path ="/" component={Login} />
+        <Route path ="/selection" component={Selection} />
+      </Switch>
+    </Router>
+  ); 
 }
 
   // render() {
