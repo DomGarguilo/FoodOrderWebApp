@@ -4,19 +4,16 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     var connection = mysql.createConnection({
-        host: "triton.towson.edu",
-        user: "mchen16",
-        password: "Cosc*d9jq",
-        port: "3360"
+        host: 'us-cdbr-iron-east-05.cleardb.net',
+        user: 'bf967a94ff1047',
+        password: '40e7fd8d',
+        database : 'heroku_01f0321449bfb48'
     });
-    
-    connection.connect(function (err) {
+
+    connection.query("SELECT * FROM test ", function (err, result, fields) {
         if (err) throw err;
-        connection.query("SELECT * FROM mchen16db.Login ", function (err, result, fields) {
-            if (err) throw err;
-            res.send(result);
-        });
-    
+        res.send(result);
+        console.log(result);
     });
 
 });
