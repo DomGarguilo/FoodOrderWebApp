@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import LoginPage from './components/LoginPage'
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +10,8 @@ import {
 
 import Login from './pages/login';
 import Selection from './pages/selection';
+import LoginPage from './components/LoginPage'
+import SelectionPage from './components/SelectionPage';
 
 class App extends Component {
 
@@ -36,8 +37,8 @@ render()
   return (
     <Router>
       <Switch>
-        <Route exact path ="/" component={Login} />
-        <Route path ="/selection" component={Selection} />
+        <Route exact path ="/" component={LoginPage} />
+        <Route exact path ="/selection" component={SelectionPage} />
       </Switch>
       <p className="App-intro">;{this.state.apiResponse}</p>
     </Router>
