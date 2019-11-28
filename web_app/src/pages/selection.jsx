@@ -1,12 +1,12 @@
 import React from "react";
+import SelectionPage from "../components/SelectionPage"
 
 const Selection = () => {
 
     return (
-        <div>
-            <h3>this is where the selection will be</h3>
-            <small>Selection page</small>
-        </div>
+        
+        <SelectionPage />
+
     )
 
 }

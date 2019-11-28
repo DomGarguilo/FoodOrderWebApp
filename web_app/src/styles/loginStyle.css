@@ -1,0 +1,82 @@
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+#login_container {
+    text-align: center;
+}
+
+/* textfield where student ID displays */
+#login_credentials {
+    margin: 20px;
+    font-size: 30px;
+}
+
+button {
+    min-width: 50px;
+    padding: 30px;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 35px;
+    font: bold;
+}
+
+button#one,
+button#two,
+button#three,
+button#four,
+button#five,
+button#six,
+button#eight {
+    background: rgb(196, 196, 196);
+    border-radius: 5px 5px 5px 5px;
+}
+
+button#zero {
+    background: rgb(196, 196, 196);
+    border-radius: 5px 5px 5px 40px;
+}
+
+button#seven {
+    background: rgb(196, 196, 196);
+    border-radius: 40px 5px 5px 5px;
+}
+
+button#nine {
+    background: rgb(196, 196, 196);
+    border-radius: 5px 40px 5px 5px;
+}
+
+button#delete {
+    background: red;
+    border-radius: 5px 5px 40px 5px;
+}
+
+button#enter {
+    background: green;
+    border-radius: 40px;
+}
+
+button#zero:active,
+button#one:active,
+button#two:active,
+button#three:active,
+button#four:active,
+button#five:active,
+button#six:active,
+button#seven:active,
+button#eight:active,
+button#nine:active {
+    background: rgb(63, 63, 63);
+}
+
+button#delete:active {
+    background: rgb(158, 0, 0);
+
+}
+
+button#enter:active {
+    background: rgb(0, 54, 0);
+}
