@@ -37,7 +37,7 @@ render()
   return (
     <Router>
       <Switch>
-        <Route exact path ="/" component={LoginPage} />
+        <Route exact path ="/" component={Login} />
         <Route exact path ="/selection" component={SelectionPage} />
       </Switch>
       <p className="App-intro">;{this.state.apiResponse}</p>

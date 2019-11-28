@@ -30,10 +30,6 @@ class LoginPage extends Component {
     });
   }
 
-  selection() {
-    return <link to="/SelectionPage"></link>;
-  }
-
   render() {
     return (
 
@@ -78,7 +74,7 @@ class LoginPage extends Component {
             </tr>
             <tr>
               {/* <!--Table Enter--> */}
-              <button onClick={this.selection()} colspan="3">Enter</button>
+              <button><Link to = "../pages/selection">Enter</Link></button>
             </tr>
           </tb>
 
