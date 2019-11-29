@@ -16,6 +16,9 @@ import Pasta from './pages/pasta';
 import Selection from './pages/selection';
 import ViewBreakfastOrder from './pages/viewBreakfastOrder';
 import ViewPastaOrder from './pages/viewPastaOrder';
+import Pancake from './pages/pancake';
+import Bacon from './pages/bacon';
+import Eggs from './pages/eggs';
 
 
 
@@ -82,6 +85,9 @@ class App extends Component {
           <Route exact path="/selection" component={Selection} />
           <Route exact path="/viewPastaOrder" component={ViewPastaOrder} />
           <Route exact path="/viewBreakfastOrder" component={ViewBreakfastOrder} />
+          <Route exact path="/pancake" component={Pancake} />
+          <Route exact path="/bacon" component={Bacon} />
+          <Route exact path="/eggs" component={Eggs} />
         </Switch>
         <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
         <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
