@@ -23,18 +23,50 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { apiResponse: "" };
-  }
-
-  callAPI() {
-    fetch("https://wv-food-order-api.herokuapp.com/")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
+    this.state = {
+      apiResponse: "",
+      apiLogin: "", apiCurrent_orders: "", apiIngredient_status: "",
+      apiBalances: "", apiEmployees: "", apiUsers: ""
+    };
   }
 
   componentDidMount() {
-    this.callAPI();
+    var apiUrl = "https://wv-food-order-api.herokuapp.com/"
+
+    fetch(apiUrl)
+      .then(res => res.text())
+      .then(res => this.setState({ apiResponse: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "login")
+      .then(res => res.text())
+      .then(res => this.setState({ apiLogin: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "current_orders")
+      .then(res => res.text())
+      .then(res => this.setState({ apiCurrent_orders: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "ingredient_status")
+      .then(res => res.text())
+      .then(res => this.setState({ apiIngredient_status: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "users")
+      .then(res => res.text())
+      .then(res => this.setState({ apiUsers: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "employees")
+      .then(res => res.text())
+      .then(res => this.setState({ apiEmployees: res }))
+      .catch(err => err);
+
+    fetch(apiUrl + "balances")
+      .then(res => res.text())
+      .then(res => this.setState({ apiBalances: res }))
+      .catch(err => err);
   }
 
   //type users
@@ -48,10 +80,16 @@ class App extends Component {
           <Route exact path="/orderConformation" component={OrderConformation} />
           <Route exact path="/pasta" component={Pasta} />
           <Route exact path="/selection" component={Selection} />
-          <Route exact path="/viewPastaOrder" component={ViewPastaOrder} />  
-          <Route exact path="/viewBreakfastOrder" component={ViewBreakfastOrder} />          
+          <Route exact path="/viewPastaOrder" component={ViewPastaOrder} />
+          <Route exact path="/viewBreakfastOrder" component={ViewBreakfastOrder} />
         </Switch>
-        <p className="App-intro">;{this.state.apiResponse}</p>
+        <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
+        <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
+        <p className="App-intro">current orders api:<br />{this.state.apiCurrent_orders}</p>
+        <p className="App-intro">ingredient status api:<br />{this.state.apiIngredient_status}</p>
+        <p className="App-intro">users api:<br />{this.state.apiUsers}</p>
+        <p className="App-intro">employee api:<br />{this.state.apiEmployees}</p>
+        <p className="App-intro">balances api:<br />{this.state.apiBalances}</p>
       </Router>
 
     );
