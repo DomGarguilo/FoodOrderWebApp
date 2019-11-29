@@ -6,11 +6,51 @@ import "../styles/commonStyle.css";
 class IngredientsPage extends Component {
   render() {
     return (
-    <div className="IngredientsPage">
-        Here is where the ingredients page will be.
-    </div>
+      <body>
+        <div className="IngredientsPage" id="container">
+          <img id="login_bg" />
+          <h1 id="head">Ingredient Status Page</h1>
+          <h3 id="please_select">Click to alter the status of an ingredient</h3> <br />
+          <table>
+            <tr>
+              <th>Ingredient</th>
+              <th>Status</th>
+            </tr>
+            <tr><td>Alfredo</td><td><StatusButton item="Alfredo" /></td></tr>
+            <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
+            <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
+            <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
+            <tr><td>Cajun</td><td><StatusButton item="Cajun" /></td></tr>
+            <tr><td>Cheese</td><td><StatusButton item="Cheese" /></td></tr>
+            <tr><td>Chicken</td><td><StatusButton item="Chicken" /></td></tr>
+            <tr><td>Egg</td><td><StatusButton item="Egg" /></td></tr>
+            <tr><td>Marinara</td><td><StatusButton item="Marinara" /></td></tr>
+            <tr><td>Meatball</td><td><StatusButton item="Meatball" /></td></tr>
+            <tr><td>Mushroom</td><td><StatusButton item="Mushroom" /></td></tr>
+            <tr><td>Old_Bay</td><td><StatusButton item="Old_Bay" /></td></tr>
+            <tr><td>Onion</td><td><StatusButton item="Onion" /></td></tr>
+            <tr><td>Pancakes</td><td><StatusButton item="Pancakes" /></td></tr>
+            <tr><td>Penne</td><td><StatusButton item="Penne" /></td></tr>
+            <tr><td>Pepper</td><td><StatusButton item="Pepper" /></td></tr>
+            <tr><td>Pesto</td><td><StatusButton item="Pesto" /></td></tr>
+            <tr><td>Salt</td><td><StatusButton item="Salt" /></td></tr>
+            <tr><td>Sausage</td><td><StatusButton item="Sausage" /></td></tr>
+            <tr><td>Spinach</td><td><StatusButton item="Spinach" /></td></tr>
+            <tr><td>Vegan_Chicken</td><td><StatusButton item="Vegan_Chicken" /></td></tr>
+          </table>
+        </div>
+      </body>
     );
   }
 }
+
+class StatusButton extends Component {
+  render() {
+    return (
+      <button type="button">{this.props.item}</button>
+    );
+  }
+}
+
 
 export default IngredientsPage;
