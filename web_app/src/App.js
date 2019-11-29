@@ -30,20 +30,20 @@ class App extends Component {
     this.callAPI();
   }
 
-//type users
-render() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path ="/" component={Login} />
-        <Route exact path ="/selection" component={Selection} />
-        <Route exact path ="/pasta" component={Pasta} />
-      </Switch>
-      <p className="App-intro">;{this.state.apiResponse}</p>
-    </Router>
-    
-  ); 
-}
+  //type users
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/selection" component={Selection} />
+          <Route exact path="/pasta" component={Pasta} />
+        </Switch>
+        <p className="App-intro">;{this.state.apiResponse}</p>
+      </Router>
+
+    );
+  }
 
   // render() {
   //   return (

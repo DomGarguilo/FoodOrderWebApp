@@ -4,30 +4,6 @@ table.center {
     margin-bottom: 30px;
 }
 
-#login_container {
-    text-align: center;
-}
-
-img#login_bg {
-    background-image: url("../images/login-bg.jpg");
-    
-    /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-  
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
 /* textfield where student ID displays */
 #login_credentials {
     margin: 20px;
