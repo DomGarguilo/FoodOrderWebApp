@@ -27,32 +27,50 @@ button#five,
 button#six,
 button#eight {
     background: rgb(196, 196, 196, 0.7);
+    background-image: url("../images/num-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px 5px 5px 5px;
 }
 
 button#zero {
     background: rgb(196, 196, 196, 0.7);
+    background-image: url("../images/num-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px 5px 5px 40px;
 }
 
 button#seven {
     background: rgb(196, 196, 196, 0.7);
+    background-image: url("../images/num-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 40px 5px 5px 5px;
 }
 
 button#nine {
     background: rgb(196, 196, 196, 0.7);
+    background-image: url("../images/num-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px 40px 5px 5px;
 }
 
 button#delete {
     background: rgb(255, 0, 0, 0.7);
+    background-image: url("../images/delete-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px 5px 40px 5px;
     width: 100%;
 }
 
 button#enter {
     background: rgb(0, 133, 0, 0.7);
+    background-image: url("../images/submit-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 40px;
     width: 100%;
 }

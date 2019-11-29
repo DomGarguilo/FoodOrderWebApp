@@ -9,6 +9,9 @@
 /*creates clickable boxes for menu items and adds style to them---------------------------------------------------------------------------------------------------------------------------------*/
 .item_label {
     display: inline-block;
+    background-image: url("../images/button-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: rgb(53, 113, 128);
     width: 50%;
     padding: 2% 0%;
@@ -17,12 +20,12 @@
 }
 
 .item_label:hover {
-    background-color: rgb(1, 173, 241);
+    border-color: rgb(1, 173, 241);
     cursor:pointer;
 }
 
 .item_label:checked {
-    background-color: rgb(95, 178, 255);
+    border-color: rgb(95, 178, 255);
 }
 
 /*hides radio button checks and checkboxes for menu options-------------------------------------------------------------------------------------------------------------------------------------*/
@@ -37,6 +40,9 @@
 .option_label {
     display: inline-block;
     background-color: #ddd;
+    background-image: url("../images/option-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 25%;
     padding: 1% 0%;
     font-family: sans-serif, Arial;
