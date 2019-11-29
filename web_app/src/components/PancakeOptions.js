@@ -23,7 +23,7 @@ class PancakeOptions extends Component {
                         <input type="checkbox" name="wh_cream" id="wh_cream" class="all_options" /> <label for="wh_cream" class="option_label">Whipped Cream</label><br />
                     </div> <br />
 
-                    <Link to="/orderConfirmation"><button id="submit">Add Item</button></Link>
+                    <Link to="/orderConfirmation"><input type="submit" id="button" value="Add item to order" /></Link>
 
                 </form>
 
