@@ -36,7 +36,7 @@ class LoginPage extends Component {
       <body>
       <div id = "login_container">
 
-        <img/>
+        <img id = "login_bg"/>
 
         <h1 id="head">Welcome</h1>
         <h3>Please log in with your TU-ID</h3>
