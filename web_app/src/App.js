@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:9000/server")
+    fetch("https://api-mysqltest5.herokuapp.com/")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }))
       .catch(err => err);
