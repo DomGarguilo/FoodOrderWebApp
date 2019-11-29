@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/viewOrderStyle.css";
 import "../styles/commonStyle.css"
 
-class ViewPastaOrderPage extends Component {
+class ViewBreakfastOrderPage extends Component {
   render() {
     return (
       <body>
@@ -25,10 +25,13 @@ class Table extends Component {
           <tr>
             <th>OrderNum</th>
             <th>Customer ID</th>
-            <th>Pasta type</th>
-            <th>Sauce</th>
-            <th>Ingredients</th>
-            <th>Status</th>
+            <th>Pancake Quantity</th>
+            <th>Fried Egg Quantity</th>
+            <th>Omlette</th>
+            <th>Scrambled eggs</th>
+            <th>Bacon Quantity</th>
+            <th>Sausage Quantity</th>
+            <th>Order Status</th>
           </tr>
           <Row />
         </table>
@@ -43,7 +46,10 @@ class Row extends Component {
       <tr>
         <td>OrderNum</td>
         <td>Customer ID</td>
-        <td>Pasta type</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td>Mark as complete button</td>
@@ -53,4 +59,4 @@ class Row extends Component {
 }
 
 
-export default ViewPastaOrderPage;
+export default ViewBreakfastOrderPage;

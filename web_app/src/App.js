@@ -14,6 +14,7 @@ import Login from './pages/login';
 import OrderConformation from './pages/orderConformation'
 import Pasta from './pages/pasta';
 import Selection from './pages/selection';
+import ViewBreakfastOrder from './pages/viewBreakfastOrder';
 import ViewPastaOrder from './pages/viewPastaOrder';
 
 
@@ -47,7 +48,8 @@ class App extends Component {
           <Route exact path="/orderConformation" component={OrderConformation} />
           <Route exact path="/pasta" component={Pasta} />
           <Route exact path="/selection" component={Selection} />
-          <Route exact path="/viewPastaOrder" component={ViewPastaOrder} />          
+          <Route exact path="/viewPastaOrder" component={ViewPastaOrder} />  
+          <Route exact path="/viewBreakfastOrder" component={ViewBreakfastOrder} />          
         </Switch>
         <p className="App-intro">;{this.state.apiResponse}</p>
       </Router>
