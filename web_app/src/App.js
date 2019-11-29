@@ -47,9 +47,7 @@ class App extends Component {
           <Route exact path="/orderConformation" component={OrderConformation} />
           <Route exact path="/pasta" component={Pasta} />
           <Route exact path="/selection" component={Selection} />
-          <Route exact path="/viewOrder" component={ViewOrder} />
-          
-          
+          <Route exact path="/viewOrder" component={ViewOrder} />          
         </Switch>
         <p className="App-intro">;{this.state.apiResponse}</p>
       </Router>
