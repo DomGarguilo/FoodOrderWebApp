@@ -12,7 +12,7 @@ class PancakeOptions extends Component {
                 <img id="login_bg" />
 
                 <h1 id="head">Breakfast Menu</h1>
-                <h3 id="please_select">Please Select an Item:</h3> <br />
+                <h3 id="please_select">Please Select Options:</h3> <br />
 
                 <form method="GET" name="BreakfastItem" class="order">
 
