@@ -78,7 +78,7 @@ class LoginPage extends Component {
             </tr>
             <tr>
               {/* <!--Table Enter--> */}
-              <td colspan = "3"><button id = "enter"><Link to = "../pages/selection"></Link>Enter</button></td>
+              <td colspan = "3"><Link to = "/selection"><button id = "enter">Enter</button></Link></td>
             </tr>
           </tb>
 
