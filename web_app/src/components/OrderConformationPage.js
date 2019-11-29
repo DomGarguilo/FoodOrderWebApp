@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "../styles/commonStyle.css"
 
 class OrderConformationPage extends Component {
   render() {
     return (
-    <div className="OrderConformationPage">
+    <div className="OrderConformationPage" id="container">
         Here is where the order confirmation page will be.
     </div>
     );

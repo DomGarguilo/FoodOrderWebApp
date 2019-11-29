@@ -8,9 +8,15 @@ import {
   Redirect
 } from "react-router-dom";
 
+import Breakfast from './pages/breakfast'
+import Ingredient from './pages/ingredient';
 import Login from './pages/login';
-import Selection from './pages/selection';
+import OrderConformation from './pages/orderConformation'
 import Pasta from './pages/pasta';
+import Selection from './pages/selection';
+import ViewOrder from './pages/viewOrder';
+
+
 
 class App extends Component {
 
@@ -20,7 +26,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("https://api-mysqltest5.herokuapp.com/")
+    fetch("https://wv-food-order-api.herokuapp.com/")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }))
       .catch(err => err);
@@ -35,9 +41,15 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route exact path="/breakfast" component={Breakfast} />
+          <Route exact path="/ingredient" component={Ingredient} />
           <Route exact path="/" component={Login} />
-          <Route exact path="/selection" component={Selection} />
+          <Route exact path="/orderConformation" component={OrderConformation} />
           <Route exact path="/pasta" component={Pasta} />
+          <Route exact path="/selection" component={Selection} />
+          <Route exact path="/viewOrder" component={ViewOrder} />
+          
+          
         </Switch>
         <p className="App-intro">;{this.state.apiResponse}</p>
       </Router>
