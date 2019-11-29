@@ -8,6 +8,26 @@ table.center {
     text-align: center;
 }
 
+img.bg {
+    background-image: url("../images/login-bg.jpg");
+    
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+  
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
 /* textfield where student ID displays */
 #login_credentials {
     margin: 20px;
@@ -30,33 +50,35 @@ button#four,
 button#five,
 button#six,
 button#eight {
-    background: rgb(196, 196, 196);
+    background: rgb(196, 196, 196, 0.7);
     border-radius: 5px 5px 5px 5px;
 }
 
 button#zero {
-    background: rgb(196, 196, 196);
+    background: rgb(196, 196, 196, 0.7);
     border-radius: 5px 5px 5px 40px;
 }
 
 button#seven {
-    background: rgb(196, 196, 196);
+    background: rgb(196, 196, 196, 0.7);
     border-radius: 40px 5px 5px 5px;
 }
 
 button#nine {
-    background: rgb(196, 196, 196);
+    background: rgb(196, 196, 196, 0.7);
     border-radius: 5px 40px 5px 5px;
 }
 
 button#delete {
-    background: red;
+    background: rgb(255, 0, 0, 0.7);
     border-radius: 5px 5px 40px 5px;
+    width: 100%;
 }
 
 button#enter {
-    background: green;
+    background: rgb(0, 133, 0, 0.7);
     border-radius: 40px;
+    width: 100%;
 }
 
 button#zero:active,
@@ -69,14 +91,14 @@ button#six:active,
 button#seven:active,
 button#eight:active,
 button#nine:active {
-    background: rgb(63, 63, 63);
+    background: rgb(63, 63, 63, 0.5);
 }
 
 button#delete:active {
-    background: rgb(158, 0, 0);
+    background: rgb(158, 0, 0, 0.5);
 
 }
 
 button#enter:active {
-    background: rgb(0, 54, 0);
+    background: rgb(0, 54, 0, 0.5);
 }
