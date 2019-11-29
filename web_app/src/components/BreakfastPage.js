@@ -18,17 +18,23 @@ class BreakfastPage extends Component {
             {/*Used to pass studentID from previous webpage*/}
             <input type='hidden' value='' name='studentID' id='studentID' />
 
+            <Link to = "/pancake">
             <input type="radio" id="r_pancakes" name="BFItem" value="pancakes" onclick="displayPancakeOptions(checked)" class="radio-tools" />
+            </Link>
             <label for="r_pancakes" class="item_label">Pancakes</label> <br /><br />
+            
 
+            <Link to = "/eggs">
             <input type="radio" id="r_eggs" name="BFItem" value="fried_eggs" onclick="displayEggOptions(checked)" class="radio-tools" />
+            </Link>
             <label for="r_eggs" class="item_label">Fried Eggs</label> <br /><br />
-
+            
+            
+            <Link to = "/bacon">
             <input type="radio" id="r_bacon" name="BFItem" value="bacon" onclick="displayBaconOptions(checked)" class="radio-tools" />
+            </Link>
             <label for="r_bacon" class="item_label">Bacon</label> <br /><br />
 
-            {/*Submit form and proceed to options page*/}
-            <br /><input type="submit" value="Next" />
 
           </form>
 
