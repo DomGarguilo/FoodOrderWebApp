@@ -19,7 +19,7 @@ class BreakfastPage extends Component {
             <input type='hidden' value='' name='studentID' id='studentID' />
 
             {/*Pancake Button (Options only appear when this button is clicked)*/}
-            <input type="radio" id="r_pancakes" name="BFItem" value="pancakes" onclick="displayPancakeOptions(checked)" class="radio-tools" />
+            <input type="checkbox" id="r_pancakes" name="BFItem" value="pancakes" onclick="displayPancakeOptions(checked)" class="radio-tools" />
             <label for="r_pancakes" class="item_label">Pancakes</label> <br /><br />
             <div id="pancake_options">
               <input type="checkbox" name="sugar" id="sugar" class="all_options" /> <label for="sugar" class="option_label">Sugar</label><br />
@@ -29,7 +29,7 @@ class BreakfastPage extends Component {
             </div> <br />
 
             {/*Eggs Button (Options only appear when this button is clicked)*/}
-            <input type="radio" id="r_eggs" name="BFItem" value="fried_eggs" onclick="displayEggOptions(checked)" class="radio-tools" />
+            <input type="checkbox" id="r_eggs" name="BFItem" value="fried_eggs" onclick="displayEggOptions(checked)" class="radio-tools" />
             <label for="r_eggs" class="item_label">Fried Eggs</label> <br /><br />
             <div id="egg_options">
               <input type="checkbox" name="red_pep" id="red_pep" class="all_options" /> <label for="red_pep" class="option_label">Red Pepper</label><br />
@@ -39,7 +39,7 @@ class BreakfastPage extends Component {
             </div> <br />
 
             {/*Bacon Button (Options only appear when this button is clicked)*/}
-            <input type="radio" id="r_bacon" name="BFItem" value="bacon" onclick="displayBaconOptions(checked)" class="radio-tools" />
+            <input type="checkbox" id="r_bacon" name="BFItem" value="bacon" onclick="displayBaconOptions(checked)" class="radio-tools" />
             <label for="r_bacon" class="item_label">Bacon</label> <br /><br />
             <div id="bacon_options">
               <input type="radio" name="smoked" id="smoked" value="smoked" class="all_options" /> <label for="smoked" class="option_label">Smoked</label><br />

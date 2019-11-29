@@ -25,7 +25,7 @@
     cursor:pointer;
 }
 
-.item_label:checked {
+:checked + .item_label {
     border-color: rgb(95, 178, 255);
 }
 
