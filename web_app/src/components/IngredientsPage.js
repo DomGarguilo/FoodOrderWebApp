@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "../styles/ingredientStyle.css";
+import "../styles/commonStyle.css";
 
 class IngredientsPage extends Component {
   render() {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "../styles/breakfastStyle.css";
+import "../styles/commonStyle.css";
 
 class BreakfastPage extends Component {
   render() {

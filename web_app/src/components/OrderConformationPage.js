@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
 
 class OrderConformationPage extends Component {
