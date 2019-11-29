@@ -8,9 +8,10 @@ class PastaPage extends Component {
     return (
       <body>
         <div className="PastaPage" id="container">
-
           <img id="login_bg" />
           <h1 id="head">Pasta Menu</h1><br />
+
+          {/*WE NEED TO MAKE IT SO PASTA TYPE IS REQUIRED AND TELLS USER ON SUBMIT*/}
           <form name="pasta_form" method="GET" action="review_order.html" class="order">
             <input type="checkbox" id="c_pasta" name="PastaItem" onclick="displayPastaOptions(checked)" class="radio-tools" />
             <label for="c_pasta" class="item_label">Select Pasta Type</label><br /><br />
