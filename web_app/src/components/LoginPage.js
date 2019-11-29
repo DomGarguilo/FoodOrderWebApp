@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/loginStyle.css";
+import "../styles/commonStyle.css"
 
 class LoginPage extends Component {
 

@@ -26,13 +26,12 @@ class App extends Component {
       .catch(err => err);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.callAPI();
   }
 
 //type users
-render()
-{
+render() {
   return (
     <Router>
       <Switch>
