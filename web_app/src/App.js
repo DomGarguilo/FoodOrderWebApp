@@ -10,8 +10,7 @@ import {
 
 import Login from './pages/login';
 import Selection from './pages/selection';
-import LoginPage from './components/LoginPage'
-import SelectionPage from './components/SelectionPage';
+import Pasta from './pages/pasta';
 
 class App extends Component {
 
@@ -38,7 +37,8 @@ render()
     <Router>
       <Switch>
         <Route exact path ="/" component={Login} />
-        <Route exact path ="/selection" component={SelectionPage} />
+        <Route exact path ="/selection" component={Selection} />
+        <Route exact path ="/pasta" component={Pasta} />
       </Switch>
       <p className="App-intro">;{this.state.apiResponse}</p>
     </Router>

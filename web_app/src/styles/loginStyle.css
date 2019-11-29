@@ -8,7 +8,7 @@ table.center {
     text-align: center;
 }
 
-img.bg {
+img {
     background-image: url("../images/login-bg.jpg");
     
     /* Set rules to fill background */
