@@ -10,6 +10,7 @@ class LoginPage extends Component {
     this.state = {
       ID: "", 
       validIDs: "",
+      Message: "Please log in with your TU-ID",
     }
   }
 
@@ -58,11 +59,14 @@ class LoginPage extends Component {
     }
     else { //id doesnt exists
       //more code here to indicate to the user that the ID doesnt exist (maybe?)
-      return e.preventDefault();
+      return (
+        e.preventDefault(),
+        this.setState((prevState, props) => {
+          return {Message: "Please make sure that you entered  valid ID!"}
+        })
+      );
     }
-
   }
-
 
   render() {
     return (
@@ -72,7 +76,7 @@ class LoginPage extends Component {
           <img id="login_bg" />
 
           <h1 id="head">Welcome</h1>
-          <h3>Please log in with your TU-ID</h3>
+          <h3>{this.state.Message}</h3>
 
           <div id="login_credentials">
 
@@ -111,7 +115,7 @@ class LoginPage extends Component {
               </tr>
               <tr>
                 {/* <!--Table Enter--> */}
-                <td colspan="3"><Link to="/selection"><button id="enter" onClick={(e) => this.checkId(e)}>Enter</button></Link></td>
+                <td colspan="3"><Link to="/selection" onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
               </tr>
             </tb>
 
@@ -122,6 +126,16 @@ class LoginPage extends Component {
 
     );
 
+  }
+}
+
+class Error extends Component {
+  render() {
+    return (
+      <div>
+      <h4>PLease make sure that the ID you entered is valid!</h4>
+      </div>
+    );
   }
 }
 
