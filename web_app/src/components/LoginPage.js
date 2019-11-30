@@ -62,7 +62,7 @@ class LoginPage extends Component {
       return (
         e.preventDefault(),
         this.setState((prevState, props) => {
-          return window.alert("Please make sure that you entered valid ID!");
+          return window.alert("Please make sure that you entered a valid ID!");
         })
       );
     }
@@ -126,16 +126,6 @@ class LoginPage extends Component {
 
     );
 
-  }
-}
-
-class Error extends Component {
-  render() {
-    return (
-      <div>
-      <h4>PLease make sure that the ID you entered is valid!</h4>
-      </div>
-    );
   }
 }
 
