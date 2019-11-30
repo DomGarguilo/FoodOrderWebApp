@@ -26,25 +26,26 @@ class BreakfastPage extends Component {
             <input type="radio" id="r_pancakes" name="BFItem" value="pancakes" onclick="displayPancakeOptions(checked)" class="radio-tools" />
             </Link>
             <label id='pancake_label' for="r_pancakes" class="item_label">
+              </label>
               <p id='text'>Pancakes</p>
-              </label><br/><br/>
+              <br/><br/>
             {/* <img id = 'img_pancake' src={im1}/> /* No Longer Needed */}
             
 
             <Link to = "/eggs">
             <input type="radio" id="r_eggs" name="BFItem" value="fried_eggs" onclick="displayEggOptions(checked)" class="radio-tools" />
             </Link>
-            <label id = 'eggs_label' for="r_eggs" class="item_label">
-              <p id='text'>Fried Eggs</p>
-              </label> <br /><br />
+            <label id = 'eggs_label' for="r_eggs" class="item_label"></label>
+            <p id='text'>Fried Eggs</p>
+            <br /><br />
             {/*<img id = 'img_eggs_fried' src={FE} >*/}
 
             <Link to = "/bacon">
             <input type="radio" id="r_bacon" name="BFItem" value="bacon" onclick="displayBaconOptions(checked)" class="radio-tools" />
             </Link>
-            <label id='bacon_label' for="r_bacon" class="item_label">
-              <p id='text'>Bacon</p>
-              </label> <br /><br />
+            <label id='bacon_label' for="r_bacon" class="item_label"></label> 
+            <p id='text'>Bacon</p>
+            <br /><br />
               {/*<img id = 'img_bacon' src={B1} />  */}
 
           </form>

@@ -111,12 +111,13 @@
 /*Used for to adjust size of 3 images & extra stuff if needed------------Comeback to and remove if not using...--------- */
 #img_bacon , #img_eggs_fried,#img_pancake
 {
+
     width: 400px;
     height: 250px;
 }
 /* p - tags used for the Text inside the Image Boxes - -------*/
 #text{
-    margin-top: 260px;
+    margin-top: 0px;
     font-size: 25px;
     font-weight: bold;
 }
