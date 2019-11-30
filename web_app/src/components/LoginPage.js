@@ -8,7 +8,8 @@ class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
-      ID: "", validIDs: "",
+      ID: "", 
+      validIDs: "",
     }
   }
 
@@ -117,7 +118,7 @@ class LoginPage extends Component {
           </table>
 
         </div>
-      </body >
+      </body>
 
     );
 
