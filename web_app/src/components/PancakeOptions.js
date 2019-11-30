@@ -17,6 +17,12 @@ class PancakeOptions extends Component {
                 <form method="GET" name="BreakfastItem" class="order">
 
                     <div id="pancake_options">
+                        <input type="radio" name="numOfPancakes" checked='checked' required /> 1
+                        <input type="radio" name="numOfPancakes" required /> 2
+                        <input type="radio" name="numOfPancakes" required /> 3
+                        <input type="radio" name="numOfPancakes" required /> 4
+                        <br></br>
+                        <br></br>
                         <input type="checkbox" name="sugar" id="sugar" class="all_options" /> <label for="sugar" class="option_label">Sugar</label><br />
                         <input type="checkbox" name="syrup" id="syrup" class="all_options" /> <label for="syrup" class="option_label">Syrup</label><br />
                         <input type="checkbox" name="berries" id="berries" class="all_options" /> <label for="berries" class="option_label">Berries</label><br />
