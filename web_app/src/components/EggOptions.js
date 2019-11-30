@@ -23,7 +23,7 @@ class EggOptions extends Component {
                     <input type="checkbox" name="garlic" id="garlic" class="all_options" /> <label id='l_garlic'for="garlic" class="option_label"></label><p id='text'>Garlic</p><br />
                 </div> <br />
 
-                <Link to="/orderConfirmation"><input type="submit" id="button" value="Add item to order" /></Link>
+                <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
 
                 </form>
 
