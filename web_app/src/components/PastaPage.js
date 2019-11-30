@@ -4,6 +4,7 @@ import "../styles/pastaStyle.css";
 import "../styles/commonStyle.css";
 
 class PastaPage extends Component {
+
   render() {
     return (
       <body>
@@ -12,7 +13,7 @@ class PastaPage extends Component {
           <h1 id="head">Pasta Menu</h1><br />
 
           {/*WE NEED TO MAKE IT SO PASTA TYPE IS REQUIRED AND TELLS USER ON SUBMIT*/}
-          <form name="pasta_form" method="GET" action="review_order.html" class="order">
+          <form name="pasta_form" method="GET" action="review_order.html" class="order" onSubmit={this.handleSubmit}>
             <label for="c_pasta" class="item_label">Select Pasta Type</label><br /><br />
             <div id="pasta_options">
               <input type="radio" id="penne" name="pasta_type" value="penne" class="all_options" required /> <label for="penne" class="option_label">Penne</label>
@@ -53,7 +54,7 @@ class PastaPage extends Component {
               <input type="checkbox" id="garlic" name="seasonings" value="garlic" class="all_options" /> <label for="garlic" class="option_label">Garlic</label><br />
             </div> {/*end seasonings options*/} <br />
 
-            <input type="submit" id="button" value="Add item to order" />
+            <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
 
           </form>
 
