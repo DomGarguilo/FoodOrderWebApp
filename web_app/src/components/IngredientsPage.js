@@ -219,7 +219,8 @@ class StatusButton extends Component {
 export default IngredientsPage;
 
 
-/* <tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
+/* THIS VERSION MIGHT BE EASIER. COULD JUST USE PROPS.ITEM TO QUERY THE DB
+<tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
             <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
             <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
             <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
