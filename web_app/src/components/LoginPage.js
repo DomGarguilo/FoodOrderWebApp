@@ -62,7 +62,7 @@ class LoginPage extends Component {
       return (
         e.preventDefault(),
         this.setState((prevState, props) => {
-          return {Message: "Please make sure that you entered  valid ID!"}
+          return window.alert("Please make sure that you entered valid ID!");
         })
       );
     }
