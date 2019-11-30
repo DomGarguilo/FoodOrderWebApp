@@ -9,11 +9,13 @@
 /*creates clickable boxes for menu items and adds style to them---------------------------------------------------------------------------------------------------------------------------------*/
 .item_label {
     display: inline-block;
+    flex-direction: row;
     background-image: url("../images/button-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(53, 113, 128);
     width: 50%;
+    height: 300px;
     padding: 2% 0%;
     font-family: sans-serif, Arial;
     font-size: 16px;
@@ -62,6 +64,37 @@
     border-color: rgb(204, 195, 68);
 }
 
+/* Adjusting each label to for the correct image --------------------- */
+#pancake_label
+{
+    background-image: url('../images/Pancake.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#eggs_label
+{
+    background-image: url('../images/FriedEggs.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#bacon_label
+{
+    background-image: url('../images/Bacon.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*Used for to adjust size of 3 images & extra stuff if needed------------Comeback to and remove if not using...--------- */
+#img_bacon , #img_eggs_fried,#img_pancake
+{
+    width: 400px;
+    height: 250px;
+}
+/* p - tags used for the Text inside the Image Boxes - -------*/
+#text{
+    margin-top: 260px;
+    font-size: 25px;
+    font-weight: bold;
+}
 /*Hides sub options by default ------NEED TO FIX THE HIDDEN AT START FUNCTIONS------------------------------------------------------------------------------------------------------------------------------------------------------------
 #pasta_options,
 #sauce_options,

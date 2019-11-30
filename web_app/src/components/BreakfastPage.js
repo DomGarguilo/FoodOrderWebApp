@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
 
+import im1 from '../images/Pancake.jpg';
+import B1 from '../images/Bacon.jpg';
+import FE from '../images/FriedEggs.jpg';
 class BreakfastPage extends Component {
+
   render() {
     return (
       <body>
@@ -21,20 +25,27 @@ class BreakfastPage extends Component {
             <Link to = "/pancake">
             <input type="radio" id="r_pancakes" name="BFItem" value="pancakes" onclick="displayPancakeOptions(checked)" class="radio-tools" />
             </Link>
-            <label for="r_pancakes" class="item_label">Pancakes</label> <br /><br />
+            <label id='pancake_label' for="r_pancakes" class="item_label">
+              <p id='text'>Pancakes</p>
+              </label><br/><br/>
+            {/* <img id = 'img_pancake' src={im1}/> /* No Longer Needed */}
             
 
             <Link to = "/eggs">
             <input type="radio" id="r_eggs" name="BFItem" value="fried_eggs" onclick="displayEggOptions(checked)" class="radio-tools" />
             </Link>
-            <label for="r_eggs" class="item_label">Fried Eggs</label> <br /><br />
-            
-            
+            <label id = 'eggs_label' for="r_eggs" class="item_label">
+              <p id='text'>Fried Eggs</p>
+              </label> <br /><br />
+            {/*<img id = 'img_eggs_fried' src={FE} >*/}
+
             <Link to = "/bacon">
             <input type="radio" id="r_bacon" name="BFItem" value="bacon" onclick="displayBaconOptions(checked)" class="radio-tools" />
             </Link>
-            <label for="r_bacon" class="item_label">Bacon</label> <br /><br />
-
+            <label id='bacon_label' for="r_bacon" class="item_label">
+              <p id='text'>Bacon</p>
+              </label> <br /><br />
+              {/*<img id = 'img_bacon' src={B1} />  */}
 
           </form>
 
