@@ -23,7 +23,7 @@ class BaconOptions extends Component {
                     <input type="radio" name="pancetta" id="pancetta" value="pancetta" class="all_options" /> <label id = 'l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p><br />
                  </div> <br />
 
-                <Link to="/orderConfirmation"><input type="submit" id="button" value="Add item to order" /></Link>
+                <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
 
                 </form>
 
