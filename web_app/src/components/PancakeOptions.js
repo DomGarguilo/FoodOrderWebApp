@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
+
 class PancakeOptions extends Component {
 
     render() {
@@ -30,7 +31,7 @@ class PancakeOptions extends Component {
                         <input type="checkbox" name="wh_cream" id="wh_cream" class="all_options" /> <label id='l_wh_cream' for="wh_cream" class="option_label"></label><p id='text'>Whipped Cream</p><br />
                     </div> <br />
 
-                    <Link to="/orderConfirmation"><input type="submit" id="button" value="Add item to order" /></Link>
+                    <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
 
                 </form>
 
