@@ -1,0 +1,8 @@
+//INGREDIENT PAGE
+//to get ingredient status
+SELECT Status FROM mchen16db.Ingredient_Status WHERE Ingredient_Name = "Pesto";
+
+//to update ingredient status
+UPDATE mchen16db.Ingredient_Status SET Status = "0" WHERE Ingredient_Name = "Cajun";
+
+
