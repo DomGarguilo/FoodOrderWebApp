@@ -6,3 +6,6 @@ SELECT Status FROM mchen16db.Ingredient_Status WHERE Ingredient_Name = "Pesto";
 UPDATE mchen16db.Ingredient_Status SET Status = "0" WHERE Ingredient_Name = "Cajun";
 
 
+//CONFORMATION PAGE
+//inserting new order into table
+INSERT INTO `Current_Orders` (`Order_Num`, `Customer_ID`, `Pasta_Type`, `Sauce`, `Pasta_Ingredients`, `Pancake_Quantity`, `Fried_Egg_Quantity`, `Omlette`, `Scrambled_Egg`, `Egg_Ingredients`, `Bacon_Quantity`, `Sausage_Quantity`) VALUES ('133', 'NULL', 'Penne', 'Marinara', 'Mushroom, Onion', '4', '8', '0', '1', 'Mushroom', '2', '3' );
