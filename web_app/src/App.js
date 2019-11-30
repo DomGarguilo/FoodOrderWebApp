@@ -19,6 +19,7 @@ import ViewPastaOrder from './pages/viewPastaOrder';
 import Pancake from './pages/pancake';
 import Bacon from './pages/bacon';
 import Eggs from './pages/eggs';
+import EmployeeDash from './pages/empDashboard';
 
 
 
@@ -88,6 +89,7 @@ class App extends Component {
           <Route exact path="/pancake" component={Pancake} />
           <Route exact path="/bacon" component={Bacon} />
           <Route exact path="/eggs" component={Eggs} />
+          <Route exact path="/empDash" component={EmployeeDash} />
         </Switch>
         <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
         <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
