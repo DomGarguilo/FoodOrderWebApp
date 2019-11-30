@@ -130,3 +130,83 @@
     display: none;
 }
 */
+
+
+
+/* Updating the Label tag to include images as the background -----------------*/
+#l_sugar
+{
+    background-image: url('../images/Sugar.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+#l_syrup
+{
+    background-image: url('../images/Syrup.jpg')
+}
+#l_berries
+{
+    background-image: url('../images/Berries.jpg');
+}
+#l_wh_cream
+{
+    background-image: url('../images/Whipped_Cream.jpg')
+}
+#l_sugar,#l_syrup,#l_berries,#l_wh_cream
+{
+    width: 400px;
+    height: 250px;   
+}
+
+/* -Egg - Options */
+
+#l_red_pep
+{
+    background-image: url('../images/RedPepper.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#l_salt
+{
+    background-image: url('../images/Salt.jpg')
+}
+#l_sage
+{
+    background-image: url('../images/Sage.jpg')
+}
+#l_garlic
+{
+    background-image: url('../images/Garlic.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#l_red_pep,#l_salt,#l_sage,#l_garlic
+{
+    width: 400px;
+    height: 250px; 
+
+}
+/* Bacon - options -------------*/
+
+#l_smoked
+{
+    background-image: url('../images/Smoked_Bacon.jpg')
+}
+#l_turkey
+{
+    background-image: url('../images/Turkey_Bacon.jpg')
+}
+#l_canadian
+{
+    background-image: url('../images/Canadian_Bacon.jpg')
+}
+#l_pancetta
+{
+    background-image: url('../images/pancetta.jpg')
+}
+#l_canadian,#l_pancetta,#l_smoked,#l_turkey
+{
+    width: 400px;
+    height: 250px;
+}
