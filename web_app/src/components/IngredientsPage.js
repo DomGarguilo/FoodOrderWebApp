@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../styles/ingredientStyle.css";
 import "../styles/commonStyle.css";
@@ -10,13 +10,16 @@ class IngredientsPage extends Component {
         <div className="IngredientsPage" id="container">
           <img id="login_bg" />
           <h1 id="head">Ingredient Status Page</h1>
-          <h3 id="please_select">Click to alter the status of an ingredient</h3> <br />
+          <h3 id="please_select">
+            Click to alter the status of an ingredient
+          </h3>{" "}
+          <br />
           <table>
             <tr>
               <th>Ingredient</th>
               <th>Status</th>
             </tr>
-            <tr><td>Alfredo</td><td><StatusButton item="Alfredo" /></td></tr>
+            {/* <tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
             <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
             <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
             <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
@@ -36,7 +39,191 @@ class IngredientsPage extends Component {
             <tr><td>Salt</td><td><StatusButton item="Salt" /></td></tr>
             <tr><td>Sausage</td><td><StatusButton item="Sausage" /></td></tr>
             <tr><td>Spinach</td><td><StatusButton item="Spinach" /></td></tr>
-            <tr><td>Vegan_Chicken</td><td><StatusButton item="Vegan_Chicken" /></td></tr>
+            <tr><td>Vegan_Chicken</td><td><StatusButton item="Vegan_Chicken" /></td></tr> */}
+            <tr>
+              <td>Alfredo</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>Bacon</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Bowtie</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Brocoli</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Cajun</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Cheese</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Chicken</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Egg</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Marinara</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Meatball</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Mushroom</td>
+              <td>
+              <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+              </label>              </td>
+            </tr>
+            <tr>
+              <td>Old_Bay</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Onion</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Pancakes</td>
+              <td>
+              <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+              </label>              </td>
+            </tr>
+            <tr>
+              <td>Penne</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Pepper</td>
+              <td>
+              <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+              </label>              </td>
+            </tr>
+            <tr>
+              <td>Pesto</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Salt</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Sausage</td>
+              <td>
+              <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+              </label>              </td>
+            </tr>
+            <tr>
+              <td>Spinach</td>
+              <td>
+              <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+              </label>              </td>
+            </tr>
+            <tr>
+              <td>Vegan_Chicken</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>{" "}
+              </td>
+            </tr>
           </table>
         </div>
       </body>
@@ -46,11 +233,8 @@ class IngredientsPage extends Component {
 
 class StatusButton extends Component {
   render() {
-    return (
-      <button type="button">{this.props.item}</button>
-    );
+    return <button type="button">{this.props.item}</button>;
   }
 }
-
 
 export default IngredientsPage;
