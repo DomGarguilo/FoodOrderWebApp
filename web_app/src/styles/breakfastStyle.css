@@ -6,6 +6,31 @@
     width: 0;
 }
 
+.quantity_label {
+    display: inline-block;
+    background-color: #ddd;
+    background-image: url("../images/option-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 40px;
+}
+
+.quantity_label:hover {
+    background-color: rgb(255, 253, 221);
+    cursor:pointer;
+}
+
+:checked + .quantity_label {
+    background-color: rgb(250, 255, 187);
+    border-color: rgb(204, 195, 68);
+}
+
+
 /*creates clickable boxes for menu items and adds style to them---------------------------------------------------------------------------------------------------------------------------------*/
 .item_label {
     display: inline-block;
