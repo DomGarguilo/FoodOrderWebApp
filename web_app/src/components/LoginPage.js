@@ -58,6 +58,7 @@ class LoginPage extends Component {
     }
     else { //id doesnt exists
       //more code here to indicate to the user that the ID doesnt exist (maybe?)
+      window.alert("User ID does not exist. Please enter a vaild user ID or create an account.");
       return e.preventDefault();
     }
 
