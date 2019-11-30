@@ -19,27 +19,6 @@ class IngredientsPage extends Component {
               <th>Ingredient</th>
               <th>Status</th>
             </tr>
-            {/* <tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
-            <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
-            <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
-            <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
-            <tr><td>Cajun</td><td><StatusButton item="Cajun" /></td></tr>
-            <tr><td>Cheese</td><td><StatusButton item="Cheese" /></td></tr>
-            <tr><td>Chicken</td><td><StatusButton item="Chicken" /></td></tr>
-            <tr><td>Egg</td><td><StatusButton item="Egg" /></td></tr>
-            <tr><td>Marinara</td><td><StatusButton item="Marinara" /></td></tr>
-            <tr><td>Meatball</td><td><StatusButton item="Meatball" /></td></tr>
-            <tr><td>Mushroom</td><td><StatusButton item="Mushroom" /></td></tr>
-            <tr><td>Old_Bay</td><td><StatusButton item="Old_Bay" /></td></tr>
-            <tr><td>Onion</td><td><StatusButton item="Onion" /></td></tr>
-            <tr><td>Pancakes</td><td><StatusButton item="Pancakes" /></td></tr>
-            <tr><td>Penne</td><td><StatusButton item="Penne" /></td></tr>
-            <tr><td>Pepper</td><td><StatusButton item="Pepper" /></td></tr>
-            <tr><td>Pesto</td><td><StatusButton item="Pesto" /></td></tr>
-            <tr><td>Salt</td><td><StatusButton item="Salt" /></td></tr>
-            <tr><td>Sausage</td><td><StatusButton item="Sausage" /></td></tr>
-            <tr><td>Spinach</td><td><StatusButton item="Spinach" /></td></tr>
-            <tr><td>Vegan_Chicken</td><td><StatusButton item="Vegan_Chicken" /></td></tr> */}
             <tr>
               <td>Alfredo</td>
               <td>
@@ -133,10 +112,10 @@ class IngredientsPage extends Component {
             <tr>
               <td>Mushroom</td>
               <td>
-              <label class="switch">
+                <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-              </label>              </td>
+                </label>              </td>
             </tr>
             <tr>
               <td>Old_Bay</td>
@@ -159,10 +138,10 @@ class IngredientsPage extends Component {
             <tr>
               <td>Pancakes</td>
               <td>
-              <label class="switch">
+                <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-              </label>              </td>
+                </label>              </td>
             </tr>
             <tr>
               <td>Penne</td>
@@ -176,10 +155,10 @@ class IngredientsPage extends Component {
             <tr>
               <td>Pepper</td>
               <td>
-              <label class="switch">
+                <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-              </label>              </td>
+                </label>              </td>
             </tr>
             <tr>
               <td>Pesto</td>
@@ -202,18 +181,18 @@ class IngredientsPage extends Component {
             <tr>
               <td>Sausage</td>
               <td>
-              <label class="switch">
+                <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-              </label>              </td>
+                </label>              </td>
             </tr>
             <tr>
               <td>Spinach</td>
               <td>
-              <label class="switch">
+                <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-              </label>              </td>
+                </label>              </td>
             </tr>
             <tr>
               <td>Vegan_Chicken</td>
@@ -238,3 +217,26 @@ class StatusButton extends Component {
 }
 
 export default IngredientsPage;
+
+
+/* <tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
+            <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
+            <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
+            <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
+            <tr><td>Cajun</td><td><StatusButton item="Cajun" /></td></tr>
+            <tr><td>Cheese</td><td><StatusButton item="Cheese" /></td></tr>
+            <tr><td>Chicken</td><td><StatusButton item="Chicken" /></td></tr>
+            <tr><td>Egg</td><td><StatusButton item="Egg" /></td></tr>
+            <tr><td>Marinara</td><td><StatusButton item="Marinara" /></td></tr>
+            <tr><td>Meatball</td><td><StatusButton item="Meatball" /></td></tr>
+            <tr><td>Mushroom</td><td><StatusButton item="Mushroom" /></td></tr>
+            <tr><td>Old_Bay</td><td><StatusButton item="Old_Bay" /></td></tr>
+            <tr><td>Onion</td><td><StatusButton item="Onion" /></td></tr>
+            <tr><td>Pancakes</td><td><StatusButton item="Pancakes" /></td></tr>
+            <tr><td>Penne</td><td><StatusButton item="Penne" /></td></tr>
+            <tr><td>Pepper</td><td><StatusButton item="Pepper" /></td></tr>
+            <tr><td>Pesto</td><td><StatusButton item="Pesto" /></td></tr>
+            <tr><td>Salt</td><td><StatusButton item="Salt" /></td></tr>
+            <tr><td>Sausage</td><td><StatusButton item="Sausage" /></td></tr>
+            <tr><td>Spinach</td><td><StatusButton item="Spinach" /></td></tr>
+            <tr><td>Vegan_Chicken</td><td><StatusButton item="Vegan_Chicken" /></td></tr> */
