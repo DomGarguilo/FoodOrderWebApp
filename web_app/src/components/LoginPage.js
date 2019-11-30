@@ -8,7 +8,7 @@ class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
-      ID: "",
+      ID: "", validIDs: "",
     }
   }
 
@@ -31,6 +31,37 @@ class LoginPage extends Component {
       return { ID: id }
     });
   }
+
+  componentDidMount() {
+    //retrieve test IDs from table 'users' on the api (can change this later)
+    fetch("https://wv-food-order-api.herokuapp.com/testIds")
+      .then(res => res.text())
+      .then(res => this.setState({ validIDs: res }))
+      .catch(err => err);
+    //console.log(this.state.validIDs);
+  }
+
+  //checks if the user's numpad ID matches and existing IDs
+  checkId(e) {
+    // console.log(this.state.validIDs);
+    var ids = this.state.validIDs;
+    // console.log(ids);
+    ids = ids.replace('[', ''); //remove excess API string junk
+    ids = ids.replace(']', ''); //ie) '["123","234"]' becomes '123,234'
+    ids = ids.replace(/"/g, '');
+    // console.log(ids);
+    ids = ids.split(",");
+    console.log(ids.includes(this.state.ID) ? "yes" : "no"); //yes - exists, no - doesnt
+    if (ids.includes(this.state.ID)) { //id does exist
+      return true;
+    }
+    else { //id doesnt exists
+      //more code here to indicate to the user that the ID doesnt exist (maybe?)
+      return e.preventDefault();
+    }
+
+  }
+
 
   render() {
     return (
@@ -79,14 +110,14 @@ class LoginPage extends Component {
               </tr>
               <tr>
                 {/* <!--Table Enter--> */}
-                <td colspan="3"><Link to="/selection"><button id="enter">Enter</button></Link></td>
+                <td colspan="3"><Link to="/selection"><button id="enter" onClick={(e) => this.checkId(e)}>Enter</button></Link></td>
               </tr>
             </tb>
 
           </table>
 
         </div>
-      </body>
+      </body >
 
     );
 
