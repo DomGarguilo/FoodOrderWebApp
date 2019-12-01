@@ -28,13 +28,12 @@ class PastaPage extends Component {
       mushroom: 0,
       corn: 0,
 
-      // protein : {
-      //   chicken : false,
-      //   shrimp : false,
-      //   meatball : false,
-      //   sausage : false,
-      //   crab_meat : false,
-      // },
+      saltNpep: 0,
+      old_bay: 0,
+      cajun: 0,
+      italian: 0,
+      garlic: 0,
+
     };
   }
 
@@ -103,15 +102,23 @@ class PastaPage extends Component {
 
             <label for="c_seasoning" class="item_label">Select Seasonings</label><br /><br />
             <div id="seasoning_options">
-              <input type="checkbox" id="saltNpep" name="seasonings" value="saltAndPepper" class="all_options" /> <label for="saltNpep" class="option_label">Salt and Pepper</label><br />
-              <input type="checkbox" id="old_bay" name="seasonings" value="oldBay" class="all_options" /> <label for="old_bay" class="option_label">Old Bay</label><br />
-              <input type="checkbox" id="cajun" name="seasonings" value="cajun" class="all_options" /> <label for="cajun" class="option_label">Cajun</label><br />
-              <input type="checkbox" id="italian" name="seasonings" value="italian" class="all_options" /> <label for="italian" class="option_label">Italian</label><br />
-              <input type="checkbox" id="garlic" name="seasonings" value="garlic" class="all_options" /> <label for="garlic" class="option_label">Garlic</label><br />
+              <input type="checkbox" id="saltNpep" onChange={() => this.setState((prevState, props) => { return { saltNpep: prevState.saltNpep + 1 } })} name="seasonings" value="saltAndPepper" class="all_options" /> <label for="saltNpep" class="option_label">Salt and Pepper</label><br />
+              <input type="checkbox" id="old_bay" onChange={() => this.setState((prevState, props) => { return { old_bay: prevState.old_bay + 1 } })} name="seasonings" value="oldBay" class="all_options" /> <label for="old_bay" class="option_label">Old Bay</label><br />
+              <input type="checkbox" id="cajun" onChange={() => this.setState((prevState, props) => { return { cajun: prevState.cajun + 1 } })} name="seasonings" value="cajun" class="all_options" /> <label for="cajun" class="option_label">Cajun</label><br />
+              <input type="checkbox" id="italian" onChange={() => this.setState((prevState, props) => { return { italian: prevState.italian + 1 } })} name="seasonings" value="italian" class="all_options" /> <label for="italian" class="option_label">Italian</label><br />
+              <input type="checkbox" id="garlic" onChange={() => this.setState((prevState, props) => { return { garlic: prevState.garlic + 1 } })} name="seasonings" value="garlic" class="all_options" /> <label for="garlic" class="option_label">Garlic</label><br />
             </div> {/*end seasonings options*/} <br />
 
-            <Link to={urlVar + "?" + "yeehaw"} ><input type="submit" id="button" value="Add item to order" /></Link>
+            <div>
+              <p>{this.state.saltNpep}</p>
+              <p>{this.state.old_bay}</p>
+              <p>{this.state.cajun}</p>
+              <p>{this.state.italian}</p>
+              <p>{this.state.garlic}</p>
+            </div>
 
+
+            <Link to={urlVar + "?" + "yeehaw"} ><input type="submit" id="button" value="Add item to order" /></Link>
 
           </form>
 
