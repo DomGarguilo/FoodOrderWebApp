@@ -43,7 +43,21 @@ import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
 import bk from '../images/breakfast.jpg';
+
+var urlData;
+
 class SelectionPage extends Component {
+
+  componentDidMount(){
+    urlData = window.location.href; //localhost:3000/selection?id=012345
+
+    urlData = urlData.split('?'); 
+    urlData = urlData[1]; //12345
+    
+    //urdData= urlData.replace('id=', '');
+
+  }
+
   render() {
     return (
       <body>
@@ -56,14 +70,14 @@ class SelectionPage extends Component {
           <form action="review_order.html" method="GET" name="MenuItem" class="order">
             <div class='grid-container'>
               <div class='grid-item'>
-                <Link to="/breakfast">
+                <Link to={"/breakfast" + "?" + urlData}>
                   <input type="radio" id="breakfast" name="BFItem" value="breakfast" class="radio-tools" />
                 </Link>
                 <label id='l_breakfast' for="breakfast" class="item_label"></label>
                 <p id='text'>Breakfast</p>
               </div>
               <div class='grid-item'>
-                <Link to="/pasta">
+                <Link to={"/pasta" + "?" + urlData}>
                   <input type="radio" id="pasta" name="PItem" value="pasta" class="radio-tools" />
                 </Link>
                 <label id='l_pasta' for="pasta" class="item_label"></label>

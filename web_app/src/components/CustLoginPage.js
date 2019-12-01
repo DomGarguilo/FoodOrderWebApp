@@ -71,15 +71,14 @@ class CustLoginPage extends Component {
   }
 
   updateStates(){
-    console.log("ID: " + this.state.ID);
-    urlData = this.state.ID;
+    urlData = "id=" + this.state.ID;
     this.setState(() => {return {dummyState : ''}})
   }
 
   render() {
     return (
       <body>
-        <div id="container" onMouseDown={() => this.updateStates()} >
+        <div id="container" >
 
           <img id="login_bg" />
 
