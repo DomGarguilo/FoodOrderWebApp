@@ -27,7 +27,7 @@ class EmpDash extends Component {
                                 <Link to="/viewOrderSelect">
                                     <input type="radio" id="pasta" name="PItem" value="pasta" class="radio-tools" />
                                 </Link>
-                                <label id='l_pasta' for="pasta" class="item_label"></label>
+                                <label id='l_orders' for="pasta" class="item_label"></label>
                                 <p id='text'>View current orders</p>
                             </div>
                         </div>

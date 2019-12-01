@@ -277,7 +277,15 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 300px;
-    width: 100%;
+    width: 300px;
+}
+#l_orders
+{
+    background-image: url('../images/currentOrders.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 300px;
 }
 
 /*  Grid Container and Item ----------------*/
