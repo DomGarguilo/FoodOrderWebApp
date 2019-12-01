@@ -20,7 +20,7 @@ class EmpDash extends Component {
                                 <Link to="/ingredient">
                                     <input type="radio" id="breakfast" name="BFItem" value="breakfast" class="radio-tools" />
                                 </Link>
-                                <label id='l_breakfast' for="breakfast" class="item_label"></label>
+                                <label id='l_ingredient' for="breakfast" class="item_label"></label>
                                 <p id='text'>Ingredient Status Page</p>
                             </div>
                             <div class='grid-item'>
