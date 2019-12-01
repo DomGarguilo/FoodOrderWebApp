@@ -53,10 +53,9 @@ class IngredientsPage extends Component {
     var i = 0;
     for (var key in this.state) {
       this.setState({[key] : s[i]});
+      console.log(s);
       i++;
     }
-
-    this.setState({stats : s});
 
   }
 
@@ -71,7 +70,8 @@ class IngredientsPage extends Component {
           </h3>{" "}
           <br />
 
-          {() => this.initStatus()}
+          <input type="submit" id="button" value="Refresh" onClick = {() => this.initStatus()}/>
+          <br/><br/><br/>
 
           <table>
             <tr>
@@ -79,7 +79,7 @@ class IngredientsPage extends Component {
               <th>Status</th>
             </tr>
             <tr>
-              <td>Alfredo {this.state.stats}</td>
+              <td>Alfredo {this.state.Alfredo}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
