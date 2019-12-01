@@ -91,7 +91,7 @@ class App extends Component {
           <Route exact path="/pancake" component={Pancake} />
           <Route exact path="/bacon" component={Bacon} />
           <Route exact path="/eggs" component={Eggs} />
-          <Route exact path="/empDash" component={EmployeeDash} />
+          <Route exact path="/empDashboard" component={EmployeeDash} />
           <Route exact path="/custLogin" component={CustLogin} />
           <Route exact path="/empLogin" component={EmpLogin} />
           <Route exact path="/viewOrderSelect" component={ViewOrderSel} />

@@ -12,7 +12,7 @@ class EmpDash extends Component {
                     <img id="login_bg" />
 
                     <h1 id="head">Employee Dashboard</h1>
-                    <h3 id="please_select">Please Select an Item:</h3> <br />
+                    <h3 id="please_select">Select an option:</h3> <br />
 
                     <form action="review_order.html" method="GET" name="MenuItem" class="order">
                         <div class='grid-container'>
@@ -24,11 +24,11 @@ class EmpDash extends Component {
                                 <p id='text'>Ingredient Status Page</p>
                             </div>
                             <div class='grid-item'>
-                                <Link to="/pasta">
+                                <Link to="/viewOrderSelect">
                                     <input type="radio" id="pasta" name="PItem" value="pasta" class="radio-tools" />
                                 </Link>
                                 <label id='l_pasta' for="pasta" class="item_label"></label>
-                                <p id='text'>Pasta</p>
+                                <p id='text'>View current orders</p>
                             </div>
                         </div>
 
