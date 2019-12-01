@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import "../styles/loginStyle.css";
 import "../styles/commonStyle.css"
 
-class LoginPage extends Component {
+class CustLoginPage extends Component {
 
   constructor() {
     super();
     this.state = {
-      ID: "", 
+      ID: "",
       validIDs: "",
     }
   }
@@ -73,7 +73,7 @@ class LoginPage extends Component {
           <img id="login_bg" />
 
           <h1 id="head">Welcome</h1>
-          <h3>Please log in with your TU-ID</h3>
+          <h3>Please log in with your TU-ID {this.state.idArr}</h3>
 
           <div id="login_credentials">
 
@@ -126,4 +126,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default CustLoginPage;

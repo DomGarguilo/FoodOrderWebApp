@@ -10,7 +10,7 @@ import {
 
 import Breakfast from './pages/breakfast'
 import Ingredient from './pages/ingredient';
-import Login from './pages/login';
+import CustLogin from './pages/custLogin';
 import OrderConformation from './pages/orderConformation'
 import Pasta from './pages/pasta';
 import Selection from './pages/selection';
@@ -20,7 +20,7 @@ import Pancake from './pages/pancake';
 import Bacon from './pages/bacon';
 import Eggs from './pages/eggs';
 import EmployeeDash from './pages/empDashboard';
-
+import Welcome from './pages/welcome';
 
 
 class App extends Component {
@@ -80,7 +80,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/breakfast" component={Breakfast} />
           <Route exact path="/ingredient" component={Ingredient} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Welcome} />
           <Route exact path="/orderConformation" component={OrderConformation} />
           <Route exact path="/pasta" component={Pasta} />
           <Route exact path="/selection" component={Selection} />
@@ -90,6 +90,7 @@ class App extends Component {
           <Route exact path="/bacon" component={Bacon} />
           <Route exact path="/eggs" component={Eggs} />
           <Route exact path="/empDash" component={EmployeeDash} />
+          <Route exact path="/custLogin" component={CustLogin} />
         </Switch>
         <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
         <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
