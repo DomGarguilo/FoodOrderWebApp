@@ -58,12 +58,12 @@ class SelectionPage extends Component {
             <Link to = "/breakfast">
             <input type="radio" id="breakfast" name="BFItem" value="breakfast" class="radio-tools" />
             </Link>
-            <label for="breakfast" class="item_label">Breakfast</label> <br /><br />
+            <label id='l_breakfast' for="breakfast" class="item_label"></label><p id='text'>Breakfast</p> <br /><br />
 
             <Link to = "/pasta">
             <input type="radio" id="pasta" name="PItem" value="pasta" class="radio-tools" />
             </Link>
-            <label for="pasta" class="item_label">Pasta</label> <br /><br />
+            <label id='l_pasta' for="pasta" class="item_label"></label><p id='text'>Pasta</p> <br /><br />
             
           </form>
 
