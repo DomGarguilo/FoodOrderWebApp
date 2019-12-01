@@ -112,7 +112,7 @@ class EmpLoginPage extends Component {
               </tr>
               <tr>
                 {/* <!--Table Enter--> */}
-                <td colspan="3"><Link to="/selection" onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
+                <td colspan="3"><Link to="/empDashboard" onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
               </tr>
             </tb>
 
