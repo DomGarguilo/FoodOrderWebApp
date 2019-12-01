@@ -52,9 +52,11 @@ class IngredientsPage extends Component {
 
     var i = 0;
     for (var key in this.state) {
-      this.setState({[key] : s[i]});
-      console.log(s);
-      i++;
+      if ([key] != "stats") {
+        this.setState({ [key]: s[i] });
+        console.log(s);
+        i++;
+      }
     }
 
   }
@@ -70,8 +72,8 @@ class IngredientsPage extends Component {
           </h3>{" "}
           <br />
 
-          <input type="submit" id="button" value="Refresh" onClick = {() => this.initStatus()}/>
-          <br/><br/><br/>
+          <input type="submit" id="button" value="Refresh" onClick={() => this.initStatus()} />
+          <br /><br /><br />
 
           <table>
             <tr>
