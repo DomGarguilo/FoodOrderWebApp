@@ -55,6 +55,32 @@
     border-color: rgb(95, 178, 255);
 }
 
+
+/*Used for only one page - */
+.item_label2 {
+    display: inline-block;
+    flex-direction: row;
+    background-image: url("../images/button-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(53, 113, 128);
+    width: 90%;
+    padding: 2% 0%;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+}
+.item_label2:hover {
+    border-color: rgb(221, 1, 241);
+    cursor:pointer;
+}
+
+:checked + .item_label2 {
+    border-color: rgb(95, 178, 255);
+}
+
+
+
 /*hides radio button checks and checkboxes for menu options-------------------------------------------------------------------------------------------------------------------------------------*/
 .all_options {
     margin: 10px;
@@ -251,11 +277,21 @@
 {
     display: grid;
     grid-template-columns: auto auto;
-    padding: 10px;
     justify-items: center;
 }
 .grid-item
 {
     width: 60%;
+    padding: 20px;
+}
+.grid-container2
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+}
+.grid-item2
+{
+    width: 100%;
     padding: 20px;
 }
