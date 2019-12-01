@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import "../styles/loginStyle.css";
 import "../styles/commonStyle.css"
 
+var urlLink = '/selection';
+var urlData;
+
 class CustLoginPage extends Component {
 
   constructor() {
     super();
     this.state = {
+      dummyState: '', //used to make this shitty react program WORK
       ID: "",
       validIDs: "",
     }
@@ -54,6 +58,7 @@ class CustLoginPage extends Component {
     ids = ids.split(",");
     console.log(ids.includes(this.state.ID) ? "yes" : "no"); //yes - exists, no - doesnt
     if (ids.includes(this.state.ID)) { //id does exist
+      urlData = this.state.ID;
       return true;
     }
     else { //id doesnt exists
@@ -65,10 +70,17 @@ class CustLoginPage extends Component {
     }
   }
 
+  updateStates(){
+    console.log("ID: " + this.state.ID);
+    urlData = this.state.ID;
+    this.setState(() => {return {dummyState : ''}})
+  }
+
+
   render() {
     return (
       <body>
-        <div id="container">
+        <div id="container" onMouseDown={() => this.updateStates()} >
 
           <img id="login_bg" />
 
@@ -81,11 +93,11 @@ class CustLoginPage extends Component {
 
           </div>
 
-          <table className="center">
+          <table className="center" >
 
             <tb>
               {/* <!--Table 7,8,9 --> */}
-              <tr>
+              <tr >
                 <td><button id="seven" onClick={() => this.numberInput(7)}>7</button></td>
                 <td><button id="eight" onClick={() => this.numberInput(8)}>8</button></td>
                 <td><button id="nine" onClick={() => this.numberInput(9)}>9</button></td>
@@ -93,7 +105,7 @@ class CustLoginPage extends Component {
 
               {/* <!--Table 4,5,6 --> */}
               <tr>
-                <td><button id="four" onClick={() => this.numberInput(4)}>4</button></td>
+                <td><button id="four" onClick={() => this.numberInput(4)} onMouseEnter={() => urlData = this.state.ID}>4</button></td>
                 <td><button id="five" onClick={() => this.numberInput(5)}>5</button></td>
                 <td><button id="six" onClick={() => this.numberInput(6)}>6</button></td>
               </tr>
@@ -110,14 +122,15 @@ class CustLoginPage extends Component {
                 <td><button id="zero" onClick={() => this.numberInput(0)}>0</button></td>
                 <td colspan="2"><button id="delete" onClick={() => this.del()}>Delete</button></td>
               </tr>
-              <tr>
+              <tr >
                 {/* <!--Table Enter--> */}
-                <td colspan="3"><Link to="/selection" onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
+                <td colspan="3" ><Link to={urlLink + "?" + urlData} onMouseDown={() => this.updateStates()} onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
               </tr>
             </tb>
 
-          </table>
 
+          </table>
+          {/* <p>;;{this.state.ID}</p> */}
         </div>
       </body>
 
