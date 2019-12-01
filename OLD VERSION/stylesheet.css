@@ -65,3 +65,9 @@ input[type=text], select {
     box-sizing: border-box;
     font-size: 30px;
   }
+/*  Grid Container and Item ----------------*/
+.grid-container
+{
+    display: grid;
+    grid-template: auto auto auto;
+}
