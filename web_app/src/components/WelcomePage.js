@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import "../styles/breakfastStyle.css";
-import "../styles/commonStyle.css";
 import "../styles/welcomeStyle.css"
 
 class WelcomePage extends Component {
@@ -14,9 +12,9 @@ class WelcomePage extends Component {
 
                 <h1 id="head">Welcome</h1>
 
-                <Link to="/custLogin" ><button id = "enter" class="loginSelect">Customer Login</button></Link>
+                <Link to="/custLogin" ><button class="loginSelect">Customer Login</button></Link>
                 <br/><br/>
-                <Link to="/empLogin" ><button id = "enter" class="loginSelect">Employee Login</button></Link>
+                <Link to="/empLogin" ><button class="loginSelect">Employee Login</button></Link>
 
             </div>
         </body>
