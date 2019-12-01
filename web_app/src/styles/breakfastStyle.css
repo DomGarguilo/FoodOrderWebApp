@@ -182,7 +182,7 @@
 }
 #l_sugar,#l_syrup,#l_berries,#l_wh_cream
 {
-    width: 400px;
+    width: 300px;
     height: 250px;   
 }
 
@@ -281,7 +281,7 @@
 }
 .grid-item
 {
-    width: 60%;
+    width: 300px;
     padding: 20px;
 }
 .grid-container2

@@ -42,7 +42,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
-
+import bk from '../images/breakfast.jpg';
 class SelectionPage extends Component {
   render() {
     return (
@@ -56,10 +56,15 @@ class SelectionPage extends Component {
           <form action="review_order.html" method="GET" name="MenuItem" class="order">
             <div class='grid-container'>
               <div class='grid-item'>
+              {/* <figure>
+                  <img src={bk}></img>
+                  <figcaption> Breakfast </figcaption>
+                </figure> */}
                 <Link to = "/breakfast">
                 <input type="radio" id="breakfast" name="BFItem" value="breakfast" class="radio-tools" />
                 </Link>
                 <label id='l_breakfast' for="breakfast" class="item_label"></label>
+
                 <p id='text'>Breakfast</p> 
               </div>
               <div class='grid-item'>

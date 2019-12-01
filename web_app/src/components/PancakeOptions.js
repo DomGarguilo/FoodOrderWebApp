@@ -36,10 +36,17 @@ class PancakeOptions extends Component {
                         <br></br>
                         <br></br>
                         <h4>Select Toppings: </h4>
-                        <input type="checkbox" id="sugar" onChange={() => this.setState((prevState, props) => { return { syrup: prevState.syrup+1}})} name="topping" value="syrup" class="all_options" /> <label id='l_sugar' for="sugar" class="option_label"></label><p id='text'>Sugar</p>
-                        <input type="checkbox" id="berries" onChange={() => this.setState((prevState, props) => { return { berries: prevState.berries+1}})} name="topping" value="berries" class="all_options" /> <label id='l_berries' for="berries" class="option_label"></label><p id='text'>Berries</p>
-                        <input type="checkbox" id="wh_cream" onChange={() => this.setState((prevState, props) => { return { wh_cream: prevState.wh_cream+1}})} name="topping" value="wh_cream" class="all_options" /> <label id='l_wh_cream' for="wh_cream" class="option_label"></label><p id='text'>Whipped Cream</p>
-
+                            <div class='grid-container2'>
+                                <div class='grid-item'>
+                                    <input type="checkbox" id="sugar" onChange={() => this.setState((prevState, props) => { return { syrup: prevState.syrup+1}})} name="topping" value="syrup" class="all_options" /> <label id='l_sugar' for="sugar" class="option_label"></label><p id='text'>Sugar</p>
+                                </div>
+                                <div class='grid-item'>
+                                    <input type="checkbox" id="berries" onChange={() => this.setState((prevState, props) => { return { berries: prevState.berries+1}})} name="topping" value="berries" class="all_options" /> <label id='l_berries' for="berries" class="option_label"></label><p id='text'>Berries</p>
+                                </div>
+                                <div class='grid-item'>
+                                    <input type="checkbox" id="wh_cream" onChange={() => this.setState((prevState, props) => { return { wh_cream: prevState.wh_cream+1}})} name="topping" value="wh_cream" class="all_options" /> <label id='l_wh_cream' for="wh_cream" class="option_label"></label><p id='text'>Whipped Cream</p>
+                                </div>
+                            </div>
                         <div>
                             <p>{this.state.onepc}</p>
                             <p>{this.state.twopc}</p>
