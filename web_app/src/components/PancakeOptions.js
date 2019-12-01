@@ -4,7 +4,18 @@ import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
 
 class PancakeOptions extends Component {
-
+    constructor() {
+        super();
+        this.state = {
+          onepc: 0,
+          twopc: 0,
+          threepc: 0,
+          fourpc: 0,
+          sugar: 0,
+          berries: 0,
+          wh_cream: 0
+        }
+    }
     render() {
         return (
             <body>
@@ -17,18 +28,26 @@ class PancakeOptions extends Component {
                 <form method="GET" name="BreakfastItem" class="order">
 
                     <div id="pancake_options">
-                        <h4>Select Quantity: 
-                        <input type="radio" id = "onepc" class = "radio-tools" name="numOfPancakes" required /> <label for="onepc" class="quantity_label">1</label>
-                        <input type="radio" id = "twopc" class = "radio-tools" name="numOfPancakes" required /> <label for="twopc" class="quantity_label">2</label>
-                        <input type="radio" id = "threepc" class = "radio-tools" name="numOfPancakes" required /> <label for="threepc" class="quantity_label">3</label>
-                        <input type="radio" id = "fourpc" class = "radio-tools" name="numOfPancakes" required /> <label for="fourpc" class="quantity_label">4</label>
-                        </h4>
+                        <h4>Select Quantity: </h4>
+                        <input type="radio" id = "onepc" onChange={() => this.setState((prevState, props) => { return { onepc: prevState.onepc+1}})} name="numOfPancakes" value="onepc" class = "radio-tools"/> <label for="onepc" class="quantity_label">1</label>
+                        <input type="radio" id = "twopc" onChange={() => this.setState((prevState, props) => { return { twopc: prevState.twopc+1}})} name="numOfPancakes" value="twopc" class = "radio-tools"/> <label for="twopc" class="quantity_label">2</label>
+                        <input type="radio" id = "threepc" onChange={() => this.setState((prevState, props) => { return { threepc: prevState.threepc+1}})} name="numOfPancakes" value="threepc" class = "radio-tools"/> <label for="threepc" class="quantity_label">3</label>
+                        <input type="radio" id = "fourepc" onChange={() => this.setState((prevState, props) => { return { fourpc: prevState.fourpc+1}})} name="numOfPancakes" value="fourpc" class = "radio-tools"/> <label for="fourpc" class="quantity_label">4</label>
                         <br></br>
                         <br></br>
-                        <input type="checkbox" name="sugar" id="sugar" class="all_options" /> <label id='l_sugar' for="sugar" class="option_label"></label><p id='text'>Sugar</p><br />
-                        <input type="checkbox" name="syrup" id="syrup" class="all_options" /> <label id = 'l_syrup'for="syrup" class="option_label">Syrup</label><p id='text'>Syrup</p><br />
-                        <input type="checkbox" name="berries" id="berries" class="all_options" /> <label id='l_berries' for="berries" class="option_label"></label><p id='text'>Berries</p><br />
-                        <input type="checkbox" name="wh_cream" id="wh_cream" class="all_options" /> <label id='l_wh_cream' for="wh_cream" class="option_label"></label><p id='text'>Whipped Cream</p><br />
+                        <h4>Select Toppings: </h4>
+                        <input type="checkbox" id="sugar" onChange={() => this.setState((prevState, props) => { return { syrup: prevState.syrup+1}})} name="topping" value="syrup" class="all_options" /> <label for="sugar" class="option_label">Sugar</label>
+                        <input type="checkbox" id="berries" onChange={() => this.setState((prevState, props) => { return { berries: prevState.berries+1}})} name="topping" value="berries" class="all_options" /> <label for="berrues" class="option_label">Berries</label>
+                        <input type="checkbox" id="wh_cream" onChange={() => this.setState((prevState, props) => { return { wh_cream: prevState.wh_cream+1}})} name="topping" value="wh_cream" class="all_options" /> <label for="wh_cream" class="option_label">Whipped Cream</label>
+
+                        <div>
+                            <p>{this.state.onepc}</p>
+                            <p>{this.state.twopc}</p>
+                            <p>{this.state.threepc}</p>
+                            <p>{this.state.fourpc}</p>
+                            <p>{this.state.sugar}</p>
+                            <p>{this.state.wh_cream}</p>
+                        </div>
                     </div> <br />
 
                     <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
