@@ -4,12 +4,18 @@ import "../styles/pastaStyle.css";
 import "../styles/commonStyle.css";
 
 var urlVar = "/orderConformation";
+var urlData = "yeet";
+
+var id;
 
 class PastaPage extends Component {
 
   constructor() {
     super();
     this.state = {
+
+      id: 0,
+
       pasta: '',
 
       sauce_pesto: 0,
@@ -35,7 +41,64 @@ class PastaPage extends Component {
       garlic: 0,
 
     };
+    this.updateUrlData = this.updateUrlData.bind(this);
+
   }
+
+  componentDidMount(){
+    urlData = window.location.href; //localhost:3000/pasta?id=012345
+
+    // urlData = urlData.split('?'); 
+    // urlData = urlData[1]; //id=12345
+    
+    // id = urlData.replace('id=', '');
+  }
+
+  updateUrlData() {
+    // console.log("YAAAAAAAA");
+    // urlData = "pesto=" + (this.state.sauce_pesto % 2)
+    //   + "&marinara=" + (this.state.sauce_marinara % 2)
+    //   + "&alfredo=" + (this.state.sauce_alfredo % 2)
+    //   + "&chicken=" + (this.state.protein_chicken % 2)
+    //   + "&shrimp=" + (this.state.protein_shrimp % 2)
+    //   + "&meatball=" + (this.state.protein_meatball % 2)
+    //   + "&sausage=" + (this.state.protein_sausage % 2)
+    //   + "&crab=" + (this.state.protein_crab_meat % 2)
+    //   + "&onion=" + (this.state.onion % 2)
+    //   + "&tomato=" + (this.state.tomato % 2)
+    //   + "&broccoli=" + (this.state.broccoli % 2)
+    //   + "&mushroom=" + (this.state.mushroom % 2)
+    //   + "&corn=" + (this.state.corn % 2)
+    //   + "&saltNpep=" + (this.state.saltNpep % 2)
+    //   + "&oldbay=" + (this.state.old_bay % 2)
+    //   + "&cajun=" + (this.state.cajun % 2)
+    //   + "&italian=" + (this.state.italian % 2)
+    //   + "&garlic=" + (this.state.garlic % 2)
+
+    urlData = "sauces=" + (this.state.sauce_pesto % 2)
+      + "_" + (this.state.sauce_marinara % 2)
+      + "_" + (this.state.sauce_alfredo % 2)
+      + "&protein=" + (this.state.protein_chicken % 2)
+      + "_" + (this.state.protein_shrimp % 2)
+      + "_" + (this.state.protein_meatball % 2)
+      + "_" + (this.state.protein_sausage % 2)
+      + "_" + (this.state.protein_crab_meat % 2)
+      + "&topping=" + (this.state.onion % 2)
+      + "_" + (this.state.tomato % 2)
+      + "_" + (this.state.broccoli % 2)
+      + "_" + (this.state.mushroom % 2)
+      + "_" + (this.state.corn % 2)
+      + "&seasoning=" + (this.state.saltNpep % 2)
+      + "_" + (this.state.old_bay % 2)
+      + "_" + (this.state.cajun % 2)
+      + "_" + (this.state.italian % 2)
+      + "_" + (this.state.garlic % 2)
+      + "&pasta=" + (this.state.pasta);
+
+    console.log(urlData);
+  }
+
+
 
   render() {
     return (
@@ -45,7 +108,7 @@ class PastaPage extends Component {
           <h1 id="head">Pasta Menu</h1><br />
 
           {/*WE NEED TO MAKE IT SO PASTA TYPE IS REQUIRED AND TELLS USER ON SUBMIT*/}
-          <form name="pasta_form" method="GET" action="review_order.html" class="order" onSubmit={this.handleSubmit}>
+          <form name="pasta_form" method="GET" class="order" onSubmit={this.handleSubmit}>
             <label for="c_pasta" class="item_label">Select Pasta Type</label><br /><br />
             <div id="pasta_options">
               <input type="radio" id="penne" onChange={() => this.setState((prevState, props) => { return { pasta: 'penne' } })} name="pasta_type" value="penne" class="all_options" required /> <label for="penne" class="option_label">Penne</label>
@@ -118,7 +181,8 @@ class PastaPage extends Component {
             </div>
 
 
-            <Link to={urlVar + "?" + "yeehaw"} ><input type="submit" id="button" value="Add item to order" /></Link>
+            <Link to={urlVar + "?" + urlData} onClick={this.updateUrlData()}><input type="submit" id="button" value="Add item to order" /></Link>
+
 
           </form>
 
