@@ -14,6 +14,8 @@ class PastaPage extends Component {
     super();
     this.state = {
 
+      dummyState: '',
+
       id: 0,
 
       pasta: '',
@@ -40,17 +42,21 @@ class PastaPage extends Component {
       italian: 0,
       garlic: 0,
 
+      urlDataState: '',
+
     };
     this.updateUrlData = this.updateUrlData.bind(this);
 
   }
 
   componentDidMount(){
-    urlData = window.location.href; //localhost:3000/pasta?id=012345
-
-    // urlData = urlData.split('?'); 
-    // urlData = urlData[1]; //id=12345
-    
+    var aa = window.location.href; //localhost:3000/pasta?id=012345
+    console.log(aa);
+    aa = aa.split('?'); 
+     console.log(aa);
+     aa = aa[1]; //id=12345
+     console.log(aa);
+     this.setState((prevState, props) => { return { id: aa } });
     // id = urlData.replace('id=', '');
   }
 
@@ -93,12 +99,20 @@ class PastaPage extends Component {
       + "_" + (this.state.cajun % 2)
       + "_" + (this.state.italian % 2)
       + "_" + (this.state.garlic % 2)
-      + "&pasta=" + (this.state.pasta);
+      + "&pasta=" + (this.state.pasta)
+      + "&id=" + (this.state.id);
+
+      this.setState(() => {return {urlDataState : urlData}})
+
+      this.updateStates();
 
     console.log(urlData);
   }
 
 
+  updateStates(){
+    this.setState(() => {return {dummyState : ''}})
+  }
 
   render() {
     return (
@@ -181,7 +195,7 @@ class PastaPage extends Component {
             </div>
 
 
-            <Link to={urlVar + "?" + urlData} onClick={this.updateUrlData()}><input type="submit" id="button" value="Add item to order" /></Link>
+            <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateStates()} onClick={() => this.updateUrlData()}><input type="submit" id="button" value="Add item to order" /></Link>
 
 
           </form>
