@@ -4,6 +4,62 @@ import "../styles/ingredientStyle.css";
 import "../styles/commonStyle.css";
 
 class IngredientsPage extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      Alfredo: 0,
+      Bacon: 0,
+      Bowtie: 0,
+      Broccoli: 0,
+      Cajun: 0,
+      Cheese: 0,
+      Chicken: 0,
+      Egg: 0,
+      Marinara: 0,
+      Meatball: 0,
+      Mushroom: 0,
+      Old_Bay: 0,
+      Onion: 0,
+      Pancakes: 0,
+      Penne: 0,
+      Pepper: 0,
+      Pesto: 0,
+      Salt: 0,
+      Sausage: 0,
+      Spinach: 0,
+      Vegan_Chicken: 0,
+      stats: "",
+    }
+  }
+
+  componentDidMount() {
+    //retrieve test IDs from table 'users' on the api (can change this later)
+    fetch("https://wv-food-order-api.herokuapp.com/ingredient_status")
+      .then(res => res.text())
+      .then(res => this.setState({ stats: res }))
+      .catch(err => err);
+    //console.log(this.state.validIDs);
+  }
+
+  initStatus() {
+    var s = this.state.stats;
+    // console.log(ids);
+    s = s.replace('[', ''); //remove excess API string junk
+    s = s.replace(']', ''); //ie) '["123","234"]' becomes '123,234'
+    s = s.replace(/"/g, '');
+    s = s.split(",");
+
+    var i = 0;
+    for (var key in this.state) {
+      this.setState({[key] : s[i]});
+      i++;
+    }
+
+    this.setState({stats : s});
+
+  }
+
   render() {
     return (
       <body>
@@ -14,13 +70,16 @@ class IngredientsPage extends Component {
             Click to alter the status of an ingredient
           </h3>{" "}
           <br />
+
+          {() => this.initStatus()}
+
           <table>
             <tr>
               <th>Ingredient</th>
               <th>Status</th>
             </tr>
             <tr>
-              <td>Alfredo</td>
+              <td>Alfredo {this.state.stats}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
@@ -47,7 +106,7 @@ class IngredientsPage extends Component {
               </td>
             </tr>
             <tr>
-              <td>Brocoli</td>
+              <td>Broccoli</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
