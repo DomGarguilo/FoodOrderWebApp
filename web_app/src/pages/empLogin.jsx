@@ -1,5 +1,5 @@
 import React from "react";
-import EmpLoginPage from "../components/CustLoginPage"
+import EmpLoginPage from "../components/EmpLogin"
 
 const EmpLogin = () => {
 
