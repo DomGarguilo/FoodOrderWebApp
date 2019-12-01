@@ -111,8 +111,14 @@ class PastaPage extends Component {
           <form name="pasta_form" method="GET" class="order" onSubmit={this.handleSubmit}>
             <label for="c_pasta" class="item_label">Select Pasta Type</label><br /><br />
             <div id="pasta_options">
-              <input type="radio" id="penne" onChange={() => this.setState((prevState, props) => { return { pasta: 'penne' } })} name="pasta_type" value="penne" class="all_options" required /> <label for="penne" class="option_label">Penne</label>
-              <input type="radio" id="bowtie" onChange={() => this.setState((prevState, props) => { return { pasta: 'bowtie' } })} name="pasta_type" value="bowtie" class="all_options" required /> <label for="bowtie" class="option_label">Bowtie</label>
+              <div class='grid-container'>
+                <div class='grid-item'>
+                  <input type="radio" id="penne" onChange={() => this.setState((prevState, props) => { return { pasta: 'penne' } })} name="pasta_type" value="penne" class="all_options" required /> <label id='l_penne' for="penne" class="option_label">Penne</label>
+                </div>
+                <div class='grid-item'>        
+                  <input type="radio" id="bowtie" onChange={() => this.setState((prevState, props) => { return { pasta: 'bowtie' } })} name="pasta_type" value="bowtie" class="all_options" required /> <label id='l_bowtie' for="bowtie" class="option_label">Bowtie</label>
+                </div>
+              </div>
             </div> {/*end pasta options*/} <br />
 
             <label for="c_sauce" class="item_label">Select Sauce Type</label><br /><br />

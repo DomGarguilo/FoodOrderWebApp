@@ -72,3 +72,17 @@
     display: none;
 }
 */
+
+/* Past Label with images */
+#l_penne
+{
+    background-image: url('../images/Penne.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#l_bowtie
+{
+    background-image: url('../images/bowtie.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
