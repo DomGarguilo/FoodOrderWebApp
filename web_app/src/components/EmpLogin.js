@@ -35,7 +35,7 @@ class EmpLoginPage extends Component {
 
   componentDidMount() {
     //retrieve test IDs from table 'users' on the api (can change this later)
-    fetch("https://wv-food-order-api.herokuapp.com/testIds")
+    fetch("https://wv-food-order-api.herokuapp.com/testEmpIds")
       .then(res => res.text())
       .then(res => this.setState({ validIDs: res }))
       .catch(err => err);
