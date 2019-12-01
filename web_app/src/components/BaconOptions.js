@@ -25,10 +25,20 @@ class BaconOptions extends Component {
                 <form method="GET" name="BreakfastItem" class="order">
 
                 <div id="bacon_options">
-                    <input type="radio" id="smoked" onChange={() => this.setState((prevState, props) => {return{smoked:prevState.smoked+1}})} name="smoked" value="smoked" class="all_options" /> <label id='l_smoked' for="smoked" class="option_label">Smoked</label>
-                    <input type="radio" id="turkey" onChange={() => this.setState((prevState, props) => {return{turkey:prevState.turkey+1}})} name="turkey" value="turkey" class="all_options" /> <label id='l_turkey' for="turkey" class="option_label">Turkey</label>
-                    <input type="radio" id="canadian" onChange={() => this.setState((prevState, props) => { return { canadian: prevState.canadian+1}})} name="canadian" value="canadian" class="all_options" /> <label id='l_canadian' for="canadian" class="option_label">Canadian</label>
-                    <input type="radio"  id="pancetta" onChange={() => this.setState((prevState, props) => { return { pancetta: prevState.pancetta+1}})} name="pancetta" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label">Pancetta</label>
+                    <div class='grid-container'>
+                        <div class='grid-item'>
+                            <input type="radio" id="smoked" onChange={() => this.setState((prevState, props) => {return{smoked:prevState.smoked+1}})} name="smoked" value="smoked" class="all_options" /> <label id='l_smoked' for="smoked" class="option_label"></label><p id='text'>Smoked</p>
+                        </div>
+                        <div class='grid-item'>
+                            <input type="radio" id="turkey" onChange={() => this.setState((prevState, props) => {return{turkey:prevState.turkey+1}})} name="turkey" value="turkey" class="all_options" /> <label id='l_turkey' for="turkey" class="option_label"></label><p id='text'>Turkey</p>
+                        </div>
+                        <div class='grid-item'>
+                            <input type="radio" id="canadian" onChange={() => this.setState((prevState, props) => { return { canadian: prevState.canadian+1}})} name="canadian" value="canadian" class="all_options" /> <label id='l_canadian' for="canadian" class="option_label"></label><p id='text'>Canadian</p>
+                        </div>
+                        <div class='grid-item'>
+                            <input type="radio"  id="pancetta" onChange={() => this.setState((prevState, props) => { return { pancetta: prevState.pancetta+1}})} name="pancetta" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <p>{this.state.smoked}</p>
