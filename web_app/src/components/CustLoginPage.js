@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import "../styles/loginStyle.css";
 import "../styles/commonStyle.css"
 
+var urlLink = '/selection';
+var urlData;
+
 class CustLoginPage extends Component {
 
   constructor() {
     super();
     this.state = {
+      dummyState: '', //used to make this shitty react program WORK
       ID: "",
       validIDs: "",
     }
@@ -54,6 +58,7 @@ class CustLoginPage extends Component {
     ids = ids.split(",");
     console.log(ids.includes(this.state.ID) ? "yes" : "no"); //yes - exists, no - doesnt
     if (ids.includes(this.state.ID)) { //id does exist
+      urlData = this.state.ID;
       return true;
     }
     else { //id doesnt exists
@@ -65,10 +70,16 @@ class CustLoginPage extends Component {
     }
   }
 
+  updateStates(){
+    console.log("ID: " + this.state.ID);
+    urlData = this.state.ID;
+    this.setState(() => {return {dummyState : ''}})
+  }
+
   render() {
     return (
       <body>
-        <div id="container">
+        <div id="container" onMouseDown={() => this.updateStates()} >
 
           <img id="login_bg" />
 
@@ -112,11 +123,12 @@ class CustLoginPage extends Component {
               </tr>
               <tr>
                 {/* <!--Table Enter--> */}
-                <td colspan="3"><Link to="/selection" onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
+                <td colspan="3" ><Link to={urlLink + "?" + urlData} onMouseDown={() => this.updateStates()} onClick={(e) => this.checkId(e)}><button id="enter">Enter</button></Link></td>
               </tr>
             </tb>
 
           </table>
+          {/* <p>;;{this.state.ID}</p> */}
 
         </div>
       </body>
