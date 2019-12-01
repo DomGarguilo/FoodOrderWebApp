@@ -11,6 +11,7 @@ import {
 import Breakfast from './pages/breakfast'
 import Ingredient from './pages/ingredient';
 import CustLogin from './pages/custLogin';
+import EmpLogin from './pages/empLogin';
 import OrderConformation from './pages/orderConformation'
 import Pasta from './pages/pasta';
 import Selection from './pages/selection';
@@ -91,6 +92,7 @@ class App extends Component {
           <Route exact path="/eggs" component={Eggs} />
           <Route exact path="/empDash" component={EmployeeDash} />
           <Route exact path="/custLogin" component={CustLogin} />
+          <Route exact path="/empLogin" component={EmpLogin} />
         </Switch>
         <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
         <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
