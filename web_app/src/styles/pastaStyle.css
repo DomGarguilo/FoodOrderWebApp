@@ -74,6 +74,30 @@
 */
 
 /* Past Label with images */
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+}
+.grid-item
+{
+    width: 300px;
+    padding: 20px;
+}
+.grid-container2
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    width: 100%;
+}
+.grid-item2
+{
+    width: 100%;
+    padding: 20px;
+}
 #l_penne
 {
     background-image: url('../images/Penne.jpg');

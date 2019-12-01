@@ -123,9 +123,17 @@ class PastaPage extends Component {
 
             <label for="c_sauce" class="item_label">Select Sauce Type</label><br /><br />
             <div id="sauce_options">
-              <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label for="pesto" class="option_label">Pesto</label><br />
-              <input type="checkbox" id="marinara" onChange={() => this.setState((prevState, props) => { return { sauce_marinara: prevState.sauce_marinara + 1 } })} name="sauce_type" value="marinara" class="all_options" /> <label for="marinara" class="option_label">Marinara</label><br />
-              <input type="checkbox" id="alfredo" onChange={() => this.setState((prevState, props) => { return { sauce_alfredo: prevState.sauce_alfredo + 1 } })} name="sauce_type" value="alfredo" class="all_options" /> <label for="alfredo" class="option_label">Alfredo</label><br />
+            <div class='grid-container2'>
+                <div class='grid-item2'>
+                  <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label for="pesto" class="option_label">Pesto</label><br />
+                </div>
+                <div class='grid-item2'>
+                  <input type="checkbox" id="marinara" onChange={() => this.setState((prevState, props) => { return { sauce_marinara: prevState.sauce_marinara + 1 } })} name="sauce_type" value="marinara" class="all_options" /> <label for="marinara" class="option_label">Marinara</label><br />
+                </div>
+                <div class='grid-item2'>
+                  <input type="checkbox" id="alfredo" onChange={() => this.setState((prevState, props) => { return { sauce_alfredo: prevState.sauce_alfredo + 1 } })} name="sauce_type" value="alfredo" class="all_options" /> <label for="alfredo" class="option_label">Alfredo</label><br />
+                </div>
+              </div>
             </div> {/*end sauce options*/} <br />
 
             <div>
