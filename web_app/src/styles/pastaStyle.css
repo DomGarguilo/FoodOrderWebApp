@@ -205,10 +205,40 @@
 {
     background-image: url('../images/Italian.jpg')
 }
+#l_sausage
+{
+    background-image: url('../images/Sausage.jpg')
+}
+#l_cajun
+{
+    background-image: url('../images/Cajun-Spice.jpg')
+}
+#l_saltnpep
+{
+    background-image: url('../images/salt_and_pepper.jpg')
+}
 #l_old_bay,#l_garlic,#l_italian,#l_cajun,#l_saltnpep
 {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 250px;
     width: 300px;
+}
+
+.addToOrder {
+    display: inline-block;
+    background-image: url("../images/button-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(53, 113, 128);
+    width: 50%;
+    padding: 2% 0%;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+}
+
+.addToOrder:hover {
+    border-color: rgb(221, 1, 241);
+    cursor:pointer;
 }

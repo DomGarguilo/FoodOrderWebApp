@@ -20,18 +20,30 @@ img#login_bg {
 }
 
 input[type = "submit"] {
-    display: inline-block;
+    /* display: inline-block;
     background-color: rgb(61, 172, 70);
     background-image: url("../images/submit-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px 100px;
     font-family: sans-serif, Arial;
+    font-size: 16px; */
+    display: inline-block;
+    background-image: url("../images/button-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(53, 113, 128);
+    width: 50%;
+    padding: 2% 0%;
+    font-family: sans-serif, Arial;
     font-size: 16px;
+    border: 2px solid #444;
 }
 
 input[type = "submit"]:hover {
-    background-color: rgb(30, 110, 9);
+    /* background-color: rgb(30, 110, 9);
+    cursor:pointer; */
+    border-color: rgb(221, 1, 241);
     cursor:pointer;
 }
 
