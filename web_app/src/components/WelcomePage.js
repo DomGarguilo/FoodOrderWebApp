@@ -10,7 +10,7 @@ class WelcomePage extends Component {
             <div className="BreakfastPage" id="container">
                 <img id="login_bg" />
 
-                <h1 id="head">Welcome</h1>
+                <h1 id="head">Welcome to West Village Dining Hall</h1>
 
                 <Link to="/custLogin" ><button class="loginSelect">Customer Login</button></Link>
                 <br/><br/>

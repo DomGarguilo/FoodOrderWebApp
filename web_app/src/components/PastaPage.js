@@ -246,9 +246,7 @@ class PastaPage extends Component {
               <p>{this.state.italian}</p>
               <p>{this.state.garlic}</p>
             </div> */}
-
-
-            <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" id="button" value="Add item to order" /></Link>
+            <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" class = "item_label" value="Add item to order" /></Link>
 
           </form>
 
