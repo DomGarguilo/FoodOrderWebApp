@@ -197,11 +197,15 @@
     width: 300px;
 }
 
-#l_oldbay
+#l_old_bay
 {
     background-image: url('../images/Oldbay.jpg')
 }
-#l_oldbay,#l_garlic,#l_italian,#l_cajun,#l_saltnpep
+#l_italian
+{
+    background-image: url('../images/Italian.jpg')
+}
+#l_old_bay,#l_garlic,#l_italian,#l_cajun,#l_saltnpep
 {
     background-repeat: no-repeat;
     background-size: 100% 100%;
