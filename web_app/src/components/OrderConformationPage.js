@@ -127,8 +127,8 @@ class OrderConformationPage extends Component {
       wh_cream = wh_cream.replace('wh_cream=', ''); //seasoning=1_0_1_0_1
       id = id.replace('id=', '');
       this.refreshStates(2);
-
-      console.log("AHH " + pancakeCount + " " + sugar + " " + berries + " " + wh_cream + " " + id);
+      this.sendOrder(2)
+      //console.log("AHH " + pancakeCount + " " + sugar + " " + berries + " " + wh_cream + " " + id);
       /* http://localhost:3000/orderConformation?pancake=0&pc=0_1_0&sugar=1&berries=0&wh_cream=1 
       the arrays are stored as such:
       pc - 1 pancake, 2 pancake, 3 pancake
@@ -206,7 +206,11 @@ class OrderConformationPage extends Component {
         .catch(err => err);
     }
     else if (choice == 2) { //pancake order
-
+      orderUrl += 'pancakeOrder?' + 'pc=' + pancakeCount + '&sugar=' + sugar + '&berries=' + berries + '&wh_cream=' + wh_cream + '&id=' + id;
+      console.log("your order: " + orderUrl);
+      fetch(orderUrl)
+        .then(console.log("Order Success"))
+        .catch(err => err);
     }
     //etc for bacon and eggs
   }
