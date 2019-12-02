@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
-var urlData;
+var urlData, globalChoiceVar;
 
-var type, sauces, protein, topping, seasoning, pastaChoice, id;
-var saucesArr, proteinArr, toppingArr, seasoningArr;
+var type, sauces, protein, topping, seasoning, pastaChoice, id; //pasta url variables
+var saucesArr, proteinArr, toppingArr, seasoningArr; //pasta array url variables (to saucesArr=sauces.split('_');)
 
-var pancakeCount, sugar, berries, wh_cream;
-
-var globalChoiceVar;
+var pancakeCount, sugar, berries, wh_cream; //pancake url variables
 
 let pastaStyle = {
   display: 'none'
@@ -26,7 +24,7 @@ class OrderConformationPage extends Component {
 
       id: 0,
 
-      //--------PASTA
+      //--------PASTAS
       pasta: '',
       sauce_pesto: 0,
       sauce_marinara: 0,
@@ -48,13 +46,16 @@ class OrderConformationPage extends Component {
       garlic: 0,
       //--------
 
-      //--------PANCAKES
-      pc: 0,
-      sug: 0,
-      berr: 0,
-      wh_cr: 0,
+      //--------PANCAKESS
+      pc: 0, //pancake count
+      sug: 0, //sugar
+      berr: 0, //berries
+      wh_cr: 0, //whipped cream
       //--------
 
+
+
+      //-------TABLE DISPLAYS
       pastaTableDisplay: 'none',
       pancakeTableDisplay: 'none',
 
@@ -63,8 +64,8 @@ class OrderConformationPage extends Component {
   }
 
   componentDidMount() {
-    console.log('yeet bomb');
-    console.log(window.location.href);
+    // console.log('yeet bomb');
+    // console.log(window.location.href);
     urlData = window.location.href; //localhost:3000/orderConformation?sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasonings=1_0_1_0_1
 
     urlData = urlData.split('?'); //pasta=0&sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1
@@ -169,7 +170,7 @@ class OrderConformationPage extends Component {
       this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
       this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
 
-      this.setState(() => { return { pastaTableDisplay : ''}});
+      this.setState(() => { return { pastaTableDisplay: '' } });
     }
     else if (choice == 2) {
       // pc: 0,
@@ -181,7 +182,7 @@ class OrderConformationPage extends Component {
       this.setState((prevState, props) => { return { berr: berries } });
       this.setState((prevState, props) => { return { wh_cr: wh_cream } });
 
-      this.setState(() => { return { pancakeTableDisplay : ''}});
+      this.setState(() => { return { pancakeTableDisplay: '' } });
 
     }
     this.hideTables(globalChoiceVar);
@@ -202,14 +203,12 @@ class OrderConformationPage extends Component {
 
   hideTables(num) {
     if (num == 1) { //pasta data
-       pastaStyle = { display: this.state.pastaTableDisplay };
+      pastaStyle = { display: this.state.pastaTableDisplay };
 
     }
     else if (num == 2) { //pancake data
-       pancakeStyle = { display: this.state.pancakeTableDisplay };
-
+      pancakeStyle = { display: this.state.pancakeTableDisplay };
     }
-
   }
 
   getSauces() {
@@ -294,7 +293,7 @@ class OrderConformationPage extends Component {
       return 'No';
   }
   getBerries() {
-    if (this.state.ber == 1)
+    if (this.state.berr == 1)
       return 'Yes';
     else
       return 'No';
@@ -321,14 +320,9 @@ class OrderConformationPage extends Component {
         <h3 id="order_con">Your order is on its way</h3> <br />
         <h3 id="order_con">Order Confirmation Number: 123</h3> <br />
         <div>
-          {/* <p>PASTA : {this.state.pasta}</p> */}
 
           <br />
-          {/* <p>Sauce Choice(s): {this.getSauces()}</p>
-          <p>Protein Choice(s): {this.getProtein()}</p>
-          <p>Topping Choice(s): {this.getTopping()}</p>
-          <p>Seasoning Choice(s): {this.getSeasoning()}</p> */}
-          <table class="center" id="pastaTable" style={{display :  this.state.pastaTableDisplay}}>
+          <table class="center" id="pastaTable" style={{ display: this.state.pastaTableDisplay }}>
             <tr>
               <td>Item</td>
               <td>Sauce Choice(s)</td>
@@ -348,7 +342,7 @@ class OrderConformationPage extends Component {
 
             </tr>
           </table>
-          <table class="center" id="pancakeTable" style={{display :  this.state.pancakeTableDisplay}}>
+          <table class="center" id="pancakeTable" style={{ display: this.state.pancakeTableDisplay }}>
             <tr>
               <td>Item</td>
               <td>Pancake Count</td>
@@ -380,3 +374,6 @@ class OrderConformationPage extends Component {
 }
 
 export default OrderConformationPage;
+
+//pancake example: http://localhost:3000/orderConformation?pancake=0&pc=3&sugar=0&berries=1&wh_cream=0&id=635111
+//pasta example: http://localhost:3000/orderConformation?pasta=0&sauces=1_1_1&protein=1_1_1_1_1&topping=1_1_1_1_1&seasoning=1_1_1_1_1&pasta=penne&id=635111
