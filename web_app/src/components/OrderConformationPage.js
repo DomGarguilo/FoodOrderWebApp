@@ -4,7 +4,7 @@ import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
 var urlData;
 
-var sauces, protein, topping, seasoning, pastaChoice;
+var sauces, protein, topping, seasoning, pastaChoice, id;
 var saucesArr, proteinArr, toppingArr, seasoningArr;
 
 class OrderConformationPage extends Component {
@@ -49,43 +49,50 @@ class OrderConformationPage extends Component {
 
     urlData = urlData.split('?'); //sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1
     urlData = urlData[1];
-    console.log(urlData);
+    // console.log(urlData);
 
-    // var urlDataArr = urlData.split('&')
-    // sauces = urlDataArr[0]; //sauces=1_1_1
-    // protein = urlDataArr[1]; //protein=1_1_1_0_1
-    // topping = urlDataArr[2]; //topping=1_0_1_0_1
-    // seasoning = urlDataArr[3]; //seasoning=1_0_1_0_1
-    // pastaChoice = urlDataArr[4];
-    // console.log(sauces);
-    // console.log(protein);
-    // console.log(topping);
-    // console.log(seasoning);
-    // console.log(pastaChoice);
+     var urlDataArr = urlData.split('&')
+     sauces = urlDataArr[0]; //sauces=1_1_1
+     protein = urlDataArr[1]; //protein=1_1_1_0_1
+     topping = urlDataArr[2]; //topping=1_0_1_0_1
+     seasoning = urlDataArr[3]; //seasoning=1_0_1_0_1
+     pastaChoice = urlDataArr[4];
+     id = urlDataArr[5];
 
-    // sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
-    // protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
-    // topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
-    // seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
-    // pastaChoice = pastaChoice.replace('pasta=', '');
-    // console.log(sauces);
-    // console.log(protein);
-    // console.log(topping);
-    // console.log(seasoning);
-    // console.log(pastaChoice);
+    //  console.log(sauces);
+    //  console.log(protein);
+    //  console.log(topping);
+    //  console.log(seasoning);
+    //  console.log(pastaChoice);
+    //  console.log(id);
 
-    // saucesArr = sauces.split('_');
-    // proteinArr = protein.split('_');
-    // toppingArr = topping.split('_');
-    // seasoningArr = seasoning.split('_');
-    // console.log(saucesArr);
-    // console.log(proteinArr);
-    // console.log(toppingArr);
-    // console.log(seasoningArr);
+     sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
+     protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
+     topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
+     seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
+     pastaChoice = pastaChoice.replace('pasta=', '');
+     id = id.replace('id=','');
+    //  console.log(" ");
+    //  console.log(sauces);
+    //  console.log(protein);
+    //  console.log(topping);
+    //  console.log(seasoning);
+    //  console.log(pastaChoice);
+    //  console.log(id);
 
-    // console.log(this.state.pasta);
-    // this.setState((prevState, props) => { return { pasta: pastaChoice } });
-    // console.log(this.state.pasta);
+     saucesArr = sauces.split('_');
+     proteinArr = protein.split('_');
+     toppingArr = topping.split('_');
+     seasoningArr = seasoning.split('_');
+    //  console.log(' ');
+    //  console.log(saucesArr);
+    //  console.log(proteinArr);
+    //  console.log(toppingArr);
+    //  console.log(seasoningArr);
+    //  console.log("AHHH");
+    //  console.log(this.state.pasta);
+     this.setState((prevState, props) => { return { pasta: pastaChoice } });
+    //  console.log(this.state.pasta);
 
     /* the arrays are stored as such:
     Sauces - pesto, marinara, alfredo
@@ -99,34 +106,42 @@ class OrderConformationPage extends Component {
   }
 
   refreshStates() {
-    console.log('helloooooo');
+    console.log(urlData);
     //console.log(this.state.pasta);
-    // this.setState((prevState, props) => { return { pasta: pastaChoice } });
+    this.setState((prevState, props) => { return { pasta: pastaChoice } });
 
-    // this.setState((prevState, props) => { return { sauce_pesto: saucesArr[0] } });
-    // this.setState((prevState, props) => { return { sauce_marinara: saucesArr[1] } });
-    // this.setState((prevState, props) => { return { sauce_alfredo: saucesArr[2] } });
+    this.setState((prevState, props) => { return { sauce_pesto: saucesArr[0] } });
+    this.setState((prevState, props) => { return { sauce_marinara: saucesArr[1] } });
+    this.setState((prevState, props) => { return { sauce_alfredo: saucesArr[2] } });
 
-    // this.setState((prevState, props) => { return { protein_chicken: proteinArr[0] } });
-    // this.setState((prevState, props) => { return { protein_shrimp: proteinArr[1] } });
-    // this.setState((prevState, props) => { return { protein_meatball: proteinArr[2] } });
-    // this.setState((prevState, props) => { return { protein_sausage: proteinArr[3] } });
-    // this.setState((prevState, props) => { return { protein_crab_meat: proteinArr[4] } });
+    this.setState((prevState, props) => { return { protein_chicken: proteinArr[0] } });
+    this.setState((prevState, props) => { return { protein_shrimp: proteinArr[1] } });
+    this.setState((prevState, props) => { return { protein_meatball: proteinArr[2] } });
+    this.setState((prevState, props) => { return { protein_sausage: proteinArr[3] } });
+    this.setState((prevState, props) => { return { protein_crab_meat: proteinArr[4] } });
 
-    // this.setState((prevState, props) => { return { onion: toppingArr[0] } });
-    // this.setState((prevState, props) => { return { tomato: toppingArr[1] } });
-    // this.setState((prevState, props) => { return { broccoli: toppingArr[2] } });
-    // this.setState((prevState, props) => { return { mushroom: toppingArr[3] } });
-    // this.setState((prevState, props) => { return { corn: toppingArr[4] } });
+    this.setState((prevState, props) => { return { onion: toppingArr[0] } });
+    this.setState((prevState, props) => { return { tomato: toppingArr[1] } });
+    this.setState((prevState, props) => { return { broccoli: toppingArr[2] } });
+    this.setState((prevState, props) => { return { mushroom: toppingArr[3] } });
+    this.setState((prevState, props) => { return { corn: toppingArr[4] } });
 
-    // this.setState((prevState, props) => { return { saltNpep: seasoningArr[0] } });
-    // this.setState((prevState, props) => { return { old_bay: seasoningArr[1] } });
-    // this.setState((prevState, props) => { return { cajun: seasoningArr[2] } });
-    // this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
-    // this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
+    this.setState((prevState, props) => { return { saltNpep: seasoningArr[0] } });
+    this.setState((prevState, props) => { return { old_bay: seasoningArr[1] } });
+    this.setState((prevState, props) => { return { cajun: seasoningArr[2] } });
+    this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
+    this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
 
 
     // console.log(this.state.pasta);
+  }
+
+  sendOrder(){
+    //fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=sauces=1_1_1&protein=1_0_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1&pasta=bowtie&id=635111"))
+    fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=" + urlData))
+    .then(res => res.text())
+    .then(res => this.setState({ validIDs: res }))
+    .catch(err => err);
   }
 
   render() {
