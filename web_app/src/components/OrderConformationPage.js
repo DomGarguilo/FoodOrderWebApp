@@ -49,7 +49,6 @@ class OrderConformationPage extends Component {
 
     urlData = urlData.split('?'); //sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1
     urlData = urlData[1];
-    // console.log(urlData);
 
     var urlDataArr = urlData.split('&')
     sauces = urlDataArr[0]; //sauces=1_1_1
@@ -59,40 +58,20 @@ class OrderConformationPage extends Component {
     pastaChoice = urlDataArr[4];
     id = urlDataArr[5];
 
-    //  console.log(sauces);
-    //  console.log(protein);
-    //  console.log(topping);
-    //  console.log(seasoning);
-    //  console.log(pastaChoice);
-    //  console.log(id);
-
     sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
     protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
     topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
     seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
     pastaChoice = pastaChoice.replace('pasta=', '');
     id = id.replace('id=', '');
-    //  console.log(" ");
-    //  console.log(sauces);
-    //  console.log(protein);
-    //  console.log(topping);
-    //  console.log(seasoning);
-    //  console.log(pastaChoice);
-    //  console.log(id);
 
     saucesArr = sauces.split('_');
     proteinArr = protein.split('_');
     toppingArr = topping.split('_');
     seasoningArr = seasoning.split('_');
-    //  console.log(' ');
-    //  console.log(saucesArr);
-    //  console.log(proteinArr);
-    //  console.log(toppingArr);
-    //  console.log(seasoningArr);
-    //  console.log("AHHH");
-    //  console.log(this.state.pasta);
+
     this.setState((prevState, props) => { return { pasta: pastaChoice } });
-    //  console.log(this.state.pasta);
+    this.refreshStates();
 
     /* the arrays are stored as such:
     Sauces - pesto, marinara, alfredo
@@ -132,8 +111,6 @@ class OrderConformationPage extends Component {
     this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
     this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
 
-
-    // console.log(this.state.pasta);
   }
 
   sendOrder() {
@@ -216,6 +193,76 @@ class OrderConformationPage extends Component {
     return seasoningNames;
   }
 
+  getSauceChoiceLabel() {
+    var label = '';
+    var counter = 0;
+
+    if (this.state.sauce_pesto == 1)
+      counter++;
+    if (this.state.sauce_marinara == 1)
+      counter++
+    if (this.state.sauce_alfredo == 1)
+      counter++
+
+    label = (counter > 1 ? 'Choices' : 'Choice');
+    return label;
+  }
+
+  getProteinChoiceLabel() {
+    var label = '';
+    var counter = 0;
+
+    if (this.state.protein_chicken == 1)
+      counter++
+    if (this.state.protein_shrimp == 1)
+      counter++
+    if (this.state.protein_meatball == 1)
+      counter++
+    if (this.state.protein_sausage == 1)
+      counter++
+    if (this.state.protein_crab_meat == 1)
+      counter++
+
+    label = (counter > 1 ? 'Choices' : 'Choice');
+    return label;
+  }
+  getToppingChoiceLabel() {
+    var label = '';
+    var counter = 0;
+
+    if (this.state.onion == 1)
+      counter++
+    if (this.state.tomato == 1)
+      counter++
+    if (this.state.broccoli == 1)
+      counter++
+    if (this.state.mushroom == 1)
+      counter++
+    if (this.state.corn == 1)
+      counter++
+
+    label = (counter > 1 ? 'Choices' : 'Choice');
+    return label;
+  }
+  getSeasoningChoiceLabel() {
+    var label = '';
+    var counter = 0;
+
+    if (this.state.saltNpep == 1)
+      counter++
+    if (this.state.old_bay == 1)
+      counter++
+    if (this.state.cajun == 1)
+      counter++
+    if (this.state.italian == 1)
+      counter++
+    if (this.state.garlic == 1)
+      counter++
+
+    label = (counter > 1 ? 'Choices' : 'Choice');
+    return label;
+  }
+
   render() {
 
     return (
@@ -225,17 +272,18 @@ class OrderConformationPage extends Component {
         <img id="login_bg" />
         <h1 id="head">Review Order</h1><br />
 
-        <h3 id="please_select">Please Select an Option:</h3> <br />
+        <h1 id="please_select">Review Your Order:</h1> <br />
         <div >
-          <p>PASTA : {this.state.pasta}</p>
+          <p>Pasta Choice: {this.state.pasta}</p>
+          <p>{this.getSauceChoiceLabel()}: {this.getSauces()}</p>
+          <p>{this.getProteinChoiceLabel()}: {this.getProtein()}</p>
+          <p>{this.getToppingChoiceLabel()}: {this.getTopping()}</p>
+          <p>{this.getSeasoningChoiceLabel()}: {this.getSeasoning()}</p>
 
           <br />
-          <p>Sauce Choice(s): {this.getSauces()}</p>
-          <p>Protein Choice(s): {this.getProtein()}</p>
-          <p>Topping Choice(s): {this.getTopping()}</p>
-          <p>Seasoning Choice(s): {this.getSeasoning()}</p>
-          <br />
-
+          <h2>Is your order correct?</h2>
+          <button onclick={this.sendOrder}>Yes</button>
+          <button>No</button>
         </div>
       </div>
     );
