@@ -5,6 +5,7 @@ import "../styles/commonStyle.css";
 
 class IngredientsPage extends Component {
 
+  //somehow need to initialize the values based on those from the DB
   constructor() {
     super();
     this.state = {
@@ -31,7 +32,7 @@ class IngredientsPage extends Component {
       Vegan_Chicken: 0,
       stats: "",
     }
-  }
+  };
 
   componentDidMount() {
     //retrieve test IDs from table 'users' on the api (can change this later)
@@ -40,8 +41,9 @@ class IngredientsPage extends Component {
       .then(res => this.setState({ stats: res }))
       .catch(err => err);
     //console.log(this.state.validIDs);
-  }
+  };
 
+  //gets the updated status from the DB. needs to be called when the page laods up
   initStatus() {
     var s = this.state.stats;
     // console.log(ids);
@@ -58,9 +60,9 @@ class IngredientsPage extends Component {
         i++;
       }
     }
+  };
 
-  }
-
+  //swaps the status of an ingredient
   changeStatus(key) {
     if (this.state.Alfredo == 0) {
       this.setState({ Alfredo: 1 });
@@ -68,11 +70,11 @@ class IngredientsPage extends Component {
     if (this.state.Alfredo == 1) {
       this.setState({ Alfredo: 0 });
     }
-  }
+  };
 
   render() {
     return (
-      <body>
+      <body >
         <div className="IngredientsPage" id="container">
           <img id="login_bg" />
           <h1 id="head">Ingredient Status Page</h1>
@@ -81,6 +83,7 @@ class IngredientsPage extends Component {
           </h3>{" "}
           <br />
 
+          
           <input type="submit" id="button" value="Refresh" onClick={() => this.initStatus()} />
           <br /><br /><br />
 
@@ -93,7 +96,7 @@ class IngredientsPage extends Component {
               <td>Alfredo{this.state.Alfredo}</td>
               <td>
                 <label class="switch">
-                  <input type="checkbox" id="alfredoSwitch" onClick={() => this.changeStatus()}></input>
+                  <input type="checkbox" onClick={() => this.changeStatus()}></input>
                   <span class="slider"></span>
                 </label>
               </td>
@@ -108,7 +111,7 @@ class IngredientsPage extends Component {
               </td>
             </tr>
             <tr>
-              <td>Bowtie</td>
+              <td>Bowtie {this.state.Bowtie}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
@@ -117,7 +120,7 @@ class IngredientsPage extends Component {
               </td>
             </tr>
             <tr>
-              <td>Broccoli</td>
+              <td>Broccoli {this.state.Broccoli}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
