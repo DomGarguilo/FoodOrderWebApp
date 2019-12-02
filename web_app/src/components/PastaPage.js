@@ -152,12 +152,12 @@ class PastaPage extends Component {
               </div>
             </div> {/*end sauce options*/} <br />
 
-            <div>
+            {/* <div>
               <p>{this.state.pasta}</p>
               <p>{this.state.sauce_pesto}</p>
               <p>{this.state.sauce_marinara}</p>
               <p>{this.state.sauce_alfredo}</p>
-            </div>
+            </div> */}
 
             <label for="c_protein" class="item_label">Select Proteins</label><br /><br />
             <div id="protein_options">
@@ -180,13 +180,13 @@ class PastaPage extends Component {
               </div>
             </div> {/*end sauce options*/} <br />
 
-            <div>
+            {/* <div>
               <p>{this.state.protein_chicken}</p>
               <p>{this.state.protein_shrimp}</p>
               <p>{this.state.protein_meatball}</p>
               <p>{this.state.protein_sausage}</p>
               <p>{this.state.protein_crab_meat}</p>
-            </div>
+            </div> */}
 
             <label for="c_topping" class="item_label">Select Additional Toppings</label><br /><br />
             <div id="topping_options">
@@ -209,13 +209,13 @@ class PastaPage extends Component {
             </div>
             </div> {/*end toppings options*/} <br />
 
-            <div>
+            {/* <div>
               <p>{this.state.onion}</p>
               <p>{this.state.tomato}</p>
               <p>{this.state.broccoli}</p>
               <p>{this.state.mushroom}</p>
               <p>{this.state.corn}</p>
-            </div>
+            </div> */}
 
             <label for="c_seasoning" class="item_label">Select Seasonings</label><br /><br />
             <div id="seasoning_options">
@@ -239,13 +239,13 @@ class PastaPage extends Component {
             </div>
             </div> {/*end seasonings options*/} <br />
 
-            <div>
+            {/* <div>
               <p>{this.state.saltNpep}</p>
               <p>{this.state.old_bay}</p>
               <p>{this.state.cajun}</p>
               <p>{this.state.italian}</p>
               <p>{this.state.garlic}</p>
-            </div>
+            </div> */}
 
 
             <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" id="button" value="Add item to order" /></Link>
