@@ -221,7 +221,7 @@ class PastaPage extends Component {
             <div id="seasoning_options">
             <div class='grid-container2'>
               <div class='grid-item2'>
-                <input type="checkbox" id="saltNpep" onChange={() => this.setState((prevState, props) => { return { saltNpep: prevState.saltNpep + 1 } })} name="seasonings" value="saltAndPepper" class="all_options" /> <label id='l_saltnpep' for="saltNpep" class="option_label"></label><p id='text'>Salt Pepper</p><br />
+                <input type="checkbox" id="saltNpep" onChange={() => this.setState((prevState, props) => { return { saltNpep: prevState.saltNpep + 1 } })} name="seasonings" value="saltAndPepper" class="all_options" /> <label id='l_saltnpep' for="saltNpep" class="option_label"></label><p id='text'>Salt / Pepper</p><br />
               </div>
               <div class='grid-item2'>
                 <input type="checkbox" id="old_bay" onChange={() => this.setState((prevState, props) => { return { old_bay: prevState.old_bay + 1 } })} name="seasonings" value="oldBay" class="all_options" /> <label id='l_old_bay' for="old_bay" class="option_label"></label><p id='text'>Old Bay</p><br />
