@@ -141,7 +141,7 @@ class PastaPage extends Component {
             <div id="sauce_options">
             <div class='grid-container2'>
                 <div class='grid-item2'>
-                  <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label id='l_pesto' for="pesto" class="option_label"></label><p id='text'>Fuck Doom</p><br />
+                  <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label id='l_pesto' for="pesto" class="option_label"></label><p id='text'>Pesto</p><br />
                 </div>
                 <div class='grid-item2'>
                   <input type="checkbox" id="marinara" onChange={() => this.setState((prevState, props) => { return { sauce_marinara: prevState.sauce_marinara + 1 } })} name="sauce_type" value="marinara" class="all_options" /> <label id='l_marinara' for="marinara" class="option_label"></label><p id='text'>Marinara</p><br />
@@ -192,19 +192,19 @@ class PastaPage extends Component {
             <div id="topping_options">
             <div class='grid-container2'>
               <div class='grid-item2'>
-                <input type="checkbox" id="onion" onChange={() => this.setState((prevState, props) => { return { onion: prevState.onion + 1 } })} name="ingredients" value="onion" class="all_options" /> <label id='l_onion' for="onion" class="option_label">Onion</label><br />
+                <input type="checkbox" id="onion" onChange={() => this.setState((prevState, props) => { return { onion: prevState.onion + 1 } })} name="ingredients" value="onion" class="all_options" /> <label id='l_onion' for="onion" class="option_label"></label><p id='text'>Onion</p><br />
               </div>
               <div class='grid-item2'>
-                <input type="checkbox" id="tomato" onChange={() => this.setState((prevState, props) => { return { tomato: prevState.tomato + 1 } })} name="ingredients" value="tomato" class="all_options" /> <label id='l_tomato' for="tomato" class="option_label">Tomato</label><br />
+                <input type="checkbox" id="tomato" onChange={() => this.setState((prevState, props) => { return { tomato: prevState.tomato + 1 } })} name="ingredients" value="tomato" class="all_options" /> <label id='l_tomato' for="tomato" class="option_label"></label><p id='text'>Tomato</p>
                 </div>
               <div class='grid-item2'>
-                <input type="checkbox" id="broccoli" onChange={() => this.setState((prevState, props) => { return { broccoli: prevState.broccoli + 1 } })} name="ingredients" value="broccoli" class="all_options" /> <label id='l_broccoli' for="broccoli" class="option_label">Broccoli</label><br />
+                <input type="checkbox" id="broccoli" onChange={() => this.setState((prevState, props) => { return { broccoli: prevState.broccoli + 1 } })} name="ingredients" value="broccoli" class="all_options" /> <label id='l_broccoli' for="broccoli" class="option_label"></label><p id='text'>Broccoli</p>
               </div>
               <div class='grid-item2'>
-                <input type="checkbox" id="mushroom" onChange={() => this.setState((prevState, props) => { return { mushroom: prevState.mushroom + 1 } })} name="ingredients" value="mushroom" class="all_options" /> <label id='l_mushroom' for="mushroom" class="option_label">Mushroom</label><br />
+                <input type="checkbox" id="mushroom" onChange={() => this.setState((prevState, props) => { return { mushroom: prevState.mushroom + 1 } })} name="ingredients" value="mushroom" class="all_options" /> <label id='l_mushroom' for="mushroom" class="option_label"></label><p id='text'>Mushroom</p><br />
                 </div>
               <div class='grid-item2'>
-                <input type="checkbox" id="corn" onChange={() => this.setState((prevState, props) => { return { corn: prevState.corn + 1 } })} name="ingredients" value="Corn" class="all_options" /> <label id='l_corn' for="corn" class="option_label">Corn</label><br />
+                <input type="checkbox" id="corn" onChange={() => this.setState((prevState, props) => { return { corn: prevState.corn + 1 } })} name="ingredients" value="Corn" class="all_options" /> <label id='l_corn' for="corn" class="option_label"></label><p id='text'>Corn</p><br />
               </div>
             </div>
             </div> {/*end toppings options*/} <br />
