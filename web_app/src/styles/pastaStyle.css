@@ -103,10 +103,96 @@
     background-image: url('../images/Penne.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    height: 250px;
+    width: 300px;
 }
 #l_bowtie
 {
     background-image: url('../images/bowtie.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    height: 250px;
+    width: 300px;
+}
+
+
+#l_pesto
+{
+    background-image: url('../images/Pesto.jpg');
+}
+#l_marinara
+{
+    background-image: url('../images/Marinara-Sauce.jpg.webp');
+}
+#l_alfredo
+{
+    background-image: url('../images/alfredo_sauce.jpg');
+}
+#l_pesto,#l_marinara, #l_alfredo
+{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+    width: 300px;
+}
+#l_chicken
+{
+    background-image: url('../images/Chicken.jpg');
+}
+#l_meatball
+{
+    background-image: url('../images/Meatball.jpg');
+}
+#l_crabmeat
+{
+    background-image: url('../images/Crabmeat.jpg');
+}
+#l_sausage
+{
+    background-image: url('../images/Sugar.jpg');
+}
+#l_shrimp
+{
+    background-image: url('../images/Shrimp.jpg');
+}
+
+#l_chicken,#l_meatball,#l_crabmeat,#l_sausage,#l_shrimp
+{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+    width: 300px;
+}
+
+#l_corn
+{
+    background-image: url('../images/corn.jpg')
+
+}
+#l_onion
+{
+
+    background-image: url('../images/Onion.jpg')
+}
+#l_tomato
+{
+    background-image: url('../images/Tomato.jpg')
+
+}
+#l_broccoli
+{
+    background-image: url('../images/Broccoli.jpg')
+
+}
+#l_mushroom
+{
+    background-image: url('../images/Mushroom.jpg')
+}
+
+#l_corn,#l_onion,#l_tomato,#l_broccoli,#l_mushroom
+{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+    width: 300px;
 }
