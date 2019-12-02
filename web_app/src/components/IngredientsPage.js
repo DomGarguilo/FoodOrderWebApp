@@ -61,6 +61,15 @@ class IngredientsPage extends Component {
 
   }
 
+  changeStatus(key) {
+    if (this.state.Alfredo = 0) {
+      this.setState({ Alfredo: 1 });
+    }
+    if (this.state.Alfredo = 1) {
+      this.setState({ Alfredo: 0 });
+    }
+  }
+
   render() {
     return (
       <body>
@@ -84,7 +93,7 @@ class IngredientsPage extends Component {
               <td>Alfredo {this.state.Alfredo}</td>
               <td>
                 <label class="switch">
-                  <input type="checkbox"></input>
+                  <input type="checkbox" value = {this.state.Alfredo} onChange={() => this.changeStatus(this.state.Alfredo)}></input>
                   <span class="slider"></span>
                 </label>
               </td>
