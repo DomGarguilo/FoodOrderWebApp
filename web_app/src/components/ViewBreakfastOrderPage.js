@@ -4,6 +4,8 @@ import "../styles/viewOrderStyle.css";
 import "../styles/commonStyle.css"
 
 class ViewBreakfastOrderPage extends Component {
+
+
   render() {
     return (
       <body>
@@ -16,6 +18,8 @@ class ViewBreakfastOrderPage extends Component {
     );
   }
 }
+
+
 
 class Table extends Component {
   render() {
@@ -40,12 +44,33 @@ class Table extends Component {
   }
 }
 
+
+
 class Row extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      orderNum: "",
+      validIDs: "order"
+    }
+  }
+
+  componentDidMount() {
+    //retrieve test IDs from table 'users' on the api (can change this later)
+    fetch("https://wv-food-order-api.herokuapp.com/current_orders")
+      .then(res => res.text())
+      .then(res => this.setState({ orderNum: res }))
+      .catch(err => err);
+    //console.log(this.state.validIDs);
+  }
+
+  
   render() {
     return (
       <tr>
-        <td>OrderNum</td>
-        <td>Customer ID</td>
+        <td>{JSON.parse(this.state.orderNum)}</td>
+        <td>{this.state.validIDs}</td>
         <td></td>
         <td></td>
         <td></td>
