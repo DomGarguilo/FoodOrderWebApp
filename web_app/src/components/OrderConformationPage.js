@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
-var urlData, globalChoiceVar, orderNum;
+var urlData, globalChoiceVar;
 
 var type, sauces, protein, topping, seasoning, pastaChoice, id; //pasta url variables
 var saucesArr, proteinArr, toppingArr, seasoningArr; //pasta array url variables (to saucesArr=sauces.split('_');)
 
 var pancakeCount, sugar, berries, wh_cream; //pancake url variables
+
+let g_orderNum = Math.floor(Math.random() * 100000);
 
 let pastaStyle = {
   display: 'none'
@@ -23,7 +25,8 @@ class OrderConformationPage extends Component {
     this.state = {
 
       id: 0,
-
+      orderNum: 0,
+      queryResponse: 'Pending...',
 
       //--------PASTAS
       pasta: '',
@@ -67,6 +70,8 @@ class OrderConformationPage extends Component {
   componentDidMount() {
     // console.log('yeet bomb');
     // console.log(window.location.href);
+
+    this.setState(() => { return { orderNum: g_orderNum } });
 
 
     urlData = window.location.href; //localhost:3000/orderConformation?sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasonings=1_0_1_0_1
@@ -189,6 +194,7 @@ class OrderConformationPage extends Component {
       this.setState(() => { return { pancakeTableDisplay: '' } });
 
     }
+
     this.hideTables(globalChoiceVar);
   }
 
@@ -202,19 +208,38 @@ class OrderConformationPage extends Component {
     var orderUrl = 'https://wv-food-order-api.herokuapp.com/';
 
     if (choice == 1) { //pasta order
-      orderUrl += 'pastaOrder?' + 'sauces=' + sauces + '&protein=' + protein + '&topping=' + topping + '&seasoning=' + seasoning + '&pasta=' + pastaChoice + '&id=' + id;
+      orderUrl += 'pastaOrder?' + 'sauces=' + sauces + '&protein=' + protein + '&topping=' + topping + '&seasoning=' + seasoning + '&pasta=' + pastaChoice + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        .then(console.log("Order Success"))
+        .then(res => res.text())
+        .then(res => this.setState(() => { return { queryResponse: res } }))
         .catch(err => err);
     }
     else if (choice == 2) { //pancake order
-      orderUrl += 'pancakeOrder?' + 'pc=' + pancakeCount + '&sugar=' + sugar + '&berries=' + berries + '&wh_cream=' + wh_cream + '&id=' + id;
+      orderUrl += 'pancakeOrder?' + 'pc=' + pancakeCount + '&sugar=' + sugar + '&berries=' + berries + '&wh_cream=' + wh_cream + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        .then(console.log("Order Success"))
+        .then(res => res.text())
+        .then(res => this.setState(() => { return { queryResponse: res } }))
         .catch(err => err);
     }
+    else if (choice == 3) { //eggs order
+      orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
+      console.log("your order: " + orderUrl);
+      // fetch(orderUrl)
+      //   .then(res => res.text())
+      //   .then(res => this.setState(() => { return { queryResponse: res } }))
+      //   .catch(err => err);
+    }
+    else if (choice == 4) { //bacon order
+      orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
+      console.log("your order: " + orderUrl);
+      // fetch(orderUrl)
+      //   .then(res => res.text())
+      //   .then(res => this.setState(() => { return { queryResponse: res } }))
+      //   .catch(err => err);
+    }
+
     //etc for bacon and eggs
   }
 
@@ -339,9 +364,8 @@ class OrderConformationPage extends Component {
         <h1 id="head">Order Confirmation</h1>
         <br />
         <h2 id="order_con">Thank you for dining with us</h2> <br />
-        <h3 id="order_con">Your order is on its way</h3> <br />
-        <h3 id="order_con">Order Confirmation Number: 123</h3> <br />
-        {/* this should really be the actual order confirmation but lol */}
+        <h3 id="order_con">Order Confirmation Number: {this.state.orderNum}</h3> <br />
+        <h3 id="order_con">{this.state.queryResponse}</h3> <br />
         <div>
 
           <br />
