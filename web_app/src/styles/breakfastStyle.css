@@ -205,6 +205,11 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+#l_sunnyside,#l_omelette,#l_scramble
+{
+    width: 300px;
+    height: 250px; 
+}
 #l_red_pep
 {
     background-image: url('../images/RedPepper.jpg');
@@ -227,7 +232,7 @@
 }
 #l_red_pep,#l_salt,#l_sage,#l_garlic
 {
-    width: 400px;
+    width: 300px;
     height: 250px; 
 
 }

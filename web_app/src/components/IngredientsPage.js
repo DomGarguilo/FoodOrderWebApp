@@ -90,10 +90,10 @@ class IngredientsPage extends Component {
               <th>Status</th>
             </tr>
             <tr>
-              <td>Alfredo {this.state.Alfredo}</td>
+              <td>Alfredo</td>
               <td>
                 <label class="switch">
-                  <input type="checkbox" value = {this.state.Alfredo} onChange={() => this.changeStatus(this.state.Alfredo)}></input>
+                  <input type="checkbox"></input>
                   <span class="slider"></span>
                 </label>
               </td>
