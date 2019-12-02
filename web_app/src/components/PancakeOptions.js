@@ -38,7 +38,7 @@ class PancakeOptions extends Component {
                         <h4>Select Toppings: </h4>
                             <div class='grid-container2'>
                                 <div class='grid-item'>
-                                    <input type="checkbox" id="sugar" onChange={() => this.setState((prevState, props) => { return { syrup: prevState.syrup+1}})} name="topping" value="syrup" class="all_options" /> <label id='l_sugar' for="sugar" class="option_label"></label><p id='text'>Sugar</p>
+                                    <input type="checkbox" id="sugar" onChange={() => this.setState((prevState, props) => { return { sugar: prevState.sugar+1}})} name="topping" value="syrup" class="all_options" /> <label id='l_sugar' for="sugar" class="option_label"></label><p id='text'>Sugar</p>
                                 </div>
                                 <div class='grid-item'>
                                     <input type="checkbox" id="berries" onChange={() => this.setState((prevState, props) => { return { berries: prevState.berries+1}})} name="topping" value="berries" class="all_options" /> <label id='l_berries' for="berries" class="option_label"></label><p id='text'>Berries</p>
@@ -53,6 +53,7 @@ class PancakeOptions extends Component {
                             <p>{this.state.threepc}</p>
                             <p>{this.state.fourpc}</p>
                             <p>{this.state.sugar}</p>
+                            <p>{this.state.berries}</p>
                             <p>{this.state.wh_cream}</p>
                         </div>
                     </div> <br />
