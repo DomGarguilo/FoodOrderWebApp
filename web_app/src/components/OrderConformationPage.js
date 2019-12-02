@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
-var urlData, globalChoiceVar;
+var urlData, globalChoiceVar, orderNum;
 
 var type, sauces, protein, topping, seasoning, pastaChoice, id; //pasta url variables
 var saucesArr, proteinArr, toppingArr, seasoningArr; //pasta array url variables (to saucesArr=sauces.split('_');)
@@ -23,6 +23,7 @@ class OrderConformationPage extends Component {
     this.state = {
 
       id: 0,
+
 
       //--------PASTAS
       pasta: '',
@@ -66,6 +67,8 @@ class OrderConformationPage extends Component {
   componentDidMount() {
     // console.log('yeet bomb');
     // console.log(window.location.href);
+
+
     urlData = window.location.href; //localhost:3000/orderConformation?sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasonings=1_0_1_0_1
 
     urlData = urlData.split('?'); //pasta=0&sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1

@@ -14,6 +14,7 @@ class CustLoginPage extends Component {
       dummyState: '', //used to make this shitty react program WORK
       ID: "",
       validIDs: "",
+      orderNum: '',
     }
   }
 
@@ -43,6 +44,12 @@ class CustLoginPage extends Component {
       .then(res => res.text())
       .then(res => this.setState({ validIDs: res }))
       .catch(err => err);
+
+    
+    fetch("https://wv-food-order-api.herokuapp.com/OrderNumber")
+      .then(res => res.text())
+      .then(res => this.setState({ orderNum: res }))
+      .catch(err => err);
     //console.log(this.state.validIDs);
   }
 
@@ -58,7 +65,17 @@ class CustLoginPage extends Component {
     ids = ids.split(",");
     console.log(ids.includes(this.state.ID) ? "yes" : "no"); //yes - exists, no - doesnt
     if (ids.includes(this.state.ID)) { //id does exist
-      urlData = this.state.ID;
+
+      console.log(this.state.orderNum);
+      //[{"max(Order_Num)":97646}]
+      var orderNumJSON = this.state.orderNum;
+      orderNumJSON = orderNumJSON.substring(19, orderNumJSON.length);
+      orderNumJSON = orderNumJSON.replace(/}]/, '');
+
+      this.setState(() => { return { orderNum: orderNumJSON} });
+      this.setState(() => {return { orderNum: orderNumJSON}});
+      console.log(orderNumJSON + " " + this.state.orderNum);
+      urlData = "id=" + this.state.ID + "&orderNum=" + this.state.orderNum;
       return true;
     }
     else { //id doesnt exists
@@ -70,9 +87,9 @@ class CustLoginPage extends Component {
     }
   }
 
-  updateStates(){
-    urlData = "id=" + this.state.ID;
-    this.setState(() => {return {dummyState : ''}})
+  updateStates() {
+    urlData = "id=" + this.state.ID + "&orderNum=" + this.state.orderNum;
+    this.setState(() => { return { dummyState: '' } })
   }
 
   render() {
