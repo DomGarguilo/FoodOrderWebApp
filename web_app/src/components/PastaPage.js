@@ -82,7 +82,8 @@ class PastaPage extends Component {
     //   + "&italian=" + (this.state.italian % 2)
     //   + "&garlic=" + (this.state.garlic % 2)
 
-    urlData = "sauces=" + (this.state.sauce_pesto % 2)
+    urlData = "pasta=0&"
+      + "sauces=" + (this.state.sauce_pesto % 2)
       + "_" + (this.state.sauce_marinara % 2)
       + "_" + (this.state.sauce_alfredo % 2)
       + "&protein=" + (this.state.protein_chicken % 2)
