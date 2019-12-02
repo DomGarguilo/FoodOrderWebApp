@@ -99,6 +99,7 @@ class OrderConformationPage extends Component {
 
       this.setState((prevState, props) => { return { pasta: pastaChoice } });
       this.refreshStates(1); //1 for pasta
+      this.sendOrder(1);
 
       /* the arrays are stored as such:
       Sauces - pesto, marinara, alfredo
@@ -188,12 +189,26 @@ class OrderConformationPage extends Component {
     this.hideTables(globalChoiceVar);
   }
 
-  sendOrder() {
+  sendOrder(choice) {
+    //template:
     //fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=sauces=1_1_1&protein=1_0_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1&pasta=bowtie&id=635111"))
-    fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=" + urlData))
-      .then(res => res.text())
-      .then(res => this.setState({ validIDs: res }))
-      .catch(err => err);
+    // fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=" + urlData))
+    //   .then(res => res.text())
+    //   .then(res => this.setState({ validIDs: res }))
+    //   .catch(err => err);
+    var orderUrl = 'https://wv-food-order-api.herokuapp.com/';
+
+    if (choice == 1) { //pasta order
+      orderUrl += 'pastaOrder?' + 'sauces=' + sauces + '&protein=' + protein + '&topping=' + topping + '&seasoning=' + seasoning + '&pasta=' + pastaChoice + '&id=' + id;
+      console.log("your order: " + orderUrl);
+      fetch(orderUrl)
+        .then(console.log("Order Success"))
+        .catch(err => err);
+    }
+    else if (choice == 2) { //pancake order
+
+    }
+    //etc for bacon and eggs
   }
 
   setGlobalChoiceVar(num) {
@@ -319,6 +334,7 @@ class OrderConformationPage extends Component {
         <h2 id="order_con">Thank you for dining with us</h2> <br />
         <h3 id="order_con">Your order is on its way</h3> <br />
         <h3 id="order_con">Order Confirmation Number: 123</h3> <br />
+        {/* this should really be the actual order confirmation but lol */}
         <div>
 
           <br />
