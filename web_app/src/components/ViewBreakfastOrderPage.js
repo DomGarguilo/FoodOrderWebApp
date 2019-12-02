@@ -69,7 +69,7 @@ class Row extends Component {
   render() {
     return (
       <tr>
-        <td>{JSON.parse(this.state.orderNum)}</td>
+        <td>{this.state.orderNum}</td>
         <td>{this.state.validIDs}</td>
         <td></td>
         <td></td>

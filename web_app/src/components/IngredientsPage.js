@@ -90,7 +90,7 @@ class IngredientsPage extends Component {
               <th>Status</th>
             </tr>
             <tr>
-              <td>Alfredo</td>
+              <td>Alfredo{this.state.Alfredo}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
