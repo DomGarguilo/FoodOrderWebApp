@@ -54,7 +54,7 @@ class IngredientsPage extends Component {
     for (var key in this.state) {
       if ([key] != "stats") {
         this.setState({ [key]: s[i] });
-        console.log(s);
+        console.log(s[i]);
         i++;
       }
     }
@@ -62,10 +62,10 @@ class IngredientsPage extends Component {
   }
 
   changeStatus(key) {
-    if (this.state.Alfredo = 0) {
+    if (this.state.Alfredo == 0) {
       this.setState({ Alfredo: 1 });
     }
-    if (this.state.Alfredo = 1) {
+    if (this.state.Alfredo == 1) {
       this.setState({ Alfredo: 0 });
     }
   }
@@ -93,7 +93,7 @@ class IngredientsPage extends Component {
               <td>Alfredo{this.state.Alfredo}</td>
               <td>
                 <label class="switch">
-                  <input type="checkbox"></input>
+                  <input type="checkbox" id="alfredoSwitch" onClick={() => this.changeStatus()}></input>
                   <span class="slider"></span>
                 </label>
               </td>
