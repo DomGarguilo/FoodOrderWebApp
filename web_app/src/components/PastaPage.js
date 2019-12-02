@@ -129,10 +129,10 @@ class PastaPage extends Component {
             <div id="pasta_options">
               <div class='grid-container'>
                 <div class='grid-item'>
-                  <input type="radio" id="penne" onChange={() => this.setState((prevState, props) => { return { pasta: 'penne' } })} name="pasta_type" value="penne" class="all_options" required /> <label id='l_penne' for="penne" class="option_label">Penne</label>
+                  <input type="radio" id="penne" onChange={() => this.setState((prevState, props) => { return { pasta: 'penne' } })} name="pasta_type" value="penne" class="all_options" required /> <label id='l_penne' for="penne" class="option_label"></label><p id='text'>Penne</p>
                 </div>
                 <div class='grid-item'>        
-                  <input type="radio" id="bowtie" onChange={() => this.setState((prevState, props) => { return { pasta: 'bowtie' } })} name="pasta_type" value="bowtie" class="all_options" required /> <label id='l_bowtie' for="bowtie" class="option_label">Bowtie</label>
+                  <input type="radio" id="bowtie" onChange={() => this.setState((prevState, props) => { return { pasta: 'bowtie' } })} name="pasta_type" value="bowtie" class="all_options" required /> <label id='l_bowtie' for="bowtie" class="option_label"></label><p id='text'>Bowtie</p>
                 </div>
               </div>
             </div> {/*end pasta options*/} <br />
@@ -141,7 +141,7 @@ class PastaPage extends Component {
             <div id="sauce_options">
             <div class='grid-container2'>
                 <div class='grid-item2'>
-                  <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label id='l_pesto' for="pesto" class="option_label"></label><p id='text'>Alfredo</p><br />
+                  <input type="checkbox" id="pesto" onChange={() => this.setState((prevState, props) => { return { sauce_pesto: prevState.sauce_pesto + 1 } })} name="sauce_type" value="pesto" class="all_options" /> <label id='l_pesto' for="pesto" class="option_label"></label><p id='text'>Fuck Doom</p><br />
                 </div>
                 <div class='grid-item2'>
                   <input type="checkbox" id="marinara" onChange={() => this.setState((prevState, props) => { return { sauce_marinara: prevState.sauce_marinara + 1 } })} name="sauce_type" value="marinara" class="all_options" /> <label id='l_marinara' for="marinara" class="option_label"></label><p id='text'>Marinara</p><br />
@@ -219,11 +219,24 @@ class PastaPage extends Component {
 
             <label for="c_seasoning" class="item_label">Select Seasonings</label><br /><br />
             <div id="seasoning_options">
-              <input type="checkbox" id="saltNpep" onChange={() => this.setState((prevState, props) => { return { saltNpep: prevState.saltNpep + 1 } })} name="seasonings" value="saltAndPepper" class="all_options" /> <label for="saltNpep" class="option_label">Salt and Pepper</label><br />
-              <input type="checkbox" id="old_bay" onChange={() => this.setState((prevState, props) => { return { old_bay: prevState.old_bay + 1 } })} name="seasonings" value="oldBay" class="all_options" /> <label for="old_bay" class="option_label">Old Bay</label><br />
-              <input type="checkbox" id="cajun" onChange={() => this.setState((prevState, props) => { return { cajun: prevState.cajun + 1 } })} name="seasonings" value="cajun" class="all_options" /> <label for="cajun" class="option_label">Cajun</label><br />
-              <input type="checkbox" id="italian" onChange={() => this.setState((prevState, props) => { return { italian: prevState.italian + 1 } })} name="seasonings" value="italian" class="all_options" /> <label for="italian" class="option_label">Italian</label><br />
-              <input type="checkbox" id="garlic" onChange={() => this.setState((prevState, props) => { return { garlic: prevState.garlic + 1 } })} name="seasonings" value="garlic" class="all_options" /> <label for="garlic" class="option_label">Garlic</label><br />
+            <div class='grid-container2'>
+              <div class='grid-item2'>
+                <input type="checkbox" id="saltNpep" onChange={() => this.setState((prevState, props) => { return { saltNpep: prevState.saltNpep + 1 } })} name="seasonings" value="saltAndPepper" class="all_options" /> <label id='l_saltnpep' for="saltNpep" class="option_label"></label><p id='text'>Salt Pepper</p><br />
+              </div>
+              <div class='grid-item2'>
+                <input type="checkbox" id="old_bay" onChange={() => this.setState((prevState, props) => { return { old_bay: prevState.old_bay + 1 } })} name="seasonings" value="oldBay" class="all_options" /> <label id='l_old_bay' for="old_bay" class="option_label"></label><p id='text'>Old Bay</p><br />
+              </div>
+              <div class='grid-item2'>
+                <input type="checkbox" id="cajun" onChange={() => this.setState((prevState, props) => { return { cajun: prevState.cajun + 1 } })} name="seasonings" value="cajun" class="all_options" /> <label id='l_cajun'for="cajun" class="option_label"></label><p id='text'>Cajun</p><br />
+              </div>
+              <div class='grid-item2'>
+                <input type="checkbox" id="italian" onChange={() => this.setState((prevState, props) => { return { italian: prevState.italian + 1 } })} name="seasonings" value="italian" class="all_options" /> <label id='l_italian' for="italian" class="option_label"></label><p id='text'>Italian</p><br />
+              </div>
+
+              <div class='grid-item2'>
+                <input type="checkbox" id="garlic" onChange={() => this.setState((prevState, props) => { return { garlic: prevState.garlic + 1 } })} name="seasonings" value="garlic" class="all_options" /> <label id='l_garlic' for="garlic" class="option_label"></label><p id='text'>Garlic</p><br />
+              </div>
+            </div>
             </div> {/*end seasonings options*/} <br />
 
             <div>
