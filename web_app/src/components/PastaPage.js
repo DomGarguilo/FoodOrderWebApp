@@ -50,13 +50,14 @@ class PastaPage extends Component {
   }
 
   componentDidMount(){
-    var aa = window.location.href; //localhost:3000/pasta?id=012345
-    console.log(aa);
-    aa = aa.split('?'); 
-     console.log(aa);
-     aa = aa[1]; //id=12345
-     console.log(aa);
-     this.setState((prevState, props) => { return { id: aa } });
+    urlData = window.location.href; //localhost:3000/pasta?id=012345
+    console.log(urlData);
+    urlData = urlData.split('?'); 
+     console.log(urlData);
+     urlData = urlData[1]; //id=12345
+     console.log(urlData);
+     console.log("." + this.state.sauce_pesto);
+     this.setState((prevState, props) => { return { id: urlData } });
     // id = urlData.replace('id=', '');
   }
 
@@ -100,7 +101,7 @@ class PastaPage extends Component {
       + "_" + (this.state.italian % 2)
       + "_" + (this.state.garlic % 2)
       + "&pasta=" + (this.state.pasta)
-      + "&id=" + (this.state.id);
+      + "&" + (this.state.id);
 
       this.setState(() => {return {urlDataState : urlData}})
 
@@ -111,13 +112,14 @@ class PastaPage extends Component {
 
 
   updateStates(){
-    this.setState(() => {return {dummyState : ''}})
+    console.log(this.updateStates.id);
+    this.setState(() => {return {urlDataState : urlData}})
   }
 
   render() {
     return (
       <body>
-        <div className="PastaPage" id="container">
+        <div className="PastaPage" id="container" onMouseDown={() => console.log(urlData)}>
           <img id="login_bg" />
           <h1 id="head">Pasta Menu</h1><br />
 
@@ -209,8 +211,7 @@ class PastaPage extends Component {
             </div>
 
 
-            <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateStates()} onClick={() => this.updateUrlData()}><input type="submit" id="button" value="Add item to order" /></Link>
-
+            <Link to={urlVar + "?" + this.state.urlDataState} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" id="button" value="Add item to order" /></Link>
 
           </form>
 

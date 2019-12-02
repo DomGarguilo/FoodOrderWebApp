@@ -51,13 +51,13 @@ class OrderConformationPage extends Component {
     urlData = urlData[1];
     // console.log(urlData);
 
-     var urlDataArr = urlData.split('&')
-     sauces = urlDataArr[0]; //sauces=1_1_1
-     protein = urlDataArr[1]; //protein=1_1_1_0_1
-     topping = urlDataArr[2]; //topping=1_0_1_0_1
-     seasoning = urlDataArr[3]; //seasoning=1_0_1_0_1
-     pastaChoice = urlDataArr[4];
-     id = urlDataArr[5];
+    var urlDataArr = urlData.split('&')
+    sauces = urlDataArr[0]; //sauces=1_1_1
+    protein = urlDataArr[1]; //protein=1_1_1_0_1
+    topping = urlDataArr[2]; //topping=1_0_1_0_1
+    seasoning = urlDataArr[3]; //seasoning=1_0_1_0_1
+    pastaChoice = urlDataArr[4];
+    id = urlDataArr[5];
 
     //  console.log(sauces);
     //  console.log(protein);
@@ -66,12 +66,12 @@ class OrderConformationPage extends Component {
     //  console.log(pastaChoice);
     //  console.log(id);
 
-     sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
-     protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
-     topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
-     seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
-     pastaChoice = pastaChoice.replace('pasta=', '');
-     id = id.replace('id=','');
+    sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
+    protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
+    topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
+    seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
+    pastaChoice = pastaChoice.replace('pasta=', '');
+    id = id.replace('id=', '');
     //  console.log(" ");
     //  console.log(sauces);
     //  console.log(protein);
@@ -80,10 +80,10 @@ class OrderConformationPage extends Component {
     //  console.log(pastaChoice);
     //  console.log(id);
 
-     saucesArr = sauces.split('_');
-     proteinArr = protein.split('_');
-     toppingArr = topping.split('_');
-     seasoningArr = seasoning.split('_');
+    saucesArr = sauces.split('_');
+    proteinArr = protein.split('_');
+    toppingArr = topping.split('_');
+    seasoningArr = seasoning.split('_');
     //  console.log(' ');
     //  console.log(saucesArr);
     //  console.log(proteinArr);
@@ -91,7 +91,7 @@ class OrderConformationPage extends Component {
     //  console.log(seasoningArr);
     //  console.log("AHHH");
     //  console.log(this.state.pasta);
-     this.setState((prevState, props) => { return { pasta: pastaChoice } });
+    this.setState((prevState, props) => { return { pasta: pastaChoice } });
     //  console.log(this.state.pasta);
 
     /* the arrays are stored as such:
@@ -136,12 +136,84 @@ class OrderConformationPage extends Component {
     // console.log(this.state.pasta);
   }
 
-  sendOrder(){
+  sendOrder() {
     //fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=sauces=1_1_1&protein=1_0_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1&pasta=bowtie&id=635111"))
     fetch(("https://wv-food-order-api.herokuapp.com/order?dbquery=" + urlData))
-    .then(res => res.text())
-    .then(res => this.setState({ validIDs: res }))
-    .catch(err => err);
+      .then(res => res.text())
+      .then(res => this.setState({ validIDs: res }))
+      .catch(err => err);
+  }
+
+  getSauces() {
+    var sauceNames = '';
+
+    if (this.state.sauce_pesto == 1)
+      sauceNames += ' pesto &';
+    if (this.state.sauce_marinara == 1)
+      sauceNames += ' marinara &';
+    if (this.state.sauce_alfredo == 1)
+      sauceNames += ' alfredo &';
+
+    sauceNames = (sauceNames.length > 0 ? sauceNames.substring(0, sauceNames.length - 1) : 'none');
+
+    return sauceNames;
+  }
+
+  getProtein() {
+    var proteinNames = '';
+
+    if (this.state.protein_chicken == 1)
+      proteinNames += ' chicken &';
+    if (this.state.protein_shrimp == 1)
+      proteinNames += ' shrimp &';
+    if (this.state.protein_meatball == 1)
+      proteinNames += ' meatball &';
+    if (this.state.protein_sausage == 1)
+      proteinNames += ' sausage &';
+    if (this.state.protein_crab_meat == 1)
+      proteinNames += ' crab &';
+
+    proteinNames = (proteinNames.length > 0 ? proteinNames.substring(0, proteinNames.length - 1) : 'none');
+
+    return proteinNames;
+  }
+
+  getTopping() {
+    var toppingNames = '';
+
+    if (this.state.onion == 1)
+      toppingNames += ' onion &';
+    if (this.state.tomato == 1)
+      toppingNames += ' tomato &';
+    if (this.state.broccoli == 1)
+      toppingNames += ' broccoli &';
+    if (this.state.mushroom == 1)
+      toppingNames += ' mushroom &';
+    if (this.state.corn == 1)
+      toppingNames += ' corn &';
+
+    toppingNames = (toppingNames.length > 0 ? toppingNames.substring(0, toppingNames.length - 1) : 'none');
+
+    return toppingNames;
+  }
+
+  getSeasoning() {
+    var seasoningNames = '';
+
+    if (this.state.saltNpep == 1)
+      seasoningNames += ' salt/pepper &';
+    if (this.state.old_bay == 1)
+      seasoningNames += ' old bay &';
+    if (this.state.cajun == 1)
+      seasoningNames += ' cajun &';
+    if (this.state.italian == 1)
+      seasoningNames += ' italian &';
+    if (this.state.garlic == 1)
+      seasoningNames += ' garlic &';
+
+    seasoningNames = (seasoningNames.length > 0 ? seasoningNames.substring(0, seasoningNames.length - 1) : 'none');
+
+    return seasoningNames;
   }
 
   render() {
@@ -152,35 +224,18 @@ class OrderConformationPage extends Component {
         <input type='hidden' value='' name='studentID' id='studentID' />
         <img id="login_bg" />
         <h1 id="head">Review Order</h1><br />
-        <ol>
-          <li></li>
-        </ol>
+
         <h3 id="please_select">Please Select an Option:</h3> <br />
         <div >
           <p>PASTA : {this.state.pasta}</p>
 
           <br />
-          <p>pesto: {this.state.sauce_pesto}</p>
-          <p>{this.state.sauce_marinara}</p>
-          <p>{this.state.sauce_alfredo}</p>
+          <p>Sauce Choice(s): {this.getSauces()}</p>
+          <p>Protein Choice(s): {this.getProtein()}</p>
+          <p>Topping Choice(s): {this.getTopping()}</p>
+          <p>Seasoning Choice(s): {this.getSeasoning()}</p>
           <br />
-          <p>chicken: {this.state.protein_chicken}</p>
-          <p>{this.state.protein_shrimp}</p>
-          <p>{this.state.protein_meatball}</p>
-          <p>{this.state.protein_sausage}</p>
-          <p>{this.state.protein_crab_meat}</p>
-          <br />
-          <p>onion: {this.state.onion}</p>
-          <p>{this.state.tomato}</p>
-          <p>{this.state.broccoli}</p>
-          <p>{this.state.mushroom}</p>
-          <p>{this.state.corn}</p>
-          <br />
-          <p>saltnpep: {this.state.saltNpep}</p>
-          <p>{this.state.old_bay}</p>
-          <p>{this.state.cajun}</p>
-          <p>{this.state.italian}</p>
-          <p>{this.state.garlic}</p>
+
         </div>
       </div>
     );

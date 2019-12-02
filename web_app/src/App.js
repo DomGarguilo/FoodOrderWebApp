@@ -96,13 +96,13 @@ class App extends Component {
           <Route exact path="/empLogin" component={EmpLogin} />
           <Route exact path="/viewOrderSelect" component={ViewOrderSel} />
         </Switch>
-        <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
+        {/* <p className="App-intro">all api:<br />{this.state.apiResponse}</p>
         <p className="App-intro">login api:<br />{this.state.apiLogin}</p>
         <p className="App-intro">current orders api:<br />{this.state.apiCurrent_orders}</p>
         <p className="App-intro">ingredient status api:<br />{this.state.apiIngredient_status}</p>
         <p className="App-intro">users api:<br />{this.state.apiUsers}</p>
         <p className="App-intro">employee api:<br />{this.state.apiEmployees}</p>
-        <p className="App-intro">balances api:<br />{this.state.apiBalances}</p>
+        <p className="App-intro">balances api:<br />{this.state.apiBalances}</p> */}
       </Router>
 
     );
