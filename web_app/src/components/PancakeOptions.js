@@ -32,7 +32,8 @@ class PancakeOptions extends Component {
                         <input type="radio" id = "onepc" onChange={() => this.setState((prevState, props) => { return { onepc: prevState.onepc+1}})} name="numOfPancakes" value="onepc" class = "radio-tools"/> <label for="onepc" class="quantity_label">1</label>
                         <input type="radio" id = "twopc" onChange={() => this.setState((prevState, props) => { return { twopc: prevState.twopc+1}})} name="numOfPancakes" value="twopc" class = "radio-tools"/> <label for="twopc" class="quantity_label">2</label>
                         <input type="radio" id = "threepc" onChange={() => this.setState((prevState, props) => { return { threepc: prevState.threepc+1}})} name="numOfPancakes" value="threepc" class = "radio-tools"/> <label for="threepc" class="quantity_label">3</label>
-                        <input type="radio" id = "fourepc" onChange={() => this.setState((prevState, props) => { return { fourpc: prevState.fourpc+1}})} name="numOfPancakes" value="fourpc" class = "radio-tools"/> <label for="fourpc" class="quantity_label">4</label>
+                        <input type="radio" id = "fourpc" onChange={() => this.setState((prevState, props) => { return { fourpc: prevState.fourpc+1}})} name="numOfPancakes" value="fourpc" class = "radio-tools"/> <label for="fourpc" class="quantity_label">4</label>
+                        
                         <br></br>
                         <br></br>
                         <h4>Select Toppings: </h4>
