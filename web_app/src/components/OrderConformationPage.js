@@ -268,22 +268,43 @@ class OrderConformationPage extends Component {
     return (
       <div onMouseOver={() => this.refreshStates()} className="OrderConformationPage" id="container">
         {/*Used to pass studentID from previous webpage*/}
-        <input type='hidden' value='' name='studentID' id='studentID' />
+        <input type="hidden" value="" name="studentID" id="studentID" />
         <img id="login_bg" />
-        <h1 id="head">Review Order</h1><br />
-
-        <h1 id="please_select">Review Your Order:</h1> <br />
-        <div >
-          <p>Pasta Choice: {this.state.pasta}</p>
-          <p>{this.getSauceChoiceLabel()}: {this.getSauces()}</p>
-          <p>{this.getProteinChoiceLabel()}: {this.getProtein()}</p>
-          <p>{this.getToppingChoiceLabel()}: {this.getTopping()}</p>
-          <p>{this.getSeasoningChoiceLabel()}: {this.getSeasoning()}</p>
+        <h1 id="head">Order Confirmation</h1>
+        <br />
+        <h2 id="order_con">Thank you for dining with us</h2> <br />
+        <h3 id="order_con">Your order is on its way</h3> <br />
+        <h3 id="order_con">Order Confirmation Number: 123</h3> <br />
+        <div>
+          {/* <p>PASTA : {this.state.pasta}</p> */}
 
           <br />
-          <h2>Is your order correct?</h2>
-          <button onclick={this.sendOrder}>Yes</button>
-          <button>No</button>
+          {/* <p>Sauce Choice(s): {this.getSauces()}</p>
+          <p>Protein Choice(s): {this.getProtein()}</p>
+          <p>Topping Choice(s): {this.getTopping()}</p>
+          <p>Seasoning Choice(s): {this.getSeasoning()}</p> */}
+          <table class = "center">
+          <tr>
+            <td>Item</td>
+            <td>Sauce Choice(s)</td>
+            <td>Protein Choice(s)</td>
+            <td>Topping Choice(s)</td>
+            <td>Seasoning Choice(s)</td>
+            <td>Quantity</td>
+            <td>Total</td>
+          </tr>
+          <tr>
+            <td>Pasta</td>
+            <td>{this.getSauces()}</td>
+            <td>{this.getProtein()}</td>
+            <td>{this.getTopping()}</td>
+            <td>{this.getSeasoning()}</td>
+            <td>1</td>
+            <td>$Big Bucks</td>
+          </tr>
+          </table>
+          <br />
+          <Link to="/" ><button class="backToMain">Return to Menu</button></Link>
         </div>
       </div>
     );
