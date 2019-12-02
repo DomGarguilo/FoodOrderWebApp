@@ -410,10 +410,10 @@ class OrderConformationPage extends Component {
           </table>
           <br />
           <Link to="/" ><button class="backToMain">Return to Menu</button></Link>
-          <p>{this.state.pc}</p>
+          {/* <p>{this.state.pc}</p>
           <p>{this.state.sug}</p>
           <p>{this.state.ber}</p>
-          <p>{this.state.wh_cr}</p>
+          <p>{this.state.wh_cr}</p> */}
         </div>
       </div>
     );

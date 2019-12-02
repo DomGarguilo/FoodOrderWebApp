@@ -114,13 +114,13 @@ class PancakeOptions extends Component {
                                 </div>
                             </div>
                             <div>
-                                <p>{this.state.onepc}</p>
+                                {/* <p>{this.state.onepc}</p>
                                 <p>{this.state.twopc}</p>
                                 <p>{this.state.threepc}</p>
                                 <p>{this.state.fourpc}</p>
                                 <p>{this.state.sugar}</p>
                                 <p>{this.state.berries}</p>
-                                <p>{this.state.wh_cream}</p>
+                                <p>{this.state.wh_cream}</p> */}
                             </div>
                         </div> <br />
 
