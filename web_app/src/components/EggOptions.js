@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
 
+var urlData;
+
 class EggOptions extends Component {
     constructor() {
         super();
@@ -11,10 +13,62 @@ class EggOptions extends Component {
             omlette: 0,
             sunside: 0,
             red_pep : 0,
-            salt_pep : 0,
+            salt : 0,
             sage : 0,
-            sgarlic : 0,
+            garlic : 0,
+            dummyState: '',
+            id: 0,
+            urlDataState: ''
         }
+    }
+    componentDidMount() {
+        urlData = window.location.href; //localhost:3000/pasta?id=012345
+        urlData = urlData.split('?');
+        urlData = urlData[1]; //id=12345
+        this.setState((prevState, props) => { return { id: urlData } });
+        this.updateStates();
+    }
+    updateUrlData() {
+        urlData = "eggs=0&"
+            + "cooked="
+            + (this.determineCook(this.state.scrambled, this.state.omlette, this.state.sunside))
+            + "&red_pep=" + (this.state.red_pep % 2)
+            + "&salt=" + (this.state.salt % 2)
+            + "&sage=" + (this.state.sage % 2)
+            + "&garlic=" + (this.state.garlic % 2)
+            + "&" + (this.state.id);
+        this.setState(() => { return { urlDataState: urlData } })
+        this.updateStates();
+        console.log(urlData);
+    }
+
+    updateStates() {
+        this.setState(() => { return { dummyState: '' } });
+        this.setState(() => { return { dummyState: '' } });
+    }
+
+    turnCookOff(pc) {
+        this.setState((prevState, props) => { return { scrambled: 0 } });
+        this.setState((prevState, props) => { return { omlette: 0 } });
+        this.setState((prevState, props) => { return { sunside: 0 } });
+        if (pc == 1)
+            this.setState((prevState, props) => { return { scrambled: 1 } });
+        else if (pc == 2)
+            this.setState((prevState, props) => { return { omlette: 1 } });
+        else if (pc == 3)
+            this.setState((prevState, props) => { return { sunside: 1 } });
+    }
+
+    determineCook(a, b, c) {
+        if (a == 1)
+            return 1;
+        else if (b == 1)
+            return 2;
+        else if (c == 1)
+            return 3;
+        else
+            return 0;
+
     }
     render() {
         return (
@@ -30,16 +84,17 @@ class EggOptions extends Component {
                     <div id="egg_cooked">
                         <div class='grid-container2'>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="scrambled" onChange={() => this.setState((prevState, props) => { return { scrambled: prevState.scrambled+1}})} name="cooked" value="scrambled" class="all_options" /> <label id = 'l_scramble' for="scrambled" class="option_label"></label><p id='text'>Scrambled</p>
+                                <input type="checkbox" id="scrambled" onChange={() => this.setState((prevState, props) => this.turnCookOff(1))} name="cooked" value="scrambled" class="all_options" /> <label id = 'l_scramble' for="scrambled" class="option_label"></label><p id='text'>Scrambled</p>
                             </div>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="omlette" onChange={() => this.setState((prevState, props) => { return { omlette: prevState.omlette+1}})} name="cooked" value="omlette" class="all_options" /> <label id='l_omelette' for="omlette" class="option_label"></label><p id='text'>Omlette</p>
+                                <input type="checkbox" id="omlette" onChange={() => this.setState((prevState, props) => this.turnCookOff(2))} name="cooked" value="omlette" class="all_options" /> <label id='l_omelette' for="omlette" class="option_label"></label><p id='text'>Omlette</p>
                             </div>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="sunside" onChange={() => this.setState((prevState, props) => { return { sunside: prevState.sunside+1}})} name="cooked" value="sunside" class="all_options" /> <label id='l_sunnyside' for="sunside" class="option_label"></label><p id='text'>"Sunny-Side" Up</p><br />
+                                <input type="checkbox" id="sunside" onChange={() => this.setState((prevState, props) => this.turnCookOff(3))} name="cooked" value="sunside" class="all_options" /> <label id='l_sunnyside' for="sunside" class="option_label"></label><p id='text'>"Sunny-Side" Up</p><br />
                             </div>
                         </div>
                     </div>
+                    <h4 id="egg_toppings">Please select your toppings:</h4>
                     <div id="egg_options">
                         <div class='grid-container'>
                             <div class='grid-item'>
@@ -67,7 +122,7 @@ class EggOptions extends Component {
                         </div>
                     </div> <br />
 
-                    <Link to="/orderConformation"><input type="submit" id="button" value="Add item to order" /></Link>
+                    <Link to={"/orderConformation" + "?" + urlData} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" id="button" value="Add item to order" /></Link>
 
                 </form>
 
