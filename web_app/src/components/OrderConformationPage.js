@@ -4,8 +4,16 @@ import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
 var urlData;
 
-var sauces, protein, topping, seasoning, pastaChoice, id;
+var type, sauces, protein, topping, seasoning, pastaChoice, id;
 var saucesArr, proteinArr, toppingArr, seasoningArr;
+
+var pancakeCount, sugar, berries, wh_cream;
+
+var globalChoiceVar;
+
+const style ={
+  
+}
 
 class OrderConformationPage extends Component {
 
@@ -15,29 +23,38 @@ class OrderConformationPage extends Component {
 
       id: 0,
 
+      //--------PASTA
       pasta: '',
-
       sauce_pesto: 0,
       sauce_marinara: 0,
       sauce_alfredo: 0,
-
       protein_chicken: 0,
       protein_shrimp: 0,
       protein_meatball: 0,
       protein_sausage: 0,
       protein_crab_meat: 0,
-
       onion: 0,
       tomato: 0,
       broccoli: 0,
       mushroom: 0,
       corn: 0,
-
       saltNpep: 0,
       old_bay: 0,
       cajun: 0,
       italian: 0,
       garlic: 0,
+      //--------
+
+      //--------PANCAKES
+      pc: 0,
+      sug: 0,
+      berr: 0,
+      wh_cr: 0,
+      //--------
+
+      pastaTableDisplay: 'none',
+      pancakeTableDisplay: 'none',
+
 
     };
   }
@@ -47,70 +64,118 @@ class OrderConformationPage extends Component {
     console.log(window.location.href);
     urlData = window.location.href; //localhost:3000/orderConformation?sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasonings=1_0_1_0_1
 
-    urlData = urlData.split('?'); //sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1
+    urlData = urlData.split('?'); //pasta=0&sauces=1_1_1&protein=1_1_1_0_1&topping=1_0_1_0_1&seasoning=1_0_1_0_1
     urlData = urlData[1];
 
     var urlDataArr = urlData.split('&')
-    sauces = urlDataArr[0]; //sauces=1_1_1
-    protein = urlDataArr[1]; //protein=1_1_1_0_1
-    topping = urlDataArr[2]; //topping=1_0_1_0_1
-    seasoning = urlDataArr[3]; //seasoning=1_0_1_0_1
-    pastaChoice = urlDataArr[4];
-    id = urlDataArr[5];
+    type = urlDataArr[0];
 
-    sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
-    protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
-    topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
-    seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
-    pastaChoice = pastaChoice.replace('pasta=', '');
-    id = id.replace('id=', '');
+    if (type == 'pasta=0') {
 
-    saucesArr = sauces.split('_');
-    proteinArr = protein.split('_');
-    toppingArr = topping.split('_');
-    seasoningArr = seasoning.split('_');
+      this.setGlobalChoiceVar(1);
 
-    this.setState((prevState, props) => { return { pasta: pastaChoice } });
-    this.refreshStates();
+      sauces = urlDataArr[1]; //sauces=1_1_1
+      protein = urlDataArr[2]; //protein=1_1_1_0_1
+      topping = urlDataArr[3]; //topping=1_0_1_0_1
+      seasoning = urlDataArr[4]; //seasoning=1_0_1_0_1
+      pastaChoice = urlDataArr[5];
+      id = urlDataArr[6];
 
-    /* the arrays are stored as such:
-    Sauces - pesto, marinara, alfredo
-    Protein - Chicken, shrimp, meatball, sausage, crab
-    Topping - onion, tomato, broccoli, mushroom, corn
-    Seasoning - salt/pep, old bay, cajun, italian, garlic
+      sauces = sauces.replace('sauces=', ''); //sauces=1_1_1
+      protein = protein.replace('protein=', ''); //protein=1_1_1_0_1
+      topping = topping.replace('topping=', ''); //topping=1_0_1_0_1
+      seasoning = seasoning.replace('seasoning=', ''); //seasoning=1_0_1_0_1
+      pastaChoice = pastaChoice.replace('pasta=', '');
+      id = id.replace('id=', '');
 
-    Pasta - just string format for 'bowtie' or 'penne', *no array used*
-    */
+      saucesArr = sauces.split('_');
+      proteinArr = protein.split('_');
+      toppingArr = topping.split('_');
+      seasoningArr = seasoning.split('_');
+
+      this.setState((prevState, props) => { return { pasta: pastaChoice } });
+      this.refreshStates(1); //1 for pasta
+
+      /* the arrays are stored as such:
+      Sauces - pesto, marinara, alfredo
+      Protein - Chicken, shrimp, meatball, sausage, crab
+      Topping - onion, tomato, broccoli, mushroom, corn
+      Seasoning - salt/pep, old bay, cajun, italian, garlic
+  
+      Pasta - just string format for 'bowtie' or 'penne', *no array used*
+      */
+    }
+
+    else if (type == 'pancake=0') {
+
+      this.setGlobalChoiceVar(2)
+
+      pancakeCount = urlDataArr[1];
+      sugar = urlDataArr[2];
+      berries = urlDataArr[3];
+      wh_cream = urlDataArr[4];
+      id = urlDataArr[5];
+
+      pancakeCount = pancakeCount.replace('pc=', ''); //sauces=1_1_1
+      sugar = sugar.replace('sugar=', ''); //protein=1_1_1_0_1
+      berries = berries.replace('berries=', ''); //topping=1_0_1_0_1
+      wh_cream = wh_cream.replace('wh_cream=', ''); //seasoning=1_0_1_0_1
+      id = id.replace('id=', '');
+      this.refreshStates(2);
+
+      console.log("AHH " + pancakeCount + " " + sugar + " " + berries + " " + wh_cream + " " + id);
+      /* http://localhost:3000/orderConformation?pancake=0&pc=0_1_0&sugar=1&berries=0&wh_cream=1 
+      the arrays are stored as such:
+      pc - 1 pancake, 2 pancake, 3 pancake
+      sugar - #
+      berries - #
+      wh_cream - #
+
+      */
+    }
 
   }
 
-  refreshStates() {
+  // 1 - pasta, 2 - pancakes, 3 - , 4 -
+  refreshStates(choice) {
     console.log(urlData);
-    //console.log(this.state.pasta);
-    this.setState((prevState, props) => { return { pasta: pastaChoice } });
+    // //console.log(this.state.pasta);
+    if (choice == 1) {
+      this.setState((prevState, props) => { return { pasta: pastaChoice } });
 
-    this.setState((prevState, props) => { return { sauce_pesto: saucesArr[0] } });
-    this.setState((prevState, props) => { return { sauce_marinara: saucesArr[1] } });
-    this.setState((prevState, props) => { return { sauce_alfredo: saucesArr[2] } });
+      this.setState((prevState, props) => { return { sauce_pesto: saucesArr[0] } });
+      this.setState((prevState, props) => { return { sauce_marinara: saucesArr[1] } });
+      this.setState((prevState, props) => { return { sauce_alfredo: saucesArr[2] } });
 
-    this.setState((prevState, props) => { return { protein_chicken: proteinArr[0] } });
-    this.setState((prevState, props) => { return { protein_shrimp: proteinArr[1] } });
-    this.setState((prevState, props) => { return { protein_meatball: proteinArr[2] } });
-    this.setState((prevState, props) => { return { protein_sausage: proteinArr[3] } });
-    this.setState((prevState, props) => { return { protein_crab_meat: proteinArr[4] } });
+      this.setState((prevState, props) => { return { protein_chicken: proteinArr[0] } });
+      this.setState((prevState, props) => { return { protein_shrimp: proteinArr[1] } });
+      this.setState((prevState, props) => { return { protein_meatball: proteinArr[2] } });
+      this.setState((prevState, props) => { return { protein_sausage: proteinArr[3] } });
+      this.setState((prevState, props) => { return { protein_crab_meat: proteinArr[4] } });
 
-    this.setState((prevState, props) => { return { onion: toppingArr[0] } });
-    this.setState((prevState, props) => { return { tomato: toppingArr[1] } });
-    this.setState((prevState, props) => { return { broccoli: toppingArr[2] } });
-    this.setState((prevState, props) => { return { mushroom: toppingArr[3] } });
-    this.setState((prevState, props) => { return { corn: toppingArr[4] } });
+      this.setState((prevState, props) => { return { onion: toppingArr[0] } });
+      this.setState((prevState, props) => { return { tomato: toppingArr[1] } });
+      this.setState((prevState, props) => { return { broccoli: toppingArr[2] } });
+      this.setState((prevState, props) => { return { mushroom: toppingArr[3] } });
+      this.setState((prevState, props) => { return { corn: toppingArr[4] } });
 
-    this.setState((prevState, props) => { return { saltNpep: seasoningArr[0] } });
-    this.setState((prevState, props) => { return { old_bay: seasoningArr[1] } });
-    this.setState((prevState, props) => { return { cajun: seasoningArr[2] } });
-    this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
-    this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
+      this.setState((prevState, props) => { return { saltNpep: seasoningArr[0] } });
+      this.setState((prevState, props) => { return { old_bay: seasoningArr[1] } });
+      this.setState((prevState, props) => { return { cajun: seasoningArr[2] } });
+      this.setState((prevState, props) => { return { italian: seasoningArr[3] } });
+      this.setState((prevState, props) => { return { garlic: seasoningArr[4] } });
+    }
+    else if (choice == 2) {
+      // pc: 0,
+      // sug: 0,
+      // berr: 0,
+      // wh_cr: 0,
+      this.setState((prevState, props) => { return { pc: pancakeCount } });
+      this.setState((prevState, props) => { return { sug: sugar } });
+      this.setState((prevState, props) => { return { berr: berries } });
+      this.setState((prevState, props) => { return { wh_cr: wh_cream } });
 
+    }
   }
 
   sendOrder() {
@@ -119,6 +184,10 @@ class OrderConformationPage extends Component {
       .then(res => res.text())
       .then(res => this.setState({ validIDs: res }))
       .catch(err => err);
+  }
+
+  setGlobalChoiceVar(num) {
+    globalChoiceVar = num;
   }
 
   getSauces() {
@@ -193,80 +262,40 @@ class OrderConformationPage extends Component {
     return seasoningNames;
   }
 
-  getSauceChoiceLabel() {
-    var label = '';
-    var counter = 0;
-
-    if (this.state.sauce_pesto == 1)
-      counter++;
-    if (this.state.sauce_marinara == 1)
-      counter++
-    if (this.state.sauce_alfredo == 1)
-      counter++
-
-    label = (counter > 1 ? 'Choices' : 'Choice');
-    return label;
+  getPc() {
+    return this.state.pc;
+  }
+  getSugar() {
+    if (this.state.sug == 1)
+      return 'Yes';
+    else
+      return 'No';
+  }
+  getBerries() {
+    if (this.state.ber == 1)
+      return 'Yes';
+    else
+      return 'No';
+  }
+  getWh() {
+    if (this.state.wh_cr == 1)
+      return 'Yes';
+    else
+      return 'No';
   }
 
-  getProteinChoiceLabel() {
-    var label = '';
-    var counter = 0;
+  hideTables(){
+    if(globalChoiceVar == 1){
 
-    if (this.state.protein_chicken == 1)
-      counter++
-    if (this.state.protein_shrimp == 1)
-      counter++
-    if (this.state.protein_meatball == 1)
-      counter++
-    if (this.state.protein_sausage == 1)
-      counter++
-    if (this.state.protein_crab_meat == 1)
-      counter++
+    }
 
-    label = (counter > 1 ? 'Choices' : 'Choice');
-    return label;
   }
-  getToppingChoiceLabel() {
-    var label = '';
-    var counter = 0;
 
-    if (this.state.onion == 1)
-      counter++
-    if (this.state.tomato == 1)
-      counter++
-    if (this.state.broccoli == 1)
-      counter++
-    if (this.state.mushroom == 1)
-      counter++
-    if (this.state.corn == 1)
-      counter++
-
-    label = (counter > 1 ? 'Choices' : 'Choice');
-    return label;
-  }
-  getSeasoningChoiceLabel() {
-    var label = '';
-    var counter = 0;
-
-    if (this.state.saltNpep == 1)
-      counter++
-    if (this.state.old_bay == 1)
-      counter++
-    if (this.state.cajun == 1)
-      counter++
-    if (this.state.italian == 1)
-      counter++
-    if (this.state.garlic == 1)
-      counter++
-
-    label = (counter > 1 ? 'Choices' : 'Choice');
-    return label;
-  }
 
   render() {
 
     return (
-      <div onMouseOver={() => this.refreshStates()} className="OrderConformationPage" id="container">
+      <div onMouseOver={() => this.refreshStates(globalChoiceVar)} className="OrderConformationPage" id="container">
         {/*Used to pass studentID from previous webpage*/}
         <input type="hidden" value="" name="studentID" id="studentID" />
         <img id="login_bg" />
@@ -283,28 +312,51 @@ class OrderConformationPage extends Component {
           <p>Protein Choice(s): {this.getProtein()}</p>
           <p>Topping Choice(s): {this.getTopping()}</p>
           <p>Seasoning Choice(s): {this.getSeasoning()}</p> */}
-          <table class = "center">
-          <tr>
-            <td>Item</td>
-            <td>Sauce Choice(s)</td>
-            <td>Protein Choice(s)</td>
-            <td>Topping Choice(s)</td>
-            <td>Seasoning Choice(s)</td>
-            <td>Quantity</td>
-            <td>Total</td>
-          </tr>
-          <tr>
-            <td>Pasta</td>
-            <td>{this.getSauces()}</td>
-            <td>{this.getProtein()}</td>
-            <td>{this.getTopping()}</td>
-            <td>{this.getSeasoning()}</td>
-            <td>1</td>
-            <td>$Big Bucks</td>
-          </tr>
+          <table class="center" id="pastaTable">
+            <tr>
+              <td>Item</td>
+              <td>Sauce Choice(s)</td>
+              <td>Protein Choice(s)</td>
+              <td>Topping Choice(s)</td>
+              <td>Seasoning Choice(s)</td>
+              <td>Quantity</td>
+
+            </tr>
+            <tr>
+              <td>Pasta</td>
+              <td>{this.getSauces()}</td>
+              <td>{this.getProtein()}</td>
+              <td>{this.getTopping()}</td>
+              <td>{this.getSeasoning()}</td>
+              <td>1</td>
+
+            </tr>
+          </table>
+          <table class="center" id="pancakeTable">
+            <tr>
+              <td>Item</td>
+              <td>Pancake Count</td>
+              <td>Sugar</td>
+              <td>Berries</td>
+              <td>Whipped Cream</td>
+
+
+            </tr>
+            <tr>
+              <td>Pancakes</td>
+              <td>{this.getPc()}</td>
+              <td>{this.getSugar()}</td>
+              <td>{this.getBerries()}</td>
+              <td>{this.getWh()}</td>
+
+            </tr>
           </table>
           <br />
           <Link to="/" ><button class="backToMain">Return to Menu</button></Link>
+          <p>{this.state.pc}</p>
+          <p>{this.state.sug}</p>
+          <p>{this.state.ber}</p>
+          <p>{this.state.wh_cr}</p>
         </div>
       </div>
     );
