@@ -35,7 +35,7 @@ class EggOptions extends Component {
             + "&red_pep=" + (this.state.red_pep % 2)
             + "&salt=" + (this.state.salt % 2)
             + "&sage=" + (this.state.sage % 2)
-            + "&garlic=" + (this.state.garlic % 2)
+            + "&garlicE=" + (this.state.garlic % 2)
             + "&" + (this.state.id);
         this.setState(() => { return { urlDataState: urlData } })
         this.updateStates();
