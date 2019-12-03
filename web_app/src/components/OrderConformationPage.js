@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/orderConformationStyle.css"
 import "../styles/commonStyle.css"
-var urlData, globalChoiceVar;
+var urlData, globalChoiceVar, hrefUrl;
 
 var type, sauces, protein, topping, seasoning, pastaChoice, id; //pasta url variables
 var saucesArr, proteinArr, toppingArr, seasoningArr; //pasta array url variables (to saucesArr=sauces.split('_');)
@@ -87,6 +87,7 @@ class OrderConformationPage extends Component {
       baconTableDisplay: 'none'
 
     };
+    hrefUrl = (window.location.port == 3000 ? 'http://localhost:3000/' : 'https://wv-food-order.herokuapp.com/');
   }
 
   componentDidMount() {
@@ -543,7 +544,8 @@ class OrderConformationPage extends Component {
             </tr>
           </table>
           <br />
-          <Link to="/" ><button class="backToMain">Return to LogOn</button></Link>
+          <a href={hrefUrl}><button class="backToMain" >Return to LogOn</button></a>
+          {/* <Link to="/" ><button class="backToMain" >Return to LogOn</button></Link> */}
           {/* <p>{this.state.pc}</p>
           <p>{this.state.sug}</p>
           <p>{this.state.ber}</p>
