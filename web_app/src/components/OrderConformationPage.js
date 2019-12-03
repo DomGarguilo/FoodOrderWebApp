@@ -335,6 +335,10 @@ class OrderConformationPage extends Component {
     }
   }
 
+  getPastaType(){
+    return this.state.pasta;
+  }
+
   getSauces() {
     var sauceNames = '';
 
@@ -478,6 +482,7 @@ class OrderConformationPage extends Component {
           <table class="center" id="pastaTable" style={{ display: this.state.pastaTableDisplay }}>
             <tr>
               <td>Item</td>
+              <td>Pasta Type</td>
               <td>Sauce Choice(s)</td>
               <td>Protein Choice(s)</td>
               <td>Topping Choice(s)</td>
@@ -487,6 +492,7 @@ class OrderConformationPage extends Component {
             </tr>
             <tr>
               <td>Pasta</td>
+              <td>{this.getPastaType()}</td>
               <td>{this.getSauces()}</td>
               <td>{this.getProtein()}</td>
               <td>{this.getTopping()}</td>
