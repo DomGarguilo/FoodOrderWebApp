@@ -9,9 +9,7 @@ class EggOptions extends Component {
     constructor() {
         super();
         this.state = {
-            scrambled: 0,
-            omlette: 0,
-            sunside: 0,
+            cooked: '',
             red_pep : 0,
             salt : 0,
             sage : 0,
@@ -30,8 +28,7 @@ class EggOptions extends Component {
     }
     updateUrlData() {
         urlData = "eggs=0&"
-            + "cooked="
-            + (this.determineCook(this.state.scrambled, this.state.omlette, this.state.sunside))
+            + "cooked="+(this.state.cooked)
             + "&red_pep=" + (this.state.red_pep % 2)
             + "&salt=" + (this.state.salt % 2)
             + "&sage=" + (this.state.sage % 2)
@@ -59,17 +56,6 @@ class EggOptions extends Component {
             this.setState((prevState, props) => { return { sunside: 1 } });
     }
 
-    determineCook(a, b, c) {
-        if (a == 1)
-            return 1;
-        else if (b == 1)
-            return 2;
-        else if (c == 1)
-            return 3;
-        else
-            return 0;
-
-    }
     render() {
         return (
             <body>
@@ -84,13 +70,13 @@ class EggOptions extends Component {
                     <div id="egg_cooked">
                         <div class='grid-container2'>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="scrambled" onChange={() => this.setState((prevState, props) => this.turnCookOff(1))} name="cooked" value="scrambled" class="all_options" /> <label id = 'l_scramble' for="scrambled" class="option_label"></label><p id='text'>Scrambled</p>
+                                <input type="checkbox" id="scrambled" onChange={() => this.setState((prevState, props) => { return {cooked: "Scrambled"} }, this.turnCookOff(1))} name="cooked" value="scrambled" class="all_options" required /> <label id='l_scramble' for="scrambled" class="option_label"></label><p id='text'>Scrambled</p>
                             </div>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="omlette" onChange={() => this.setState((prevState, props) => this.turnCookOff(2))} name="cooked" value="omlette" class="all_options" /> <label id='l_omelette' for="omlette" class="option_label"></label><p id='text'>Omlette</p>
+                                <input type="checkbox" id="omlette" onChange={() => this.setState((prevState, props) => { return {cooked: "Omelette"} },this.turnCookOff(2))} name="cooked" value="omlette" class="all_options" /> <label id='l_omelette' for="omlette" class="option_label"></label><p id='text'>Omlette</p>
                             </div>
                             <div class='grid-item2'>
-                                <input type="checkbox" id="sunside" onChange={() => this.setState((prevState, props) => this.turnCookOff(3))} name="cooked" value="sunside" class="all_options" /> <label id='l_sunnyside' for="sunside" class="option_label"></label><p id='text'>"Sunny-Side" Up</p><br />
+                                <input type="checkbox" id="sunside" onChange={() => this.setState((prevState, props) => { return {cooked: "SunnySide"} },this.turnCookOff(3))} name="cooked" value="sunside" class="all_options" /> <label id='l_sunnyside' for="sunside" class="option_label"></label><p id='text'>"Sunny-Side" Up</p><br />
                             </div>
                         </div>
                     </div>
