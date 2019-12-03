@@ -11,7 +11,7 @@ class ViewBreakfastOrderPage extends Component {
       <body>
         <div className="ViewOrderPage" id="container">
           <img id="login_bg" />
-          <h1 id="head">View Current Pasta Orders</h1>
+          <h1 id="head">View Current Breakfast Orders</h1>
           <Table />
         </div>
       </body>
@@ -29,15 +29,65 @@ class Table extends Component {
           <tr>
             <th>OrderNum</th>
             <th>Customer ID</th>
-            <th>Pancake Quantity</th>
-            <th>Fried Egg Quantity</th>
-            <th>Omlette</th>
-            <th>Scrambled eggs</th>
-            <th>Bacon Quantity</th>
-            <th>Sausage Quantity</th>
+            <th>Order</th>
             <th>Order Status</th>
           </tr>
-          <Row />
+          <tr>
+            <td>1</td>
+            <td>635565</td>
+            <td>Pancakes (4)
+              <li>Sugar</li>
+              <li>Berries</li>
+            </td>
+            <td>
+              <label class="switch">
+                <input type="checkbox"></input>
+                <span class="slider"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>729188</td>
+            <td>Bacon
+              <li>Smoked</li>
+            </td>
+            <td>
+              <label class="switch">
+                <input type="checkbox"></input>
+                <span class="slider"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>663596</td>
+            <td>SunnySideUp
+              <li>Salt</li>
+              <li>Sage</li>
+            </td>
+            <td>
+                <label class="switch">
+                  <input type="checkbox"></input>
+                  <span class="slider"></span>
+                </label>
+              </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>635111</td>
+            <td>Omelette
+              <li>RedPepper</li>
+              <li>Salt</li>
+              <li>Garlic</li>
+            </td>
+            <td>
+              <label class="switch">
+                <input type="checkbox"></input>
+                <span class="slider"></span>
+              </label>
+            </td>
+          </tr>
         </table>
       </div>
     );
@@ -46,9 +96,9 @@ class Table extends Component {
 
 
 
-class Row extends Component {
+/*class Row extends Component {
 
-  constructor() {
+  /*constructor() {
     super();
     this.state = {
       orderNum: "",
@@ -62,26 +112,73 @@ class Row extends Component {
       .then(res => res.text())
       .then(res => this.setState({ orderNum: res }))
       .catch(err => err);
-    //console.log(this.state.validIDs);
+    console.log(this.state.orderNum);
   }
 
   
   render() {
     return (
-      <tr>
-        <td>{this.state.orderNum}</td>
-        <td>{this.state.validIDs}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Mark as complete button</td>
-      </tr>
+      <table class="row">
+        <tr>
+          <td>1</td>
+          <td>635565</td>
+          <td>Pancakes (4)
+            <li>Sugar</li>
+            <li>Berries</li>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox"></input>
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>729188</td>
+          <td>Bacon
+            <li>Smoked</li>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox"></input>
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>663596</td>
+          <td>SunnySideUp
+            <li>Salt</li>
+            <li>Sage</li>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox"></input>
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>635111</td>
+          <td>Omelette
+            <li>RedPepper</li>
+            <li>Salt</li>
+            <li>Garlic</li>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox"></input>
+              <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+      </table>
     );
   }
-}
+}*/
 
 
 export default ViewBreakfastOrderPage;
