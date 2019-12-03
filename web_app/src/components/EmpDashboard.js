@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/breakfastStyle.css";
 import "../styles/commonStyle.css";
-
+var hrefUrl;
 class EmpDash extends Component {
-
+    constructor() {
+        super();
+        hrefUrl = (window.location.port == 3000 ? 'http://localhost:3000/' : 'https://wv-food-order.herokuapp.com/');
+    }
     render() {
         return (
             <body>
@@ -33,7 +36,7 @@ class EmpDash extends Component {
                         </div>
 
                     </form>
-
+                    <a href={hrefUrl}><button class="backToMain" >Return to Home Screen</button></a>
                 </div>
             </body>
         );
