@@ -282,17 +282,17 @@ class OrderConformationPage extends Component {
       orderUrl += 'pastaOrder?' + 'sauces=' + sauces + '&protein=' + protein + '&topping=' + topping + '&seasoning=' + seasoning + '&pasta=' + pastaChoice + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        /*.then(res => res.text())
+        .then(res => res.text())
         .then(res => this.setState(() => { return { queryResponse: res } }))
-        .catch(err => err);*/
+        .catch(err => err);
     }
     else if (choice == 2) { //pancake order
       orderUrl += 'pancakeOrder?' + 'pc=' + pancakeCount + '&sugar=' + sugar + '&berries=' + berries + '&wh_cream=' + wh_cream + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        /*.then(res => res.text())
+        .then(res => res.text())
         .then(res => this.setState(() => { return { queryResponse: res } }))
-        .catch(err => err);*/
+        .catch(err => err);
     }
     else if (choice == 3) { //eggs order
       orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
