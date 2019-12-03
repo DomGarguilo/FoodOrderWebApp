@@ -24,7 +24,7 @@ let pancakeStyle = {
 let eggStyle = {
   display: 'none'
 }
-let baconStyle={
+let baconStyle = {
   display: 'none'
 }
 
@@ -180,20 +180,20 @@ class OrderConformationPage extends Component {
       garlicE = urlDataArr[5];
       id = urlDataArr[6];
 
-      cookType = cookType.replace('cooked=', ''); //sauces=1_1_1
-      redpep = redpep.replace('red_pep=', ''); //protein=1_1_1_0_1
-      salt = salt.replace('salt=', ''); //topping=1_0_1_0_1
-      sage = sage.replace('sage=', ''); //seasoning=1_0_1_0_1
+      cookType = cookType.replace('cooked=', '');
+      redpep = redpep.replace('red_pep=', '');
+      salt = salt.replace('salt=', '');
+      sage = sage.replace('sage=', '');
       garlicE = garlicE.replace('garlicE=', '');
       id = id.replace('id=', '');
       this.setState((prevState, props) => { return { cookType: pastaChoice } });
       this.refreshStates(3);
       this.sendOrder(3);
     }
-    else if(type=='bacon=0'){
-      baconType=urlDataArr[1];
+    else if (type == 'bacon=0') {
+      baconType = urlDataArr[1];
 
-      baconType=baconType.replace('bac=', '');
+      baconType = baconType.replace('bac=', '');
       this.refreshStates(4);
       this.sendOrder(4);
     }
@@ -245,26 +245,26 @@ class OrderConformationPage extends Component {
       this.setState(() => { return { pancakeTableDisplay: '' } });
 
     }
-    else if (choice == 3){
-     /*
-      cook: '',//Scrambled, Omlette, or SunnySideUp
-      rep: 0, //red pepper
-      sal: 0, //salt
-      sag: 0, //sage
-      gar: 0, //garlic for eggs
-     */
-      this.setState((prevState, props)=>{return{cook: cookType}});
-      this.setState((prevState, props)=>{return{rep: redpep}});
-      this.setState((prevState, props)=>{return{sal: salt}});
-      this.setState((prevState, props)=>{return{sag: sage}});
-      this.setState((prevState, props)=>{return{gar: garlicE}});
+    else if (choice == 3) {
+      /*
+       cook: '',//Scrambled, Omlette, or SunnySideUp
+       rep: 0, //red pepper
+       sal: 0, //salt
+       sag: 0, //sage
+       gar: 0, //garlic for eggs
+      */
+      this.setState((prevState, props) => { return { cook: cookType } });
+      this.setState((prevState, props) => { return { rep: redpep } });
+      this.setState((prevState, props) => { return { sal: salt } });
+      this.setState((prevState, props) => { return { sag: sage } });
+      this.setState((prevState, props) => { return { gar: garlicE } });
 
-      this.setState(()=>{return{eggsTableDisplay:''}});
+      this.setState(() => { return { eggsTableDisplay: '' } });
     }
-    else if(choice == 4){
-      this.setState((prevState, props)=>{return{bacon: baconType}});
+    else if (choice == 4) {
+      this.setState((prevState, props) => { return { bacon: baconType } });
 
-      this.setState(()=>{return{baconTableDisplay:''}});
+      this.setState(() => { return { baconTableDisplay: '' } });
     }
 
     this.hideTables(globalChoiceVar);
@@ -327,15 +327,15 @@ class OrderConformationPage extends Component {
     else if (num == 2) { //pancake data
       pancakeStyle = { display: this.state.pancakeTableDisplay };
     }
-    else if(num==3){
-      eggStyle={display: this.state.eggsTableDisplay};
+    else if (num == 3) {
+      eggStyle = { display: this.state.eggsTableDisplay };
     }
-    else if(num==4){
-      baconStyle={display: this.state.baconTableDisplay};
+    else if (num == 4) {
+      baconStyle = { display: this.state.baconTableDisplay };
     }
   }
 
-  getPastaType(){
+  getPastaType() {
     return this.state.pasta;
   }
 
@@ -432,34 +432,34 @@ class OrderConformationPage extends Component {
     else
       return 'No';
   }
-  getCook(){
+  getCook() {
     return this.state.cook;
   }
-  getRedpep(){
-    if(this.state.rep==1)
+  getRedpep() {
+    if (this.state.rep == 1)
       return 'Yes';
-    else 
+    else
       return 'No';
   }
-  getSalt(){
-    if(this.state.sal==1)
+  getSalt() {
+    if (this.state.sal == 1)
       return 'Yes';
-    else 
+    else
       return 'No';
   }
-  getSage(){
-    if(this.state.sag==1)
+  getSage() {
+    if (this.state.sag == 1)
       return 'Yes';
-    else 
+    else
       return 'No';
   }
-  getGarlicE(){
-    if(this.state.gar==1)
+  getGarlicE() {
+    if (this.state.gar == 1)
       return 'Yes';
-    else 
+    else
       return 'No';
   }
-  getBacon(){
+  getBacon() {
     return this.state.bacon;
   }
 
@@ -550,8 +550,8 @@ class OrderConformationPage extends Component {
             </tr>
           </table>
           <br />
-          <a href={hrefUrl}><button class="backToMain" >Return to LogOn</button></a>
-          {/* <Link to="/" ><button class="backToMain" >Return to LogOn</button></Link> */}
+          <a href={hrefUrl}><button class="backToMain" >Return to Home Screen</button></a>
+          {/* <Link to="/" ><button class="backToMain" >Return to LogIn</button></Link> */}
           {/* <p>{this.state.pc}</p>
           <p>{this.state.sug}</p>
           <p>{this.state.ber}</p>
