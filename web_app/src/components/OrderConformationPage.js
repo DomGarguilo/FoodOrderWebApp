@@ -192,8 +192,10 @@ class OrderConformationPage extends Component {
     }
     else if (type == 'bacon=0') {
       baconType = urlDataArr[1];
+      id = urlDataArr[2];
 
       baconType = baconType.replace('bac=', '');
+      id = id.replace('id=', '');
       this.refreshStates(4);
       this.sendOrder(4);
     }
@@ -296,20 +298,22 @@ class OrderConformationPage extends Component {
         .catch(err => err);
     }
     else if (choice == 3) { //eggs order
-      orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
+
+      //console.log(cookType + " " + redpep + " " + salt + " " + sage + " " + garlicE);
+      orderUrl += 'eggOrder?' + 'style=' + cookType + '&redpep=' + redpep + '&salt=' + salt + '&sage=' + sage + '&garlic=' + garlicE + '&id=' + id + '&orderNum=' + g_orderNum;
       console.log("your order: " + orderUrl);
-      // fetch(orderUrl)
-      //   .then(res => res.text())
-      //   .then(res => this.setState(() => { return { queryResponse: res } }))
-      //   .catch(err => err);
+      fetch(orderUrl)
+        .then(res => res.text())
+        .then(res => this.setState(() => { return { queryResponse: res } }))
+        .catch(err => err);
     }
     else if (choice == 4) { //bacon order
-      orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
+      orderUrl += 'baconOrder?' + 'type=' + baconType + '&id=' + id + '&orderNum=' + g_orderNum;
       console.log("your order: " + orderUrl);
-      // fetch(orderUrl)
-      //   .then(res => res.text())
-      //   .then(res => this.setState(() => { return { queryResponse: res } }))
-      //   .catch(err => err);
+      fetch(orderUrl)
+        .then(res => res.text())
+        .then(res => this.setState(() => { return { queryResponse: res } }))
+        .catch(err => err);
     }
 
     //etc for bacon and eggs
