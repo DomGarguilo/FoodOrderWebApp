@@ -92,7 +92,7 @@ class BaconOptions extends Component {
                             <input type="radio" id="canadian" onChange={() => this.setState((prevState, props) => { return {bacon: "Canadian"} }, this.turnBaconOff(3))} name="bacon" value="canadian" class="all_options" /> <label id='l_canadian' for="canadian" class="option_label"></label><p id='text'>Canadian</p>                      
                         </div>
                         <div class='grid-item'>
-                            <input type="radio" id="pancetta" onChange={() => this.setState((prevState, props) => { return {bacon: "Pancetta"} }, this.turnBaconOff(3))} name="bacon" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p>                      
+                            <input type="radio" id="pancetta" onChange={() => this.setState((prevState, props) => { return {bacon: "Pancetta"} }, this.turnBaconOff(4))} name="bacon" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p>                      
                         </div>
                     </div>
                 </div>
