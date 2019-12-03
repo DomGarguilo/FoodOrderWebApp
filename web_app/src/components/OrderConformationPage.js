@@ -11,6 +11,8 @@ var pancakeCount, sugar, berries, wh_cream; //pancake url variables
 
 var cookType, redpep, salt, sage, garlicE;//egg url variables
 
+var baconType;//bacon url variables
+
 let g_orderNum = Math.floor(Math.random() * 100000);
 
 let pastaStyle = {
@@ -20,6 +22,9 @@ let pancakeStyle = {
   display: 'none'
 }
 let eggStyle = {
+  display: 'none'
+}
+let baconStyle={
   display: 'none'
 }
 
@@ -63,19 +68,23 @@ class OrderConformationPage extends Component {
       //--------
 
       //--------EGGS
-      cook: '',//Scrambled, Omlette, or SunnySideUp
+      cook: '',//Scrambled, Omelette, or SunnySide
       rep: 0, //red pepper
       sal: 0, //salt
       sag: 0, //sage
       gar: 0, //garlic for eggs
       //--------
 
+      //--------Bacon
+      bacon: '',//Bacon choice: smoked, turkey, canadian, pencetta
+      //--------
+
 
       //-------TABLE DISPLAYS
       pastaTableDisplay: 'none',
       pancakeTableDisplay: 'none',
-      eggsTableDisplay: 'none'
-
+      eggsTableDisplay: 'none',
+      baconTableDisplay: 'none'
 
     };
   }
@@ -176,8 +185,16 @@ class OrderConformationPage extends Component {
       sage = sage.replace('sage=', ''); //seasoning=1_0_1_0_1
       garlicE = garlicE.replace('garlicE=', '');
       id = id.replace('id=', '');
+      this.setState((prevState, props) => { return { cookType: pastaChoice } });
       this.refreshStates(3);
       this.sendOrder(3);
+    }
+    else if(type=='bacon=0'){
+      baconType=urlDataArr[1];
+
+      baconType=baconType.replace('bac=', '');
+      this.refreshStates(4);
+      this.sendOrder(4);
     }
 
   }
@@ -243,6 +260,11 @@ class OrderConformationPage extends Component {
 
       this.setState(()=>{return{eggsTableDisplay:''}});
     }
+    else if(choice == 4){
+      this.setState((prevState, props)=>{return{bacon: baconType}});
+
+      this.setState(()=>{return{baconTableDisplay:''}});
+    }
 
     this.hideTables(globalChoiceVar);
   }
@@ -260,17 +282,17 @@ class OrderConformationPage extends Component {
       orderUrl += 'pastaOrder?' + 'sauces=' + sauces + '&protein=' + protein + '&topping=' + topping + '&seasoning=' + seasoning + '&pasta=' + pastaChoice + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        .then(res => res.text())
+        /*.then(res => res.text())
         .then(res => this.setState(() => { return { queryResponse: res } }))
-        .catch(err => err);
+        .catch(err => err);*/
     }
     else if (choice == 2) { //pancake order
       orderUrl += 'pancakeOrder?' + 'pc=' + pancakeCount + '&sugar=' + sugar + '&berries=' + berries + '&wh_cream=' + wh_cream + '&id=' + id + "&orderNum=" + g_orderNum;
       console.log("your order: " + orderUrl);
       fetch(orderUrl)
-        .then(res => res.text())
+        /*.then(res => res.text())
         .then(res => this.setState(() => { return { queryResponse: res } }))
-        .catch(err => err);
+        .catch(err => err);*/
     }
     else if (choice == 3) { //eggs order
       orderUrl += '&id=' + id + "&orderNum=" + g_orderNum;
@@ -306,6 +328,9 @@ class OrderConformationPage extends Component {
     }
     else if(num==3){
       eggStyle={display: this.state.eggsTableDisplay};
+    }
+    else if(num==4){
+      baconStyle={display: this.state.baconTableDisplay};
     }
   }
 
@@ -402,6 +427,9 @@ class OrderConformationPage extends Component {
     else
       return 'No';
   }
+  getCook(){
+    return this.state.cook;
+  }
   getRedpep(){
     if(this.state.rep==1)
       return 'Yes';
@@ -426,7 +454,9 @@ class OrderConformationPage extends Component {
     else 
       return 'No';
   }
-
+  getBacon(){
+    return this.state.bacon;
+  }
 
 
   render() {
@@ -494,6 +524,7 @@ class OrderConformationPage extends Component {
             </tr>
             <tr>
               <td>Eggs</td>
+              <td>{this.getCook()}</td>
               <td>{this.getRedpep()}</td>
               <td>{this.getSalt()}</td>
               <td>{this.getSage()}</td>
@@ -501,8 +532,18 @@ class OrderConformationPage extends Component {
 
             </tr>
           </table>
+          <table class="center" id="baconTable" style={{ display: this.state.baconTableDisplay }}>
+            <tr>
+              <td>Item</td>
+              <td>Type</td>
+            </tr>
+            <tr>
+              <td>Bacon</td>
+              <td>{this.getBacon()}</td>
+            </tr>
+          </table>
           <br />
-          <Link to="/" ><button class="backToMain">Return to Menu</button></Link>
+          <Link to="/" ><button class="backToMain">Return to LogOn</button></Link>
           {/* <p>{this.state.pc}</p>
           <p>{this.state.sug}</p>
           <p>{this.state.ber}</p>
