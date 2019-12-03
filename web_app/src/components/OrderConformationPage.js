@@ -9,12 +9,17 @@ var saucesArr, proteinArr, toppingArr, seasoningArr; //pasta array url variables
 
 var pancakeCount, sugar, berries, wh_cream; //pancake url variables
 
+var cookType, redpep, salt, sage, garlicE;//egg url variables
+
 let g_orderNum = Math.floor(Math.random() * 100000);
 
 let pastaStyle = {
   display: 'none'
 }
 let pancakeStyle = {
+  display: 'none'
+}
+let eggStyle = {
   display: 'none'
 }
 
@@ -57,11 +62,19 @@ class OrderConformationPage extends Component {
       wh_cr: 0, //whipped cream
       //--------
 
+      //--------EGGS
+      cook: '',//Scrambled, Omlette, or SunnySideUp
+      rep: 0, //red pepper
+      sal: 0, //salt
+      sag: 0, //sage
+      gar: 0, //garlic for eggs
+      //--------
 
 
       //-------TABLE DISPLAYS
       pastaTableDisplay: 'none',
       pancakeTableDisplay: 'none',
+      eggsTableDisplay: 'none'
 
 
     };
@@ -146,10 +159,30 @@ class OrderConformationPage extends Component {
 
       */
     }
+    else if (type == 'eggs=0') {
+
+      this.setGlobalChoiceVar(3)
+      //cookType, redpep, salt, sage, garlic;
+      cookType = urlDataArr[1];
+      redpep = urlDataArr[2];
+      salt = urlDataArr[3];
+      sage = urlDataArr[4];
+      garlicE = urlDataArr[5];
+      id = urlDataArr[6];
+
+      cookType = cookType.replace('cooked=', ''); //sauces=1_1_1
+      redpep = redpep.replace('red_pep=', ''); //protein=1_1_1_0_1
+      salt = salt.replace('salt=', ''); //topping=1_0_1_0_1
+      sage = sage.replace('sage=', ''); //seasoning=1_0_1_0_1
+      garlicE = garlicE.replace('garlicE=', '');
+      id = id.replace('id=', '');
+      this.refreshStates(3);
+      this.sendOrder(3);
+    }
 
   }
 
-  // 1 - pasta, 2 - pancakes, 3 - , 4 -
+  // 1 - pasta, 2 - pancakes, 3 - eggs, 4 - bacon
   refreshStates(choice) {
     //console.log(urlData);
     //console.log(choice);
@@ -193,6 +226,22 @@ class OrderConformationPage extends Component {
 
       this.setState(() => { return { pancakeTableDisplay: '' } });
 
+    }
+    else if (choice == 3){
+     /*
+      cook: '',//Scrambled, Omlette, or SunnySideUp
+      rep: 0, //red pepper
+      sal: 0, //salt
+      sag: 0, //sage
+      gar: 0, //garlic for eggs
+     */
+      this.setState((prevState, props)=>{return{cook: cookType}});
+      this.setState((prevState, props)=>{return{rep: redpep}});
+      this.setState((prevState, props)=>{return{sal: salt}});
+      this.setState((prevState, props)=>{return{sag: sage}});
+      this.setState((prevState, props)=>{return{gar: garlicE}});
+
+      this.setState(()=>{return{eggsTableDisplay:''}});
     }
 
     this.hideTables(globalChoiceVar);
@@ -251,10 +300,12 @@ class OrderConformationPage extends Component {
   hideTables(num) {
     if (num == 1) { //pasta data
       pastaStyle = { display: this.state.pastaTableDisplay };
-
     }
     else if (num == 2) { //pancake data
       pancakeStyle = { display: this.state.pancakeTableDisplay };
+    }
+    else if(num==3){
+      eggStyle={display: this.state.eggsTableDisplay};
     }
   }
 
@@ -351,6 +402,30 @@ class OrderConformationPage extends Component {
     else
       return 'No';
   }
+  getRedpep(){
+    if(this.state.rep==1)
+      return 'Yes';
+    else 
+      return 'No';
+  }
+  getSalt(){
+    if(this.state.sal==1)
+      return 'Yes';
+    else 
+      return 'No';
+  }
+  getSage(){
+    if(this.state.sag==1)
+      return 'Yes';
+    else 
+      return 'No';
+  }
+  getGarlicE(){
+    if(this.state.gar==1)
+      return 'Yes';
+    else 
+      return 'No';
+  }
 
 
 
@@ -405,6 +480,24 @@ class OrderConformationPage extends Component {
               <td>{this.getSugar()}</td>
               <td>{this.getBerries()}</td>
               <td>{this.getWh()}</td>
+
+            </tr>
+          </table>
+          <table class="center" id="eggTable" style={{ display: this.state.eggsTableDisplay }}>
+            <tr>
+              <td>Item</td>
+              <td>Cooked</td>
+              <td>Red Pepper</td>
+              <td>Salt</td>
+              <td>Sage</td>
+              <td>Garlic</td>
+            </tr>
+            <tr>
+              <td>Eggs</td>
+              <td>{this.getRedpep()}</td>
+              <td>{this.getSalt()}</td>
+              <td>{this.getSage()}</td>
+              <td>{this.getGarlicE()}</td>
 
             </tr>
           </table>
