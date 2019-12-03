@@ -93,7 +93,7 @@ class IngredientsPage extends Component {
               <th>Status</th>
             </tr>
             <tr>
-              <td>Alfredo{this.state.Alfredo}</td>
+              <td>Alfredo</td>
               <td>
                 <label class="switch">
                   <input type="checkbox" onClick={() => this.changeStatus()}></input>
@@ -111,7 +111,7 @@ class IngredientsPage extends Component {
               </td>
             </tr>
             <tr>
-              <td>Bowtie {this.state.Bowtie}</td>
+              <td>Bowtie</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
@@ -120,7 +120,7 @@ class IngredientsPage extends Component {
               </td>
             </tr>
             <tr>
-              <td>Broccoli {this.state.Broccoli}</td>
+              <td>Broccoli</td>
               <td>
                 <label class="switch">
                   <input type="checkbox"></input>
@@ -231,7 +231,8 @@ class IngredientsPage extends Component {
                 <label class="switch">
                   <input type="checkbox"></input>
                   <span class="slider"></span>
-                </label>              </td>
+                </label>              
+              </td>
             </tr>
             <tr>
               <td>Pesto</td>
@@ -293,7 +294,7 @@ export default IngredientsPage;
 
 
 /* THIS VERSION MIGHT BE EASIER. COULD JUST USE PROPS.ITEM TO QUERY THE DB
-<tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
+            <tr><td>Alfredo</td><td><StatusButton item="In" /></td></tr>
             <tr><td>Bacon</td><td><StatusButton item="Bacon" /></td></tr>
             <tr><td>Bowtie</td><td><StatusButton item="Bowtie" /></td></tr>
             <tr><td>Brocoli</td><td><StatusButton item="Brocoli" /></td></tr>
