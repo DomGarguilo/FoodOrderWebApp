@@ -9,6 +9,7 @@ class BaconOptions extends Component {
     constructor() {
         super();
         this.state = {
+          bacon: '',  
           smoked: 0,
           turkey: 0,
           canadian: 0,
@@ -27,8 +28,8 @@ class BaconOptions extends Component {
     }
     updateUrlData() {
         urlData = "bacon=0&"
-            + "bac="
-            + (this.determineBacon(this.state.smoked, this.state.turkey, this.state.canadian, this.state.pancetta))
+            + "bac=" + (this.state.bacon)
+            //+ (this.determineBacon(this.state.smoked, this.state.turkey, this.state.canadian, this.state.pancetta))
             + "&" + (this.state.id);
         this.setState(() => { return { urlDataState: urlData } })
         this.updateStates();
@@ -55,7 +56,7 @@ class BaconOptions extends Component {
             this.setState((prevState, props) => { return { pancetta: 1 } });
     }
 
-    determineBacon(a, b, c, d) {
+    /*determineBacon(a, b, c, d) {
         if (a == 1)
             return 1;
         else if (b == 1)
@@ -67,7 +68,7 @@ class BaconOptions extends Component {
         else
             return 0;
 
-    }
+    }*/
     render() {
         return (
             <body>
@@ -82,16 +83,16 @@ class BaconOptions extends Component {
                 <div id="bacon_options">
                     <div class='grid-container'>
                         <div class='grid-item'>
-                            <input type="radio" id="smoked" onChange={() => this.setState((prevState, props) => this.turnBaconOff(1))} name="bacon" value="smoked" class="all_options" /> <label id='l_smoked' for="smoked" class="option_label"></label><p id='text'>Smoked</p>
+                            <input type="radio" id="smoked" onChange={() => this.setState((prevState, props) => { return {bacon: "Smoked"} }, this.turnBaconOff(1))} name="bacon" value="smoked" class="all_options" /> <label id='l_smoked' for="smoked" class="option_label"></label><p id='text'>Smoked</p>
                         </div>
                         <div class='grid-item'>
-                            <input type="radio" id="turkey" onChange={() => this.setState((prevState, props) => this.turnBaconOff(2))} name="bacon" value="turkey" class="all_options" /> <label id='l_turkey' for="turkey" class="option_label"></label><p id='text'>Turkey</p>
+                            <input type="radio" id="turkey" onChange={() => this.setState((prevState, props) => { return {bacon: "Turkey"} }, this.turnBaconOff(2))} name="bacon" value="turkey" class="all_options" /> <label id='l_turkey' for="turkey" class="option_label"></label><p id='text'>Turkey</p>
                         </div>
                         <div class='grid-item'>
-                            <input type="radio" id="canadian" onChange={() => this.setState((prevState, props) => this.turnBaconOff(3))} name="bacon" value="canadian" class="all_options" /> <label id='l_canadian' for="canadian" class="option_label"></label><p id='text'>Canadian</p>
+                            <input type="radio" id="canadian" onChange={() => this.setState((prevState, props) => { return {bacon: "Canadian"} }, this.turnBaconOff(3))} name="bacon" value="canadian" class="all_options" /> <label id='l_canadian' for="canadian" class="option_label"></label><p id='text'>Canadian</p>                      
                         </div>
                         <div class='grid-item'>
-                            <input type="radio"  id="pancetta" onChange={() => this.setState((prevState, props) => this.turnBaconOff(4))} name="bacon" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p>
+                            <input type="radio" id="pancetta" onChange={() => this.setState((prevState, props) => { return {bacon: "Pancetta"} }, this.turnBaconOff(3))} name="bacon" value="pancetta" class="all_options" /> <label id='l_pancetta' for="pancetta" class="option_label"></label><p id='text'>Pancetta</p>                      
                         </div>
                     </div>
                 </div>
