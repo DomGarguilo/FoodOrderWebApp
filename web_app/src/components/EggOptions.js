@@ -98,13 +98,13 @@ class EggOptions extends Component {
                         </div>
                         
                         <div>
-                            <p>{this.state.scrambled}</p>
+                            {/* <p>{this.state.scrambled}</p>
                             <p>{this.state.omlette}</p>
                             <p>{this.state.sunside}</p>
                             <p>{this.state.red_pep}</p>
                             <p>{this.state.salt}</p>
                             <p>{this.state.sage}</p>
-                            <p>{this.state.garlic}</p>
+                            <p>{this.state.garlic}</p> */}
                         </div>
                     </div> <br />
 

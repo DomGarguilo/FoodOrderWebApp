@@ -97,10 +97,10 @@ class BaconOptions extends Component {
                     </div>
                 </div>
                 <div>
-                    <p>{this.state.smoked}</p>
+                    {/* <p>{this.state.smoked}</p>
                     <p>{this.state.turkey}</p>
                     <p>{this.state.canadian}</p>
-                    <p>{this.state.pancetta}</p>
+                    <p>{this.state.pancetta}</p> */}
                 </div>
                 <Link to={"/orderConformation" + "?" + urlData} onMouseDown={() => this.updateUrlData()} onClick={() => this.updateStates()}><input type="submit" id="button" value="Add item to order" /></Link>
 
